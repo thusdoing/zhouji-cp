@@ -1,0 +1,369 @@
+.inputNuber {
+    width: 80px;
+    outline: none;
+    height: 30px;
+    padding: 3px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+  }
+  
+  .local-wrap {
+    padding: 10px
+  }
+  
+  .local-wrap/deep/.ivu-checkbox-group {
+    display: inline-block;
+    margin: 0 0 0 10px;
+  }
+  
+  .longhuIntegrate/deep/.ivu-row {
+    display: inline-block;
+    width: 100%;
+    color: #000
+  }
+  
+  .longhuIntegrate {
+    background-color: #fff
+  }
+  
+  .longhuIntegrate/deep/.longhuIntegrateHeader .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper {
+    height: 27px;
+    line-height: 27px;
+    font-size: 12px;
+    padding: 0;
+    color: #919090;
+    border-radius: 4px !important;
+    width: 70px;
+    border: 1px solid #c0c1c2;
+    text-align: center;
+    margin: 7px 4px;
+    z-index: 9;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#e7e7e7));
+  }
+  
+  .longhuIntegrate/deep/.longhuIntegrateHeader .ivu-radio-group-button .ivu-radio-wrapper-checked,
+  .longhuIntegrate/deep/.longhuIntegrateHeader .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper:hover {
+    color: #fff !important;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fba915), to(#e97607)) !important;
+    border-color: #e97607 !important;
+    box-shadow: 0 0 0
+  }
+  
+  .longhuIntegrate/deep/.ivu-table-cell {
+    padding: 0 3px !important;
+    text-align: center
+  }
+  
+  .longhuIntegrate/deep/.longhuIntegrateHeader div {
+    display: inline-block
+  }
+  
+  .longhuIntegrate/deep/.longhuIntegrateHeader {
+    background-color: #f6f4f4;
+    height: 41px
+  }
+  
+  .longhuIntegrate/deep/.dollarIcon {
+    width: 29px;
+    text-align: center;
+    height: 29px;
+    border-radius: 50%;
+    background-color: #fff;
+    float: left;
+    margin: 6px 20px;
+    line-height: 29px;
+    border: 1px solid #c0c1c2;
+    font-size: 18px;
+    color: #b62929;
+  }
+  
+  /* modal */
+  
+  .longhuIntegrate/deep/.modalContent {
+    padding: 20px;
+  }
+  
+  /* ballGameTitle */
+  
+  .longhuIntegrate/deep/.ballGameTitle {
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#e7e7e7));
+    width: 100%;
+    padding: 7px 0;
+  }
+  
+  .longhuIntegrate/deep/.ballGameDetailHover:hover,
+  .longhuIntegrate/deep/.ballGameDetailHover.active {
+    background-color: #fff8b6;
+    box-shadow: 0 0px 6px 1px rgba(0, 0, 0, .2);
+    cursor: pointer;
+  }
+  
+  .longhuIntegrate/deep/.ballGameTitle>div {
+    line-height: 18px !important;
+    border-right: 1px solid #a4a4a4;
+  }
+  
+  .longhuIntegrate/deep/.ballGameTitle>div:last-child {
+    border-right: none !important;
+  }
+  
+  /* ballGameDetail */
+  
+  .longhuIntegrate/deep/.ballGameDetail {
+    width: 100%;
+    border-bottom: 1px solid #c9c7c7;
+    border-right: 1px solid #c9c7c7;
+    display: block
+  }
+  
+  .longhuIntegrate/deep/.ballGameDetail>div {
+    text-align: center;
+    line-height: 36px;
+  }
+  
+  .longhuIntegrate/deep/.ballGameDetail .bonusAmt {
+    color: #FF0000;
+  }
+  
+  .longhuIntegrate/deep/.ballGameDetail .ballSelect {
+    padding: 0 3px
+  }
+  
+  .longhuIntegrate/deep/.ballGameDetail .ivu-select-single .ivu-select-selection,
+  .longhuIntegrate/deep/.ballGameDetail .ivu-select-selected-value {
+    height: 23px;
+    line-height: 23px;
+    padding: 0;
+  }
+  
+  /* ballSoon */
+  
+  /* .longhuIntegrate /deep/ .ballSoon:hover{cursor: pointer !important} */
+  
+  .longhuIntegrate/deep/.ivu-radio-group {
+    float: right
+  }
+  
+  .longhuIntegrate/deep/.history .ivu-radio-group {
+    width: 100%
+  }
+  
+  .longhuIntegrate/deep/.ivu-radio-group-button .ivu-radio-wrapper:after,
+  .longhuIntegrate/deep/.ivu-radio-group-button .ivu-radio-wrapper:before {
+    background-color: rgba(0, 0, 0, 0)
+  }
+  
+  .longhuIntegrate/deep/.history .historyRadio .ivu-radio-group-button .ivu-radio-wrapper {
+    width: 50%;
+    border: none !important;
+    line-height: 45px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 15px;
+    background-color: #353535;
+    border-radius: 0 !important;
+    height: 45px;
+  }
+  
+  .longhuIntegrate/deep/.history .historyRadio .ivu-radio-wrapper-checked {
+    background-color: #b62929 !important;
+    color: #fff
+  }
+  
+  .longhuIntegrate/deep/.history .periods {
+    height: 36px;
+    border-bottom: 1px solid #e2e0dd
+  }
+  
+  .longhuIntegrate/deep/.history .periods p {
+    line-height: 36px;
+    text-align: center;
+    border-right: 1px solid #e2e0dd
+  }
+  
+  .longhuIntegrate/deep/.history .periods .periodsSelect .ivu-select-selection {
+    height: 26px;
+    width: 70px;
+    border-radius: 0;
+    margin: 5px 7px;
+    line-height: 26px;
+  }
+  
+  .longhuIntegrate/deep/.history .ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+  /* .longhuIntegrate /deep/ .history .ivu-select-single .ivu-select-selection .ivu-select-selected-value{line-height: 26px;height: 26px} */
+  
+  .longhuIntegrate/deep/.history .periodResult thead {
+    display: none
+  }
+  
+  .longhuIntegrate/deep/.history .periodResult .ivu-table-cell {
+    text-align: left
+  }
+  
+  .longhuIntegrate/deep/.history .periodResult .ivu-table td {
+    height: 21px
+  }
+  
+  
+  /* soonAuto */
+  
+  .longhuIntegrate/deep/.soonAuto>input {
+    height: 25px;
+    width: 100px;
+    margin-right: 20px;
+    float: right;
+  }
+  
+  .longhuIntegrate/deep/.order .historyRadio .ivu-radio-group-button .ivu-radio-wrapper {
+    font-size: 12px;
+    line-height: 29px !important;
+    height: 29px !important;
+    width: 100% !important;
+    text-align: center;
+    background-color: #b62929 !important
+  }
+  
+  .longhuIntegrate/deep/.ivu-radio-wrapper:focus {
+    border: none !important;
+    box-shadow: 0 0 0
+  }
+  
+  .longhuIntegrate/deep/.order .historyRadio .ivu-radio-wrapper-checked {
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fba915), to(#e97607));
+  }
+  
+  .longhuIntegrate/deep/.btnBox {
+    margin: 15px 0;
+    width: 100%
+  }
+  
+  .longhuIntegrate/deep/.btnBox {
+    margin: 15px 0
+  }
+  
+  .longhuIntegrate/deep/.btnBox button {
+    width: 65px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    box-shadow: -1px 1px 2px #afafaf
+  }
+  
+  .longhuIntegrate/deep/.btnBox .confirmBtn {
+    float: right;
+    margin-right: 15px;
+    background-color: #eea70d
+  }
+  
+  .longhuIntegrate/deep/.btnBox .cancelBtn {
+    margin-left: 15px;
+    background-color: #4b4a49
+  }
+  
+  .longhuIntegrate/deep/.orderBox {
+    width: 20%;
+    display: inline-block;
+    float: left;
+  }
+  
+  .longhuIntegrate/deep/.order .historyRadio .ivu-col {
+    border-right: 1px solid #e2e0dd
+  }
+  
+  
+  .longhuIntegrate/deep/.ivu-table-wrapper {
+    border: none;
+  }
+  
+  .longhuIntegrate/deep/.ballNo {
+    background: #b62929;
+    color: #fff;
+    line-height: 29px;
+    text-align: center;
+    font-weight: bold;
+    border-right: 1px solid #d0d0d0
+  }
+  
+  .longhuIntegrate/deep/.ivu-table th {
+    text-align: center;
+    font-weight: bold;
+    height: 33px;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#e7e7e7)) !important;
+  }
+  
+  .longhuIntegrate/deep/.ivu-table th .ivu-table-cell {
+    border-right: .5px solid #666;
+    width: 100%
+  }
+  
+  .longhuIntegrate/deep/.ivu-table-header thead tr th:last-child .ivu-table-cell {
+    border-right: none;
+  }
+  
+  .longhuIntegrate/deep/.ivu-table td {
+    height: 36px
+  }
+  
+  .longhuIntegrate/deep/.ivu-select-arrow {
+    display: none
+  }
+  
+  .longhuIntegrate/deep/.ivu-select-selection:hover,
+  .longhuIntegrate/deep/.ivu-select-visible .ivu-select-selection {
+    border-color: #dddee1;
+    box-shadow: 0 0 0
+  }
+  
+  .longhuIntegrate/deep/td.longhuIntegrate-bonusAmt,.red {
+    color: red;
+    font-weight: bold
+  }
+  
+  .longhuIntegrate/deep/.ballStyle {
+    color: #fff;
+    font-weight: bold;
+    background: radial-gradient(circle at 70px 70px, #000, #ec1515);
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    line-height: 25px;
+    -webkit-box-shadow: 0px 0px 1px 0px #aba5a5 inset;
+    box-shadow: 0px 0px 1px 0px #aba5a5 inset;
+  }
+  
+  .longhuIntegrate/deep/.ivu-select-small.ivu-select-single .ivu-select-selection .ivu-select-selected-value,
+  .longhuIntegrate/deep/.ivu-select-single .ivu-select-selection .ivu-select-placeholder {
+    padding: 0
+  }
+  .notice-model .ivu-modal-close i {
+    color: #fff;
+  }
+  
+  .notice-model .ivu-modal-header {
+    padding: 16px;
+    background-color: #d00808;
+    color: #fff;
+  }
+  
+  
+  .notice-model .ivu-modal-body {
+    padding: 2px;
+  }
+  .notice-model/deep/.ivu-modal-close i {
+    color: #fff;
+  }
+  
+  .modal/deep/.ivu-modal-header {
+    padding: 16px;
+    background-color: #b62929;
+    color: #fff;
+  }
+  
+  .notice-model/deep/.ivu-modal-body {
+    padding: 2px;
+  }

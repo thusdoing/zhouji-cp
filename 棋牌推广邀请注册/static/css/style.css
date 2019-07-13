@@ -1,0 +1,42 @@
+body,html{margin: 0;padding: 0;background: linear-gradient(#4b3051 50%,#22133c 51%,#22133c 100%);width: 100vw;height: 100vh;overflow: hidden;}
+#app{position: relative;max-width: 420px;margin: auto;top: 50%;transform: translateY(-50%)}
+.bg{width: 100%;display: block}
+.btn{position: absolute;bottom: 10%; width: 60%;left: 50%;transform: translateX(-50%);animation: sx 1s ease infinite}
+@keyframes sx{
+    0%{}
+    50%{width: 62%;}
+    100%{width: 60%;}
+}
+form{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    transition: all 0.5s ease;
+}
+.albg{
+    width: 100%;
+}
+
+.formi{position: absolute;}
+.ljzc{width: 50%;top: 8%;left: 50%;transform: translateX(-50%)}
+.close{width: 17%;top: 6%;right: 5%;}
+.forminput{top: 20%;left: 0;width: 100%;}
+.forminput>div{text-align: center;padding: 5% 0 5%;position: relative;}
+.forminput input{width: 45%;border: 1px solid #666;border-radius: 8px;outline: none;padding:2%;background: rgba(56,0,77,.6);color: #fff;margin-left: 2%;}
+.forminput input::placeholder{color: #ccc}
+.label{width: 14%;vertical-align: middle}
+.arrow{width: 58%;bottom: 15%;left: 50%;transform: translateX(-50%);animation: ss 1s ease infinite}
+.submit{width: 34%;bottom: 14%;left: 50%;transform: translateX(-50%)}
+.yzm{vertical-align: middle;width: 18%;}
+@keyframes ss{
+    0%{width: 58%}
+    50%{width: 59%;}
+}
+.closeed{opacity: 0;top: 150%;}
+
+.tips{position: absolute;left: 56%;transform: translateX(-50%);font-size: 12px;color: #fff;text-align: left;transition: all 1s linear;opacity: 0;}
+.opacity{opacity: 1;}

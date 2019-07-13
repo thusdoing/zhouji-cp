@@ -1,0 +1,108 @@
+.zhuQianBao {
+  font-size: 2.1rem;
+  font-weight: 300
+}
+
+.ling-padding {
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
+
+.index-line1 {
+  height: 3rem;
+  line-height: 3rem;
+  background-color: #fff;
+}
+
+.cchOLB {
+  font-size: 1.3rem;
+  color: rgb(155, 155, 155);
+}
+
+._1ZJpc {
+  width: 1.3rem;
+  height: 1.3rem;
+  text-align: center
+}
+
+.zhuYuE {
+  font-size: 3rem;
+  color: rgb(195, 19, 50);
+  text-align: center;
+}
+
+.czlhtC {
+  border-bottom-style: dashed;
+  height: 1rem;
+  /* width: 100%; */
+  color: rgb(230, 230, 230);
+  margin: 5px 10px 5px;
+}
+
+.ziYuE {
+  color: rgb(195, 19, 50);
+  font-size: 2rem
+}
+
+.jaaBFm {
+  height: 38px;
+  background-color: rgb(246, 246, 246);
+  line-height: 38px
+}
+
+.jaaBFm>span {
+  color: rgb(155, 155, 155);
+  font-size: 12px;
+  margin-left: 16px;
+  display: inline-block;
+}
+
+.zhuanhuanqu {
+  padding: 0;
+  margin: 0
+}
+
+.demo5-item {
+  width: 7rem;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin: 4px;
+}
+
+.demo5-item-selected {
+  /* background: #ffffff url(../assets/demo/checker/active.png) no-repeat right bottom; */
+  border-color: #ff4a00;
+}
+
+.itemFlex {
+  flex: 16%
+}
+
+.whirl {
+  -webkit-animation: whirl 2s infinite linear;
+  animation: whirl 2 infinite linear
+}
+
+@-webkit-keyframes whirl {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
+}
+
+.main-tra {
+  padding-top: 44px
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

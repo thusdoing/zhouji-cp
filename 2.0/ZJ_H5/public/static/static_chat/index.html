@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title></title>
+  <script type="text/javascript">
+  	//平台、设备和操作系统 ，返回ture或false,true表示是移动端，false表示不是移动端
+		function ismobile() {
+			var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
+			var ua = navigator.userAgent;
+			var res=mobileArry.filter(function(arr) {
+				return ua.indexOf(arr) > 0;
+			});
+			return res.length > 0;
+		}
+		var flag = ismobile();if(!flag){location.href = './login_pc.html'}else{location.href = './login_mobile.html'}
+  </script>
+</head>
+<body>
+	
+
+</body>
+</html>

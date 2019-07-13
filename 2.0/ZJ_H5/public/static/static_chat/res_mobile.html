@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style>
+			#body_{
+				background: url(img/bj.jpg) no-repeat top center;
+				background-size: 100% 100%;	
+				max-width: 720px;
+				overflow: hidden;				
+				margin: auto;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			.header-text{
+				width: 100%;
+				box-sizing: border-box;
+				text-align: center;
+				font-size: 30px;
+				color: #fff;
+				height: auto;
+				margin: 0 auto;
+				padding-top: 10%;
+			}
+			.logo img{
+				width: 100%;
+			}
+			.from_login{
+				width: 70%;
+				margin: 0 auto;
+				/* padding: 1.875rem; */
+			}
+			.user input{	
+				width: 100%;
+				height: 35px;
+				box-sizing: border-box;
+				margin: 0 auto;
+				border: none;
+				border-bottom: 1px solid #fff;
+				background: url(img/zhanghao.png) no-repeat 3% center ;
+				background-size: 15px;
+				padding-left: 50px !important;
+				font-size: 15px;
+				margin-bottom: 10%;
+				color: #fff;
+				outline:none
+			}
+			
+			.pwd input{		
+				width: 100%;
+				height: 35px;
+				border-style: none;	
+			     border-bottom: 1px solid #fff;
+				box-sizing: border-box;
+				background: url(img/mima.png) no-repeat 3% center ;
+				background-size: 15px;
+				padding-left: 50px !important;
+				font-size: 15px;
+				margin-bottom: 10%;
+				color: #fff;
+				outline:none
+				
+			}
+			
+			.yaoqingma input{		
+				width: 100%;
+				height: 35px;
+				border-style: none;	
+			     border-bottom: 1px solid #fff;
+				box-sizing: border-box;
+				background: url(img/feiji.png) no-repeat 3% center ;
+				background-size: 15px;
+				padding-left: 50px !important;
+				font-size: 15px;
+				color: #fff;
+				outline:none
+				
+			}
+			#nickname {		
+				width: 100%;
+				height: 35px;
+				border-style: none;	
+			     border-bottom: 1px solid #fff;
+				box-sizing: border-box;
+				background: url(img/nickname.png) no-repeat 3% center ;
+				background-size: 15px;
+				padding-left: 50px !important;
+				font-size: 15px;
+				color: #fff;
+				outline:none
+				
+			}
+			.xingbie input{					
+					    
+				box-sizing: border-box;					
+				font-size: 15px;
+				color: #fff;
+				outline:none;
+				    margin-left: 20px;
+			}
+			 #zhuce{
+				width: 100% !important;
+				box-sizing: border-box;
+				height: 0;
+				padding-bottom: 17%;
+				background: url(img/zhuce.png) no-repeat ;
+				background-size: 100% auto;				
+				margin-top: 15%;
+				border-style: none;
+				outline:none
+			}
+			.reg_{
+				margin-top: 1.25rem;
+				text-align: center;
+			}
+			.reg_ a{
+				text-decoration: none;
+				
+			}
+			#reg{
+				color:#00C6FF;
+				float: left;
+			}
+			#forgetPwd{
+				color:#fff;
+				float: right;
+			}
+			.avater{
+				width: 70px;
+				height: 70px;
+				border-radius: 100%;
+				margin-bottom: 10px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+	</head>
+
+	<body>
+
+		<div id="body_">
+
+
+			<div class="header-text">
+				欢迎来到搭讪
+			</div>
+			<div class="from_login">
+				<div style="overflow: hidden;height: 150px;padding-top: 13%;">
+				<div style="width: 30%;text-align: center;margin-bottom: 5%;float: left; " id="uploadAvater"> <img src="img/logo_.png" class="avater" id="avater_"> <div style="color: #fff;" >设置头像</div></div>
+				<div style="width: 60%;text-align: center;margin-bottom: 5%;float: left;line-height: 150px;margin-left:10% ;"><input type="text" name="nickname" id="nickname" placeholder="请输入昵称" /> </div>	
+				</div>
+				
+				<div class="user">
+					
+					<input type="text" name="account" id="account" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入账号" />
+				</div>
+				<div class="pwd">
+					
+					<input type="password" name="password" id="password" placeholder="请输入密码" />
+				</div>
+				<div class="yaoqingma">
+					<input type="hidden" name="yaoqingma" id="yaoqingma" placeholder="请输入邀请码" value="agarxhqb98rpajloaxn"/>
+				</div>
+				<div class="xingbie" style="color: #fff;    margin-top: 10%; overflow: hidden;">
+					<input type="radio" name="xingbie" value="1" id='sex' checked="1"/>男
+					<input type="radio" name="xingbie" value="0"/>女
+					<a href="./login_mobile.html" style="text-decoration: none; float: right;color: #fff;font-size: 14px;" >返回登录</a>
+					
+				</div>
+				<button id='zhuce' ></button>
+			</div>
+
+		</div>
+
+<script src="layui/layui.js"></script>  
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	layui.use(['layer', 'jquery','upload','layim'], function(layim){
+		var $=layui.jquery;	
+		var layer=layui.layer;
+		var upload = layui.upload;
+		var profilephoto=""
+            $(function () {
+                document.onkeyup = function (e) {
+                    var ev = document.all ? window.event : e;
+                    if (ev.keyCode === 13) {
+                        $('#zhuce').click();
+                    }
+                };
+            });
+			
+			  var uploadInst = upload.render({
+							elem: '#uploadAvater'
+							,url: apiUrl+'imgupload'
+							,before: function(obj){
+							  //预读本地文件示例，不支持ie8
+							  obj.preview(function(index, file, result){
+								$('#avater_').attr('src', result); //图片链接（base64）
+							  });
+							}
+							,done: function(res){
+							  //如果上传失败
+							  if(res.code==0){
+								  profilephoto=res.data.src
+							  }
+							  //上传成功
+							}
+							,error: function(){
+							  //演示失败状态，并实现重传
+// 							  var demoText = $('#demoText');
+// 							  demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+// 							  demoText.find('.demo-reload').on('click', function(){
+// 								uploadInst.upload();
+// 							  });
+							}
+						  });
+			
+			
+
+            $('#zhuce').click(function () {
+				
+                var account = $('#account').val();
+                var password = $('#password').val();
+				 var nickname = $('#nickname').val();
+				  var sex = $("input[name='xingbie']:checked").value
+				   var chanel_code = $('#yaoqingma').val();
+				if (profilephoto == '' || $.trim(profilephoto).length == 0) {
+				    layer.tips('请设置好头像', '#uploadAvater', {tips: [3, '#3595cc'], anim: 4});
+				    return false;
+				}   
+				if (nickname == '' || $.trim(nickname).length == 0) {
+				    layer.tips('请输入昵称', '#nickname', {tips: [3, '#3595cc'], anim: 4});
+				    return false;
+				}
+                if (account == '' || $.trim(account).length == 0) {
+                    layer.tips('请输入登录名称', '#account', {tips: [3, '#3595cc'], anim: 4});
+                    return false;
+                }
+                if (password == '' || $.trim(password).length == 0) {
+                    layer.tips('请输入登录密码', '#password', {tips: [3, '#3595cc'], anim: 4});
+                    return false;
+                }
+				if (chanel_code == '' || $.trim(chanel_code).length == 0) {
+				    layer.tips('请输入邀请码', '#yaoqingma', {tips: [3, '#3595cc'], anim: 4});
+				    return false;
+				}
+				/* if ($("input[name='xingbie']:checked").value) {
+				    layer.tips('请选择性别', '#sex', {tips: [3, '#3595cc'], anim: 4});
+				    return false;
+				} */
+				var t={account:account,password:password,nickname:nickname,sex:sex,chanel_code:chanel_code,profilephoto:profilephoto,sex:sex}
+				 /* localStorage.setItem("t",JSON.stringify(t)) */
+				zhuce_api(t)
+				
+				/* main.login(name,pwd) */
+			})
+			function  zhuce_api(d){
+				layer.load(0, {
+					shade: 0.1
+				});
+				$.post(apiUrl+"useraccount/save",d,function(res){	
+							data=JSON.parse(res)
+							data=JSON.parse(data.data)
+							console.log(data)
+							if(data.code=='0'){
+								layer.closeAll('loading')
+								layer.msg("注册成功")
+									localStorage.removeItem("t");
+								setTimeout(function(){
+									location.href="login_mobile.html"
+								},"2000")
+							}else{
+								layer.closeAll('loading')
+								layer.msg(data.msg)
+							}
+							/* if(JSON.parse(data).msg.indexOf('layimmobile')>=0){
+									location.href="layimmobile.html";
+								}else{
+									location.href="layim.html";
+								} */
+					  });
+					 
+			} 
+			
+	})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+
+</html>

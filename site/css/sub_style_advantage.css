@@ -1,0 +1,576 @@
+/*font-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.top-section {
+  display: flex;
+  align-items: center;
+  height: 86vh;
+  padding: 160px 0;
+  position: relative;
+}
+.top-section .kv {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.top-section .w3-center {
+  width: 100%;
+  padding: 24px;
+  padding-right: 0;
+  position: absolute;
+  top: 29%;
+}
+.top-section .w3-center img {
+  width: 180px;
+  height: 80px;
+}
+.top-section .w3-center h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.top-section .w3-center h1 {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 100px;
+  margin: 12px 0 24px;
+}
+
+.second-section {
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  transform: translate(0, 0);
+}
+.second-section .w3-center {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.second-section .w3-center .w3-row-padding {
+  padding: 0;
+}
+.second-section .w3-center .w3-row-padding .w3-col {
+  padding: 0 20px;
+}
+.second-section .w3-center .w3-row-padding .w3-col .icon {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  background: #000;
+  background-clip: padding-box;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  margin: 0 auto;
+}
+.second-section .w3-center .w3-row-padding .w3-col .icon:after {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  border-radius: 50%;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: #f8eea4;
+  background: -webkit-radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+  background: -o-radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+  background: -moz-radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+  background: radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+}
+.second-section .w3-center .w3-row-padding .w3-col .icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  -o-object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.second-section .w3-center .w3-row-padding .w3-col h2 {
+    
+  font-size: 30px !important;
+  font-weight: normal;
+  line-height: 50px;
+  margin: 48px 0;
+}
+.second-section .w3-center .w3-row-padding .w3-col p,
+.second-section .w3-center .w3-row-padding .w3-col ul {
+  text-align: left;
+  font-size: 24px;
+  font-weight: normal;
+}
+.second-section .w3-center .w3-row-padding .w3-col ul {
+  padding-left: 25px;
+}
+.partner-section {
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  background: #f8f8f8;
+  background: -webkit-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -o-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -moz-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+}
+.partner-section .w3-center {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.partner-section .w3-center .w3-row-padding {
+  padding: 0;
+}
+.partner-section .w3-center .w3-row-padding .w3-col {
+  padding: 0 12px;
+  margin-bottom: 24px;
+}
+.partner-section .w3-center .w3-row-padding .w3-col img {
+  width: 100%;
+  max-width: 305px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.partner-section .w3-center h2 {
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 50px;
+  color: #000;
+}
+.partner-section .w3-center h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.solution-section {
+  position: relative;
+  padding: 60px 0 0;
+  background: #fff;
+  overflow: hidden;
+}
+.solution-section h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 60px;
+  color: #000;
+  padding: 0 60px;
+}
+.solution-section h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.solution-section p {
+  position: relative;
+  font-size: 26px;
+  line-height: 37px;
+  font-weight: normal;
+  color: #000;
+  max-width: 1000px;
+  margin: 0 auto 100px;
+}
+.solution-section > img {
+  padding: 0 130px;
+  position: relative;
+  width: 100%;
+  max-width: 1314px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.solution-section .w3-row-padding {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  padding: 0;
+  margin: 0 auto 0;
+}
+.solution-section .w3-row-padding .w3-col {
+  padding: 0 56px;
+
+  height: 350px;
+}
+.solution-section .w3-row-padding .w3-col img {
+  width: 60px;
+  height: 60px;
+}
+.solution-section .w3-row-padding .w3-col h3 {
+  font-size: 36px;
+  font-weight: 400 !important;
+  line-height: 50px;
+  color: #000;
+}
+.solution-section .w3-row-padding .w3-col p,
+.solution-section .w3-row-padding .w3-col ul {
+    margin-top: 10px !important;
+  color: #000;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 24px;
+  max-width: 373px;
+  margin: 0;
+  padding: 0;
+}
+.solution-section .w3-row-padding .w3-col ul {
+    margin-top: 10px !important;
+  list-style: inside;
+}
+.solution-section .circle1 {
+  position: absolute;
+  top: 18%;
+  right: 72%;
+  width: 914px;
+  height: 914px;
+  background: #e346eb;
+  background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.solution-section .circle2 {
+  position: absolute;
+  top: 15%;
+  left: 78%;
+}
+.solution-section .circle2 img {
+  width: 453px;
+  height: 705px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.ai-section {
+  padding: 60px 0 80px;
+  overflow: hidden;
+  background: #f8f8f8;
+  background: -webkit-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -o-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -moz-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+}
+.ai-section .w3-row-padding .w3-col {
+  height: 350px;
+}
+.ai-section .circle1 {
+  top: 20%;
+  left: 68%;
+  right: initial;
+}
+.ai-section .circle2 {
+  top: 8%;
+  right: 78%;
+  left: initial;
+}
+.ai-section .circle2 img {
+  width: 464px;
+  height: 745px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 992px) {
+  .top-section {
+    height: 50vh;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+  }
+  .second-section {
+    padding: 100px 0 120px;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col .icon {
+    margin: 0;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col h2 {
+      
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 24px;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col ul,
+  .second-section .w3-center .w3-row-padding .w3-col p {
+    font-size: 16px;
+    max-width: 500px;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col ul {
+    padding-left: 20px;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col + .w3-col {
+    margin-top: 80px;
+  }
+  .partner-section {
+    padding: 100px 24px 120px;
+  }
+  .partner-section .w3-center .w3-row-padding .w3-col {
+    padding: 0 6px;
+    margin-bottom: 36px;
+  }
+  .partner-section .w3-center h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 60px;
+  }
+  .partner-section .w3-center h2:after {
+    width: 60px;
+    height: 3px;
+    margin-top: 16px;
+  }
+  .solution-section {
+    padding: 100px 0 70px;
+  }
+  .solution-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .solution-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px auto;
+  }
+  .solution-section p {
+    padding: 0 60px;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 130px;
+    text-align: left;
+  }
+  .solution-section > img {
+    padding: 0 90px;
+  }
+  .solution-section .w3-row-padding {
+    padding: 0 36px;
+  }
+  .solution-section .w3-row-padding .w3-col {
+    padding: 0 24px;
+    height: 265px;
+    margin-bottom: 50px;
+  }
+  .solution-section .w3-row-padding .w3-col h3 {
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 24px;
+  }
+  .solution-section .w3-row-padding .w3-col p,
+  .solution-section .w3-row-padding .w3-col ul {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  .top-section {
+    height: 86vh;
+  }
+  .top-section .w3-center {
+    text-align: left !important;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col {
+    display: block;
+    text-align: left;
+  }
+  .second-section .w3-center .w3-row-padding .w3-col + .w3-col {
+    margin-top: 80px;
+  }
+  .partner-section .w3-center h2 {
+    text-align: left;
+  }
+  .partner-section .w3-center h2:after {
+    margin-left: 0;
+  }
+  .partner-section .w3-center .w3-row-padding .w3-col {
+    padding: 0 20px;
+    height: 50px;
+  }
+  .partner-section .w3-center .w3-row-padding .w3-col img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .solution-section {
+    padding: 100px 0 0;
+  }
+  .solution-section h2 {
+    text-align: left;
+    padding: 0 24px;
+  }
+  .solution-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .solution-section p {
+    padding: 0 24px;
+  }
+  .solution-section > img {
+    padding: 0 24px;
+  }
+  .solution-section .w3-row-padding {
+    padding: 0;
+  }
+  .solution-section .w3-row-padding .w3-col {
+    height: initial;
+  }
+  .solution-section .w3-row-padding .w3-col p,
+  .solution-section .w3-row-padding .w3-col ul {
+    max-width: 500px;
+  }
+  .solution-section .circle1 {
+    top: 19%;
+    right: 72%;
+    width: 318px;
+    height: 318px;
+    -webkit-box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  .solution-section .circle2 {
+    top: 11%;
+    left: 61%;
+  }
+  .solution-section .circle2 img {
+    width: 155px;
+    height: 283px;
+  }
+  .ai-section .circle1 {
+    top: 14%;
+    left: 60%;
+    right: initial;
+    width: 400px;
+    height: 400px;
+  }
+  .ai-section .circle2 {
+    top: 11%;
+    right: 68%;
+    left: initial;
+  }
+  .ai-section .circle2 img {
+    width: 132px;
+    height: 296px;
+  }
+}

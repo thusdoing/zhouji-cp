@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <radialGradient id="a" cx="77.546%" cy="20.309%" r="122.816%" fx="77.546%" fy="20.309%" gradientTransform="matrix(-.65432 .67195 -.75622 -.5814 1.436 -.2)">
+            <stop offset="0%" stop-color="#F8EEA4"/>
+            <stop offset="100%" stop-color="#B9760B"/>
+        </radialGradient>
+        <radialGradient id="b" cx="77.546%" cy="20.309%" r="122.816%" fx="77.546%" fy="20.309%">
+            <stop offset="0%" stop-color="#F8EEA4"/>
+            <stop offset="100%" stop-color="#B9760B"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" fill-rule="nonzero" d="M61.123 30.345v-5.751H35.346v13.872h25.777v-6.12H49.85a1 1 0 0 1 0-2h11.274zm-33.53 26.363v6.121h25.778V48.957H27.594v5.751h10.904a1 1 0 1 1 0 2H27.594zm6.753-34.114h27.777a1 1 0 0 1 1 1v15.872a1 1 0 0 1-1 1H34.346a1 1 0 0 1-1-1V23.594a1 1 0 0 1 1-1zm-7.752 24.363H54.37a1 1 0 0 1 1 1v15.872a1 1 0 0 1-1 1H26.594a1 1 0 0 1-1-1V47.957a1 1 0 0 1 1-1z"/>
+        <circle cx="44" cy="44" r="43" stroke="url(#b)" stroke-width="2"/>
+    </g>
+</svg>

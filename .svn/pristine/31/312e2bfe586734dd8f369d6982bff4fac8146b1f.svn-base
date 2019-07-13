@@ -1,0 +1,118 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Language" content="zh-cn">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+    <title>百乐门娱乐 - 登录</title>
+    <script src="./ismobile.js"></script>
+    <script>var flag = ismobile();if(flag){location.href = './loginh5.html'}</script>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="zs_theme/css/login_s.min.css" rel="stylesheet" type="text/css">
+    <link href="zs_theme/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<noscript>
+        <div class="noScript">
+            <div>
+                <h2>请开启浏览器的Javascript功能</h2>
+                <p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>
+				不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" rel="nofollow" target="_blank">猛击这里</a>！
+                </p>
+            </div>
+        </div>
+    </noscript>
+
+	<style>
+    /** * 客户端下载视窗 */
+    #clientDownload {	width: 400px}
+    /* 平台选择 */
+    #clientDownload .platform-wrap span { display: inline-block; cursor: pointer; width: 33.33%;}
+    /* 平台选择 - 启动 */#clientDownload .platform-wrap > .active {	color: green;}
+    /* 平台选择 - 滑鼠移过 */#clientDownload .platform-wrap > span:hover {	color: red;}
+    /* QR Code 对半分 */#clientDownload #clientQrImg > * {	display: inline-block;	text-align: center;	width: 50%;}
+    /* QR Code 对齐置中 */#clientDownload #clientQrImg > div > * {	margin: auto;}
+    /* 客户端下载连结 */#clientDownload #clientUrl {  padding: 16px 0 0 0;  text-align: center;  display: block;  font-size: 22px;
+	</style>
+	<script>
+		function replaceSpecialAgentCode() {
+			var url =  "/getVerCode?w=70&h=26&date="+Date.now() ;
+			$('#verifycodeImg').attr('src',url);
+		}
+	</script>
+</head>
+<body>
+    <div class="noScript hide" id="NoSupport_IE67">
+        <div>
+            <h2>不支援的浏览器</h2>
+            <p>亲，您的浏览器为ie内核浏览器，我们不支援IE6、IE7！<br><br>
+                <a href="http://www.cdn9988.com:8088/pgyl/client_ap/setup.exe?1510238376.exe" rel="nofollow" target="_blank">请猛击这里下载客户端</a>！
+            </p>
+        </div>
+    </div>      
+	 <div class="title">
+        <div class="title-left">
+			<img src="zs_theme/images/other/logo1.png" height="90px" alt="">
+        </div>
+        <div class="title-right">
+          <div class="sub-logo"><img src="zs_theme/images/other/sub_logo.png" alt=""></div>
+        </div>
+      </div>
+      <div class="info-wrapper">
+        <div class="tip-wrapper">
+          <img src="zs_theme/images/banner.jpg" alt="">
+        </div>
+        <form class="login_form" id="login_form">
+          <h3></h3>
+          <dl>
+            <dt class="positionre">
+              <input name="custName" id="username" class="required w100 fi1" autocomplete="off" autocapitalize="off" placeholder="用户名" type="text">
+            </dt><br>
+            <dt class="positionre">
+              <input name="pwd" id="password" class="required w100 fi2" autocomplete="off" placeholder="密码" type="password">
+            </dt><br>
+            <dt class="positionre">
+              <input name="verCode" id="validateCode" class="required numbcer w100 fi3" size="10" maxlength="5" placeholder="验证码" type="text">
+              <img class="aut" id="verifycodeImg" src="/getVerCode?w=70&h=26&date=1546677376103" style="width:70px;height:26px;" onClick="replaceSpecialAgentCode()">
+            </dt><br>
+          </dl>
+          <div class="btn-wrapper login-btn-wrapper">
+            <button type="button" id="send-button" class="submit-btn">登&nbsp;录</button>
+          </div>
+        <div class="clearfix"></div>
+        </form>
+        <div class="customer_bg">
+        </div>
+        <span class="hide" id="windows">http://www.ws1d32j93.com/images/bailemen.exe</span>
+        <span class="hide" id="ios">http://srccom.com/a/dow.html</span>
+        <span class="hide" id="android">http://www.ws1d32j93.com/images/bailemen.apk</span>
+        <div class="clearfix"></div>
+      </div>
+      <!--end info-wrapper-->
+      <div class="footerx">
+          <div class="browers" style="">
+			<img src="zs_theme/images/other/footer.png" usemap="#planetmapL" alt="Planets" width="755px" height="60px">
+			<map name="planetmapL" id="planetmapL">
+				<area shape="rect" coords="0,0,116,60"   href="http://111.blm51115.com/" target="_blank">
+				<area shape="rect" coords="116,0,236,60" href="https://fir.dog/app.php/29">
+				<area shape="rect" coords="236,0,275,60" href="https://www.google.com.tw/chrome" target="_blank">
+				<area shape="rect" coords="275,0,315,60" href="https://www.mozilla.org/" target="_blank">		
+
+				<area shape="rect" coords="315,0,357,60" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
+				<area shape="rect" coords="357,0,395,60" href="http://www.uc.cn/" target="_blank">
+				<area shape="rect" coords="395,0,518,60" href="tencent://message/?uin=576880026&Site=百乐门娱乐&Menu=yes" target="_blank">
+				<area shape="rect" coords="518,0,642,60" href="tencent://message/?uin=353465900&Site=百乐门娱乐&Menu=yes" target="_blank">
+				<area shape="rect" coords="642,0,755,60" href="https://chat.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=1069134&configID=82304&jid=7728549998&s=1" target="_blank">
+			</map>
+          </div>
+    </div>
+	<script type="text/javascript">
+		var ddom = '';
+		var tpl_path = '';
+	</script>
+	<script src="zs_theme/js/Simple.min.js" type="text/javascript"></script>
+
+</body>
+</html>

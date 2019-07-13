@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+<meta content="text/html;charset=utf-8" http-equiv=Content-Type>
+<meta content=utf-8 http-equiv=encoding>
+<meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>洲际娱乐彩票系统</title>
+<link rel=stylesheet href="js/node_modules/w3-css/w3.css">
+<link rel=stylesheet href="css/font-awesome.min.css">
+<link rel=stylesheet href="js/node_modules/featherlight/release/featherlight.min.css">
+<link rel=stylesheet href="css/main_style.css">
+<script src="js/node_modules/jquery/dist/jquery.js"></script>
+<script src="js/node_modules/featherlight/release/featherlight.min.js"></script>
+<script src="js/mobile-chrome-vh-fix/mobile-chrome-vh-fix.js"></script>
+<script src="js/node_modules/iscroll/build/iscroll.js"></script>
+<script src="js/main_fun.js"></script>
+<link rel=stylesheet href="css/sub_style_payment.css">
+<script src="js/sub_fun_payment.js"></script>
+<script src="js/jquery-cookie/jquery.cookie.js"></script>
+<script src="js/jquery-i18n-properties/jquery.i18n.properties.min.js"></script>
+<script src="js/locale_main.js"></script>
+<!— Global site tag (gtag.js) - Google Analytics —>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109820959-2"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109820959-2');
+    </script>
+</head>
+<body class=trhide>
+<div id=content-wrapper class="main-container scrollContainer">
+<div class=scrollContent>
+<section class="w3-display-container top-section">
+<img class="w3-display-middle w3-hide-small kv" src="img/1920/bg-payment.jpg" srcset="img/1920/bg-payment@2x.jpg 2x">
+<img class="w3-display-middle w3-hide-medium w3-hide-large kv" src="img/375/bg-payment-phone.jpg" srcset="img/375/bg-payment-phone@2x.jpg 2x, img/375/bg-payment-phone@3x.jpg 3x">
+<div class=w3-center>
+<h2 data-locale-msg=payment_main_caption>快捷支付</h2>
+<h1 data-locale-msg=payment_main_description>免額度轉換 <span class="w3-hide-medium w3-hide-large"><br></span>輕鬆下注</h1>
+</div>
+</section>
+<section class="section-100 payment-section">
+<div class=circle1></div>
+<div class=circle2>
+<img class=w3-hide-small src="img/1920/ctn-payment-1.png" srcset="img/1920/ctn-payment-1@2x.png 2x, img/1920/ctn-payment-1@3x.png 3x">
+<img class="w3-hide-medium w3-hide-large" src="img/375/ctn-payment-1.png" srcset="img/375/ctn-payment-1@2x.png 2x, img/375/ctn-payment-1@3x.png 3x">
+</div>
+<div class=w3-center>
+<h2 data-locale-msg=payment_1_caption>安全支付</h2>
+<p data-locale-msg=payment_1_description>依據個人喜好及使用習慣，使用「免轉錢包」，輕鬆娛樂。讓玩家無需事先轉換額度即可暢遊各大國際遊戲平台。</p>
+<div class=list>
+<div class=item>
+<div class=info>
+<div class=icon><img src="svg/ic-website-gold.svg"></div>
+<h2 data-locale-msg=payment_1_sub_1_caption>移動端網頁版</h2>
+<p><span data-locale-msg=payment_1_sub_1_description>免安裝，掃描二維碼即可進行遊戲</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_1_description_1>數據同步：</span>
+<br><span data-locale-msg=payment_1_sub_1_description_1_content>手機領取優惠，參與活動等，與PC版功能全同步</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_1_description_2>秒支付：</span>
+<br><span data-locale-msg=payment_1_sub_1_description_2_content>微信直連、掃碼支付、網銀支付、轉帳到支付寶</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_1_description_3>資料同步：</span>
+<br><span data-locale-msg=payment_1_sub_1_description_3_content>手機線上申請優惠，實時檢視投注、資金等記錄</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_1_description_4>一戶通：</span>
+<br><span data-locale-msg=payment_1_sub_1_description_4_content>使用洲际平臺帳號，支援登入各大APP客戶端</span>
+</p>
+</div>
+<div class=pic>
+<img class=w3-hide-small src="img/1920/ctn-payment-web.png" srcset="img/1920/ctn-payment-web@2x.png 2x, img/1920/ctn-payment-web@3x.png 3x">
+<img class="w3-hide-medium w3-hide-large" src="img/375/ctn-payment-web.png" srcset="img/375/ctn-payment-web@2x.png 2x, img/375/ctn-payment-web@3x.png 3x">
+</div>
+</div>
+<div class=item>
+<div class=info>
+<div class=icon><img src="svg/ic-phone-gold.svg"></div>
+<h2 data-locale-msg=payment_1_sub_2_caption>移動端APP</h2>
+<p><span data-locale-msg=payment_1_sub_2_description>搭配免額度轉換技術，玩家在各大遊戲廠商內遊戲，額度無需轉來轉去</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_2_description_1>・支持IOS熱更新，下載一次，永久可用。</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_2_description_2>・提供IOS、Android版客戶端下載資源。</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_2_description_3>・彙集十家以上遊戲平臺，千款遊戲任意暢玩。</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_2_description_4>・支援多家銀行服務、多款第三方支付。</span>
+<br><span class=blod-title data-locale-msg=payment_1_sub_2_description_5>・【免轉錢包】隨身錢包額度自動轉入遊戲平臺。</span>
+</p>
+</div>
+<div class=pic>
+<img class=w3-hide-small src="img/1920/ctn-payment-phone.png" srcset="img/1920/ctn-payment-phone@2x.png 2x, img/1920/ctn-payment-phone@3x.png 3x">
+<img class="w3-hide-medium w3-hide-large" src="img/375/ctn-payment-phone.png" srcset="img/375/ctn-payment-phone@2x.png 2x, img/375/ctn-payment-phone@3x.png 3x">
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w3-center solution-section">
+<h2 data-locale-msg=payment_2_caption>玩家存款解決方案</h2>
+<h3 data-locale-msg=payment_2_description>玩家存款，渠道暢通<br>公司入款，自動上分</h3>
+<ul>
+<li>
+<div class=icon><img src="svg/ic-payment.svg"></div>
+<p><span class=blod-title data-locale-msg=payment_2_sub_1_caption>支援數種銀行卡及第三方賬戶（微信、支付寶）等</span></p>
+</li>
+<li>
+<div class=icon><img src="svg/ic-value.svg"></div>
+<p><span class=blod-title data-locale-msg=payment_2_sub_2_caption>快速充值中心</span>
+<br><span data-locale-msg=payment_2_sub_2_description>解決目前第三/四方支付快速更新換代的問題，保障存款渠道的暢通</span></p>
+</li>
+<li>
+<div class=icon><img src="svg/ic-management.svg"></div>
+<p><span class=blod-title data-locale-msg=payment_2_sub_3_caption>平臺第三方接入響應速度</span>
+<br><span data-locale-msg=payment_2_sub_3_description>第三方支付經風險評估後，接入只需1天，每月至少更新5款以上。</span></p>
+</li>
+</ul>
+</section>
+<section class="section-100 footer-section">
+<div class=w3-center>
+<h2 data-locale-msg=footer_caption>聯繫我們</h2>
+<form class=w3-container>
+<div class="w3-row-padding w3-section">
+<div class=w3-half>
+<div class=w3-half>
+<input class="w3-input w3-border w3-round" id=username name=username required placeholder=" ">
+<label for=username data-locale-msg=footer_input_1>姓名</label>
+</div>
+<div class="w3-half margin-mob">
+<div class="w3-cell w3-padding">
+<input class=w3-radio type=radio name=gender value=male checked>
+<label data-locale-msg=footer_radio_1>先生</label>
+</div>
+<div class="w3-cell w3-padding">
+<input class=w3-radio type=radio name=gender value=female>
+<label data-locale-msg=footer_radio_2>女士</label>
+</div>
+</div>
+</div>
+<div class=w3-half>
+<div class=w3-col>
+<input class="w3-input w3-border w3-round" type=tel pattern="[0-9]*" id=cellphone name=cellphone required placeholder=" ">
+<label for=cellphone data-locale-msg=footer_input_2>手機</label>
+</div>
+</div>
+</div>
+<div class="w3-row-padding w3-section">
+<div class=w3-half>
+<div class=w3-col>
+<input class="w3-input w3-border w3-round" type=email id=email name=email required placeholder=" ">
+<label for=email data-locale-msg=footer_input_3>郵箱</label>
+</div>
+<div class="w3-col w3-section">
+<select class="w3-select w3-border w3-round" id=cantact_acctount name=cantact_acctount required>
+<option value="" disabled selected data-locale-msg=footer_select>通訊帳號</option>
+<option value=1>Skype</option>
+<option value=2>QQ</option>
+<option value=3>Wechat</option>
+</select>
+</div>
+<div class=w3-col>
+<input class="w3-input w3-border w3-round" id=contact_id name=contact_id required placeholder=" ">
+<label for=contact_id data-locale-msg=footer_input_4>通訊帳號ID</label>
+</div>
+</div>
+<div class="w3-half margin-mob-textarea">
+<div class=w3-col>
+<textarea rows=7 class="w3-input w3-border w3-round" type=text id=contact_info name=contact_info required placeholder=" "></textarea>
+<label data-locale-msg=footer_input_5>輸入內容</label>
+</div>
+</div>
+</div>
+<div class="w3-section margin-mob-button">
+<button class="w3-button w3-block w3-padding-large w3-round" data-locale-msg=footer_button>確認送出</button>
+</div>
+</form>
+</div>
+</section>
+</div>
+</div>
+<div class=w3-bar>
+<button class="w3-bar-item w3-button nav-hamburger w3-hide-large">
+<span class=hamburger-icon></span>
+</button>
+<a href=index.html class="w3-bar-item ap-logo">洲际 洲际</a>
+<nav class=w3-right role=navigation id=scroller>
+<div class=nav_container>
+<div class=nav_menu_container>
+<a href=index.html class=w3-bar-item data-locale-msg=menu_home>首頁</a>
+<div class=w3-dropdown-hover>
+<span data-locale-msg=menu_advantage>洲际優勢</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden=true></i>
+<div class=sub-menu>
+<div class="w3-dropdown-content w3-bar-block w3-center">
+<button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden=true></i><span data-locale-msg=menu_advantage>洲际優勢</span></button>
+<a href=advantage.html class=w3-bar-item data-locale-msg=menu_advantage_1>合作優勢</a>
+<a href=deploy.html class=w3-bar-item data-locale-msg=menu_advantage_2>極速建站</a>
+<a href=payment.html class=w3-bar-item data-locale-msg=menu_advantage_3>快捷支付</a>
+</div>
+</div>
+</div>
+<a href=lottery.html class=w3-bar-item data-locale-msg=menu_lottery>洲际彩票</a>
+<div class=w3-dropdown-hover>
+<span data-locale-msg=menu_product>產品介紹</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden=true></i>
+<div class=sub-menu>
+<div class="w3-dropdown-content w3-bar-block w3-center">
+<button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden=true></i><span data-locale-msg=menu_product>產品介紹</span></button>
+<a href=backend.html class=w3-bar-item data-locale-msg=menu_product_1>後台管理系統</a>
+<a href=apigame.html class=w3-bar-item data-locale-msg=menu_product_2>API游戏</a>
+</div>
+</div>
+</div>
+<div class=w3-dropdown-hover>
+<span data-locale-msg=menu_service>特點服務</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden=true></i>
+<div class=sub-menu>
+<div class="w3-dropdown-content w3-bar-block w3-center">
+<button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden=true></i><span data-locale-msg=menu_service>特點服務</span></button>
+<a href=technique.html class=w3-bar-item data-locale-msg=menu_service_1>技術服務</a>
+<a href=market.html class=w3-bar-item data-locale-msg=menu_service_2>市場營銷服務</a>
+<a href=template.html class=w3-bar-item data-locale-msg=menu_service_3>模板設計規劃</a>
+</div>
+</div>
+</div>
+<a href=about.html class=w3-bar-item data-locale-msg=menu_about>關於洲际</a>
+<a href=news.html class=w3-bar-item data-locale-msg=menu_news>最新消息</a>
+<a class=w3-bar-item>
+<select class=w3-bar-selec name=Language>
+<option value=zh-CN>简体中文</option>
+<option value=zh-TW>繁体中文</option>
+...
+</select>
+</a>
+</div>
+</div>
+</nav>
+<nav class=sub-nav role=navigation id=scroller2>
+<div class=nav_container>
+<div class=nav_submenu_container></div>
+</div>
+</nav>
+<div class=nav-bg></div>
+</div>
+<header></header>
+</body>
+</html>

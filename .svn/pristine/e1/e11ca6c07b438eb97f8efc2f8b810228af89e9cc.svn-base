@@ -1,0 +1,118 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+}
+body {line-height: 1;}
+ol, ul ,li{list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+:focus {outline: 0;}
+ins {text-decoration: none;}
+del { text-decoration: line-through;}
+table {border-collapse: collapse;border-spacing: 0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{height:1%;}
+* html .clearfix{zoom:1;} /* IE6 */
+*+html .clearfix{zoom:1;} /* IE7 */
+html {overflow-y: scroll;} 
+*{margin:0;padding:0;}
+.w1000{ width:1000-px; margin:0 auto;}
+.clear{ clear:both;}
+a{ text-decoration:none;color:#fff; font-size:12px;}
+body{font-size:12px; font-family: "微软雅黑"; background:#fffff url(./bg-.jpg) top center no-repeat;}
+
+@keyframes rotate{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+@-webkit-keyframes rotate{
+from{-webkit-transform:rotate(0deg)}
+to{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes rotate{
+from{-moz-transform:rotate(0deg)}
+to{-moz-transform:rotate(360deg)}
+}
+@-ms-keyframes rotate{
+from{-ms-transform:rotate(0deg)}
+to{-ms-transform:rotate(360deg)}
+}
+@-o-keyframes rotate{
+from{-o-transform:rotate(0deg)}
+to{-o-transform:rotate(360deg)}
+}
+
+@-webkit-keyframes stop
+{
+}
+.top{ height: 120px; width:100%; margin: 0 auto; position: relative;background:#e4393c}
+.top .logo{ display: block; background: url(./logo.png) no-repeat center center; width: 350px; height: 120px; margin:0 auto}
+
+.title{width:100%;height:130px;background:url(./title.png) no-repeat center center;margin:0 auto}
+
+.main{ position:relative;  width: 100%; margin:10px auto;background:#f8f8f8; height:960px;}
+.main01{ background:#fffdf4; width:100%; margin:0 auto; text-align:center;   border-radius: 10px;}
+.main01 .title2{  line-height: 80px; height:80px;}
+.main01 .title2 a{color: #959595; font-size: 13px;}
+.main01 .title2 img{position: relative;top: 15px;left:20px}
+
+
+.list { padding-left: 15px;}
+.list ul{ margin:0 auto; padding:0px;}
+.list li{ float:left; width:32%;height: 170px;  margin:5px; }
+.list li a{ display:block; width:100%; height:170px; text-align:center; color:#fff100; margin:0 auto; z-index:999;border:1px #e4393c solid; border-radius:20px;  display:inline-block;}
+/*.list li:hover{background:#e4393c;}*/
+.list li a:hover{color:#fff;background:#e4393c;}
+.list li a .item{font-size:25px; color:#000;text-align:center; line-height:80px;}
+.list li a:hover .item{font-size:25px; color:#fff;text-align:center; line-height:80px;}
+.list li a em{text-align: center;font-size:12px; top:115px; text-align: center;color: #000;line-height:30px;}
+.list li a:hover em{color:#ff0;}
+.list li a h6{top:87px; color:#000; font-size:16px;font-weight:bold; font-family:"Arial"; text-align:center;text-align: center;;line-height:30px;}
+.list li a:hover h6{ color:#fff;}
+/*.list li .-libg{ background:url(./m-s.png) no-repeat center top;animation:2s linear 0s normal forwards  infinite rotate;  height: 170px;  }
+.list li.stop .-libg{animation-play-state:paused;-webkit-animation-play-state:paused;}*/
+
+.list li .hover{display:none}
+.list li.current a .item,.list li.current a em,.list li.current a h6{color:red;}
+.list li.current a:hover .item,.list li.current a:hover em,.list li.current a:hover h6{color:yellow;}
+/*.list li:hover .hover{opacity:1;display:block;background:#e4393c;width:32%; height: 170px; position: absolute; left: 0; top: 0;border-radius:17px;;z-index:999;opacity:0.85;filter:alpha(opacity=85); text-align:center;}
+.list li:hover .green{background:#e4393c;}*/
+
+.list li.current .hover,.list li:hover .hover a{line-height:165px;font-size:16px;color:#fff;text-align:center;}
+/*.list li:hover .libg{-webkit-transform: rotateZ(360deg);	-moz-transform: rotateZ(360deg);-o-transform: rotateZ(360deg);-ms-transform: rotateZ(360deg);transform: rotateZ(360deg); }*/
+.main01 p{ clear:both;width:100%;height: 100px; text-align: center; line-height: 100px; color:#e4393c; font-size: 18px;}
+.main01 .subbtn{ width: 103px; height: 27px; background: #e4393c url(./shua.png) no-repeat top 7px right 10px;padding-right:15px; border-radius:5px; border:none; color: #fff; font-size: 14px;font-weight:bold; cursor: pointer; transition:all 0.3s;}
+.main01 .subbtn:hover{ background: #e9dc86 url(./shua.png) no-repeat top 7px right 10px;color:#e4393c; }
+
+.fg{position: absolute; background: url(./fg.png) no-repeat; height: 22px; left: 0; width: 100%;}
+
+
+.main02{width:98%; margin:0 auto; height: 180px; margin-top:10px}
+.main02 .left{width:100%; height: 220px; background:#e4393c;  border-radius: 10px; margin:0 auto; text-align:center;}
+.main02 .right{width:100%; height: 260px; background:#fffdf4;  border-radius: 10px; margin-top:10px; }
+.title3 img,.title4 img{position: relative; top: 15px;left:20px}
+.icon{ margin:0px auto; text-align:center;}
+.icon{width:370px;text-align:center;padding-top:40px}
+#help{margin:30px;font-size:16px;line-height:25px;color:#000;}
+.footer{ height: 122px; border-top: 1px solid #252424; margin-top: 20px;}
+.footer ul {margin-top:20px; width: 1020px;}
+.footer ul li{ float:left; color:#969696; font-size:14px; line-height:36px; text-align:left}
+.footer ul li span{ display:block; width:36px; height:36px; display:block; float:left; background:url(./footerico.png) no-repeat; margin-right:14px;}
+.footer ul li span.ico01{ background-position:0 0}
+.footer ul li span.ico02{ background-position:0 0}
+.footer ul li span.ico03{ background-position:-559px 0}
+.footer ul li span.ico04{ background-position:-824px 0}
+.footer ul li b{ color:#ece089; font-size:18px; font-family:Arial; font-weight:normal; margin-left:5px;}
+.footer p{ line-height: 50px; color: #646464; text-align: center;}

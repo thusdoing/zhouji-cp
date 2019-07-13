@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <radialGradient id="a" cx="100%" cy="100%" r="115.371%" fx="100%" fy="100%" gradientTransform="matrix(-.5971 -.73032 .80216 -.54363 .795 2.274)">
+            <stop offset="0%" stop-color="#D41879"/>
+            <stop offset="100%" stop-color="#2A00D7"/>
+        </radialGradient>
+        <radialGradient id="b" cx="100%" cy="100%" r="115.371%" fx="100%" fy="100%" gradientTransform="scale(-.50694 -1) rotate(31.8 3.024 -5.218)">
+            <stop offset="0%" stop-color="#D41879"/>
+            <stop offset="100%" stop-color="#2A00D7"/>
+        </radialGradient>
+        <radialGradient id="c" cx="100%" cy="100%" r="115.371%" fx="100%" fy="100%" gradientTransform="scale(-.7604 -1) rotate(42.924 2.386 -2.944)">
+            <stop offset="0%" stop-color="#D41879"/>
+            <stop offset="100%" stop-color="#2A00D7"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path stroke="url(#a)" d="M9.5 3.245H0v38.527c0 1.776 1.415 3.211 3.167 3.211h31.666c1.752 0 3.167-1.435 3.167-3.21V3.244h-9.5" transform="translate(11 8)"/>
+        <path stroke="url(#b)" d="M9.5.035h19v6.42c0 1.776-1.416 3.211-3.167 3.211H12.667c-1.752 0-3.167-1.435-3.167-3.21V.035" transform="translate(11 8)"/>
+        <path stroke="url(#c)" d="M25.333 22.509l-9.5 9.632-3.166-3.211" transform="translate(11 8)"/>
+    </g>
+</svg>

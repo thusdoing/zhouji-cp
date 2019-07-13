@@ -1,0 +1,585 @@
+/*font-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.top-section {
+  display: flex;
+  align-items: center;
+  height: 86vh;
+  padding: 160px 0;
+  position: relative;
+}
+.top-section .kv {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.top-section .w3-center {
+  width: 100%;
+  padding: 24px;
+  position: absolute;
+  top: 29%;
+}
+.top-section .w3-center img {
+  width: 180px;
+  height: 80px;
+}
+.top-section .w3-center h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.top-section .w3-center h1 {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 100px;
+  margin: 12px 0 24px;
+}
+.top-section .w3-center:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  margin: 0 auto;
+}
+.solution-section {
+  position: relative;
+  padding: 60px 0 207px;
+  background: #fff;
+  transform: translate(0, 0);
+}
+.solution-section .circle1 {
+  position: absolute;
+  top: 16%;
+  right: -4%;
+  width: 526px;
+  height: 526px;
+  background: #57b2f1;
+  background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  -webkit-box-shadow: -43px 43px 86px rgba(106, 104, 208, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(106, 104, 208, 0.3);
+  box-shadow: -43px 43px 86px rgba(106, 104, 208, 0.3);
+  border-radius: 50%;
+}
+.solution-section .circle2 {
+  position: absolute;
+  top: 45%;
+  left: -6%;
+  width: 800px;
+  height: 800px;
+  background: #e346eb;
+  background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  -webkit-box-shadow: -43px 43px 86px rgba(127, 115, 221, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(127, 115, 221, 0.3);
+  box-shadow: -43px 43px 86px rgba(127, 115, 221, 0.3);
+  border-radius: 50%;
+}
+.solution-section .circle3 {
+  position: absolute;
+  top: 68%;
+  right: -11%;
+  width: 846px;
+  height: 846px;
+  background: #6dee88;
+  background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  -webkit-box-shadow: -43px 43px 86px rgba(67, 172, 172, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(67, 172, 172, 0.3);
+  box-shadow: -43px 43px 86px rgba(67, 172, 172, 0.3);
+  border-radius: 50%;
+}
+.solution-section h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 60px;
+  color: #000;
+  padding: 0 24px;
+}
+.solution-section h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.solution-section p {
+  position: relative;
+  font-size: 20px !important;
+  line-height: 37px;
+  color: #000;
+  max-width: 1008px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.solution-section .list {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.solution-section .list .item {
+  width: 100%;
+  padding: 0 30px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.solution-section .list .item .info {
+  width: 470px;
+}
+.solution-section .list .item .info .icon {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  background: #FFF;
+  background-clip: padding-box;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  margin: 0;
+}
+.solution-section .list .item .info .icon:after {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  border-radius: 50%;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+}
+.solution-section .list .item .info .icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  -o-object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.solution-section .list .item .info h3 {
+  font-size: 40px !important;
+  font-weight: normal;
+  color: #000;
+  margin: 24px 0;
+  text-align: left;
+}
+.solution-section .list .item .info p {
+  color: #000;
+  font-size: 18px !important;
+  line-height: 33px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.solution-section .list .item .pic img {
+  object-fit: contain;
+  -o-object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.solution-section .list .item:nth-child(1) .info {
+  margin-top: 100px;
+  margin-right: -220px;
+}
+.solution-section .list .item:nth-child(1) .pic {
+  margin-right: -300px;
+  width: 1016px;
+  height: 696px;
+}
+.solution-section .list .item:nth-child(2) {
+  flex-direction: row-reverse;
+}
+.solution-section .list .item:nth-child(2) .info {
+  margin-top: 250px;
+}
+.solution-section .list .item:nth-child(2) .pic {
+  margin-left: -500px;
+  width: 960px;
+  height: 658px;
+}
+.solution-section .list .item:nth-child(3) .info {
+  margin-top: 250px;
+  margin-right: -40px;
+}
+.solution-section .list .item:nth-child(3) .pic {
+  margin-right: -500px;
+  width: 1021px;
+  height: 494px;
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 992px) {
+  .top-section {
+    height: 50vh;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+  }
+  .solution-section {
+    padding: 100px 0 70px;
+  }
+  .solution-section .circle1 {
+    position: absolute;
+    top: 11%;
+    right: -25%;
+    width: 456px;
+    height: 456px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -43px 43px 86px rgba(106, 104, 208, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(106, 104, 208, 0.3);
+    box-shadow: -43px 43px 86px rgba(106, 104, 208, 0.3);
+    border-radius: 50%;
+  }
+  .solution-section .circle2 {
+    position: absolute;
+    top: 40%;
+    left: -7%;
+    width: 457px;
+    height: 457px;
+    background: #e346eb;
+    background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    -webkit-box-shadow: -43px 43px 86px rgba(127, 115, 221, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(127, 115, 221, 0.3);
+    box-shadow: -43px 43px 86px rgba(127, 115, 221, 0.3);
+    border-radius: 50%;
+  }
+  .solution-section .circle3 {
+    position: absolute;
+    top: 69%;
+    right: -10%;
+    width: 493px;
+    height: 493px;
+    background: #6dee88;
+    background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    -webkit-box-shadow: -43px 43px 86px rgba(67, 172, 172, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(67, 172, 172, 0.3);
+    box-shadow: -43px 43px 86px rgba(67, 172, 172, 0.3);
+    border-radius: 50%;
+  }
+  .solution-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .solution-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .solution-section p {
+    font-size: 16px !important;
+    line-height: 22px;
+    text-align: left;
+    padding: 0 60px;
+  }
+  .solution-section .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .solution-section .list .item {
+    width: 100%;
+    padding: 0 60px;
+    /*height: 265px;*/
+    margin-bottom: 50px;
+  }
+  .solution-section .list .item .info {
+    width: 100%;
+    text-align: center;
+  }
+  .solution-section .list .item .info .icon {
+    margin: 0 auto;
+  }
+  .solution-section .list .item .info h3 {
+    font-size: 22px !important;
+    line-height: 50px;
+    margin-top: 24px;
+    text-align: center;
+  }
+  .solution-section .list .item .info p,
+  .solution-section .list .item .info ul {
+    font-size: 14px !important;
+    line-height: 20px;
+  }
+  .solution-section .list .item:nth-child(1) {
+    flex-direction: column-reverse;
+  }
+  .solution-section .list .item:nth-child(1) .info {
+    margin: 0 auto;
+  }
+  .solution-section .list .item:nth-child(1) .pic {
+    margin: 0 0 20px;
+    width: 600px;
+    height: 400px;
+  }
+  .solution-section .list .item:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  .solution-section .list .item:nth-child(2) .info {
+    margin: 0 auto;
+  }
+  .solution-section .list .item:nth-child(2) .pic {
+    margin: 0 0 20px;
+    width: 600px;
+    height: 400px;
+  }
+  .solution-section .list .item:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+  .solution-section .list .item:nth-child(3) .info {
+    margin: 0 auto;
+  }
+  .solution-section .list .item:nth-child(3) .pic {
+    margin: 0 0 20px;
+    width: 600px;
+    height: 400px;
+  }
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  .top-section {
+    height: 86vh;
+  }
+  .top-section .w3-center {
+    text-align: left !important;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+    width: 312px;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0;
+  }
+  .solution-section .circle1 {
+    position: absolute;
+    top: 17%;
+    right: -25%;
+    width: 210px;
+    height: 210px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -17px 17px 34px rgba(106, 104, 208, 0.6);
+    -moz-box-shadow: -17px 17px 34px rgba(106, 104, 208, 0.6);
+    box-shadow: -17px 17px 34px rgba(106, 104, 208, 0.6);
+    border-radius: 50%;
+  }
+  .solution-section .circle2 {
+    position: absolute;
+    top: 45%;
+    left: -30%;
+    width: 320px;
+    height: 320px;
+    background: #e346eb;
+    background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    -webkit-box-shadow: -17px 17px 34px rgba(127, 115, 221, 0.6);
+    -moz-box-shadow: -17px 17px 34px rgba(127, 115, 221, 0.6);
+    box-shadow: -17px 17px 34px rgba(127, 115, 221, 0.6);
+    border-radius: 50%;
+  }
+  .solution-section .circle3 {
+    position: absolute;
+    top: 72%;
+    right: -30%;
+    width: 338px;
+    height: 338px;
+    background: #6dee88;
+    background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    -webkit-box-shadow: -17px 17px 34px rgba(67, 172, 172, 0.6);
+    -moz-box-shadow: -17px 17px 34px rgba(67, 172, 172, 0.6);
+    box-shadow: -17px 17px 34px rgba(67, 172, 172, 0.6);
+    border-radius: 50%;
+  }
+  .solution-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .solution-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .solution-section p {
+    margin-bottom: 20px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+  .solution-section .list .item {
+    height: initial;
+    padding: 0 24px;
+  }
+  .solution-section .list .item .info .icon {
+    margin: 0;
+  }
+  .solution-section .list .item .info h3 {
+    margin: 24px 0 16px;
+    text-align: left;
+  }
+  .solution-section .list .item .info p,
+  .solution-section .list .item .info ul {
+    max-width: 500px;
+  }
+  .solution-section .list .item:nth-child(1) .pic {
+    margin: 0 0 20px;
+    /*width: 360px;
+                        height: 264px;*/
+    width: 100vw;
+    height: auto;
+  }
+  .solution-section .list .item:nth-child(2) .pic {
+    margin: 0 0 20px;
+    /*width: 360px;
+                        height: 264px;*/
+    width: 100vw;
+    height: auto;
+  }
+  .solution-section .list .item:nth-child(3) .pic {
+    margin: 0 0 20px;
+    /*width: 360px;
+                        height: 197px;*/
+    width: 100vw;
+    height: auto;
+  }
+}

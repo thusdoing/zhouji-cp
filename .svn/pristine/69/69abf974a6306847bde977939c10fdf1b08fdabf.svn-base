@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <script src="./ismobile.js"></script>
+    <script>var flag = ismobile();if(!flag){location.href = './loginpc.html'}</script>
+    <link href="./Res/font/font.css" rel="stylesheet" />
+	<link href="./Content/mobile/main.min.css" rel="stylesheet" id="MainCss" />
+	<link href="./Content/mapping/mobile-biying/main.min.css" rel="stylesheet" id="MainCss" />
+    <script src="./Scripts/Common/jquery-1.11.3.min.js"></script>
+    <script src="./Scripts/Common/jquery.md5.min.js"></script>
+    <script src="./Scripts/Common/knockout-3.4.0.js"></script>
+    <script src="./Scripts/officialMobile/utils.dev.js"></script>
+</head>
+<body class="login-bg">
+    <div class="login">
+        <div class="company-logo">
+        </div>
+        <h2></h2>
+        <form method="post" action="/Home/DoLogin">
+            <div class="login-area">
+                <div class="form-item"><i class="iconfont icon-user"></i><span>账号</span> <input type="text" id="username" name="username" value="" placeholder="请输入账号" /></div>
+                <div class="form-item"><i class="iconfont icon-editpwd"></i><span>密码 </span><input type="password" id="password" name="password" value="" placeholder="请输入密码" /></div>
+                <div id="validateCodeDiv" class="code clear form-item" style="display:none;"><i class="icon-code"></i><span>验证码 </span><input type="text" id="validateCode" name="validateCode" value=""  maxlength="6" placeholder="验证码" autocomplete="off" /><span class="code-box"><img src="/getVerCode?w=100&h=40&date=154667737610333" width="100" height="40" id="verifyCode" onclick="changeVerify()"/></span></div>
+                <div id="remberBox" class="remberBox"><label style="text-align: left;color: #fff;">记住密码</label><label class="switch"><input type="checkbox" id="rember" class="control"></label></div>
+                <div><input id="login" type="submit" value="登录" class="login-btn" /></div>
+                <div class="register"><a href="./registerh5.html?hash=">立刻注册</a></div>
+                <div class="sys-btn ldn"><a href="/">首页</a>｜<a href="javascript:;" class="service" onclick="utils.hotLine('https://chat.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=1069134&configID=82304&jid=7728549998&s=1')">联系客服</a></div>
+                <div class="pass"><a href="javascript:;" class="service" onclick="utils.hotLine('https://chat.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=1069134&configID=82304&jid=7728549998&s=1')">忘记密码？</a></div>
+                <div class="sys-btn1">遇到问题？联系<a href="javascript:;" class="service" onclick="utils.hotLine('https://chat.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=1069134&configID=82304&jid=7728549998&s=1')">在线客服</a></div>
+            </div>
+        </form>
+    </div>
+    <script>
+        window.name = null;
+		var isNeedVerifyCode = '7' - 2 > 0;
+        function QRcodeshow() { document.getElementById('QRcode').style.display = 'block' }
+        function QRcodehide() { document.getElementById('QRcode').style.display = 'none' }
+        var verifyCode = document.getElementById("verifyCode");
+        var verify = document.getElementById("validateCode");
+		if (isNeedVerifyCode)$("#validateCodeDiv").show();
+        function changeVerify() {
+            verifyCode.src = "/getVerCode?w=100&h=40&_=" + Date.now();
+			verify.value = "";
+        }
+        verifyCode.addEventListener("click", changeVerify);
+        var submit = $(":submit"), isLogining = false;
+        $("form").on("submit", function (e) {
+            e.preventDefault();
+            if (isLogining) return;
+            var username = document.getElementsByName("username")[0].value.trim();
+            var password = document.getElementsByName("password")[0].value;
+			var verify = isNeedVerifyCode ? document.getElementById("validateCode").value : "";
+            switch (true) {
+                case username === "":
+                    utils.tip("账号不能为空");
+                    break;
+                case password.length === 0:
+                    utils.tip("密码不能为空");
+                    break;
+                case isNeedVerifyCode && verify === "":
+                    utils.tip("验证码不能为空");
+                    break;
+                case isNeedVerifyCode && !/^[\d]{4,6}$/i.test(verify):
+                    utils.tip("验证码格式不正确");
+                    break;
+                default:
+                    isLogining = true;
+                    submit.val("正在登录中...");
+                    $.ajax({
+                        url: '/api/login',
+                        type: "post",
+                        data: { custName: username, pwd: password, verCode: verify },
+                        dataType:'json',
+                        success: function (json) {
+                            if (json.success) {
+								if (document.querySelector("#rember").checked) {
+									 _Stroage.setItem('user', JSON.stringify({ u: username, p: password, p2: $.md5($.md5(password)) }));
+								} else {
+									_Stroage.removeItem("user");
+								}
+                                location.href = "/";
+                            } else {
+                                verifyCode.src = verifyCode.src.replace(/\d+$/, Date.now());
+                                verify.value = "";
+                                isLogining = false;
+                                submit.val("登录");
+                                utils.tip(typeof json === 'object' ? (json.msg||json.message) : json);
+								if (typeof json === 'object') {
+									if (json.errorCount > 2) {
+										isNeedVerifyCode = true;
+										$("#validateCodeDiv").show();
+									}
+								}
+                            }
+                        },
+                        error: function () {
+                            isLogining = false;
+                            submit.val("登录");
+                            utils.tip("你所在地区可能不在服务范围，如有问题，请联系我们客服部");
+                        },
+                        complete: function () {
+                            changeVerify();
+                        }
+                    });
+            }
+        });
+	   //本地存储兼容
+		var _Stroage = function () {
+			var hasStroage = function () {
+				if (!(typeof window.localStorage == "object")) { return false; }
+				try {
+					localStorage.setItem("_t_", 1);
+					localStorage.removeItem("_t_");
+					return true;
+				} catch (e) {
+					return false;
+				}
+			}();
+			return hasStroage ? localStorage : {
+				getItem: function (name) {
+					return new RegExp("[?:; ]*" + name + "=([^;]*);?").test(document.cookie) ? RegExp["$1"] : null;
+				},
+				setItem: function (key, value) {
+					return document.cookie = key + "=" + value;
+				},
+				removeItem: function (name) {
+					var exp = new Date();
+					exp.setTime(exp.getTime() - 1);
+					var cval=getCookie(name); 
+					 if(cval!=null)
+						 document.cookie= name + "="+cval+";expires="+exp.toGMTString(); 
+				}
+			};
+		}();
+		_Stroage.setItem("agreementAction", "");
+		_Stroage.setItem("hasShowMessage", "");
+		
+		/// 如果有保存密码 自动登录
+		var user = _Stroage.getItem("user");
+		if (user) {
+			user = JSON.parse(user);
+			$("#username").val(user.u);
+			$("#password").val(user.p);
+			//if (!utils.storage.localStorage.getItem("donotAutoLogin")) {
+			//    $("form").submit();
+			//}
+			$("#rember").attr("checked", "checked");
+		}
+		changeVerify();
+		function guestlogin(){
+			$.ajax({
+				url: "/Home/guestlogin",
+				dataType: "json",
+				success: function (json) {
+					if (json.tips=='') {
+						alert("试玩登录成功，即将跳转");
+						location.href = "/Home";
+					} else {
+						alert(json.tips);
+					}
+				},
+				error: function () {
+					alert("网络异常，请刷新页面");
+				}
+			});
+		};
+		function CookieEnable(){
+			var result=false;
+			if(navigator.cookiesEnabled)return true;
+			document.cookie = "testcookie=yes;";
+			var cookieSet = document.cookie;
+			if (cookieSet.indexOf("testcookie=yes") > -1)result=true;
+			document.cookie = "";   
+			return result;
+		}
+		if(!CookieEnable()){
+			alert("对不起，您的浏览器的Cookie功能被禁用，请开启");
+		}
+    </script>
+</body>
+</html>

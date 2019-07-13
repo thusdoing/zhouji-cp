@@ -1,0 +1,88 @@
+.dUkFeH {
+  background-color: rgb(246, 246, 246);
+  height: auto;
+  border-radius: 14px;
+}
+
+.johZhA {
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  padding: 18px 0px;
+}
+
+
+
+.eAxzdB {
+  display: inline-block;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.eeeSzO {
+  font-size: 13px;
+  padding: 5px 15px;
+  margin: 0px 0px 0px;
+  text-align: left
+}
+
+.QYfXl {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+}
+.fr{
+  float:right;
+}
+.cmAbzr {
+  display: inline-block;
+  text-align: center;
+  color: rgb(69, 69, 69);
+  font-size: 14px;
+  line-height: 30px;
+  flex: 1 1 0%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(230, 230, 230);
+  border-image: initial;
+  background: rgb(255, 255, 255);
+  margin: 0px 10px 10px 0px;
+}
+
+.HmACe {
+  border-top: 1px solid rgb(230, 230, 230);
+}
+
+.gsepek {
+  text-align: center;
+  font-size: 17px;
+  line-height: 44px;
+  color: rgb(155, 155, 155);
+  border-bottom: 1px solid rgb(230, 230, 230);
+  margin: 0px;
+}
+
+.ktPVUf {
+  text-align: center;
+  font-size: 17px;
+  line-height: 44px;
+  color: rgb(0, 122, 255);
+  /* border-bottom: 1px solid rgb(230, 230, 230); */
+  background: #fff;
+  margin: 0px !important;
+}
+
+.ktPVUf:last-child {
+  border-bottom: 0px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}

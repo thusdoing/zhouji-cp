@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>聊天记录</title>
+
+		<link rel="stylesheet" href="../../../layui.css?v=1">
+		<script src="../../../../layui.js?v=1"></script>
+		<script src="../../../../../js/common.js"></script>
+		<!-- <script src="http://local.res.layui.com/layui/src/layui.js"></script> 真实真的大大大多多多多多-->
+		<style>
+			body .layim-chat-main {
+				height: auto;
+			}
+
+			.layim-msgbox-tips {
+				margin: 0;
+				border: none;
+				padding-left: 0 !important;
+				min-height: 0 !important;
+				text-align: center;
+				color: #999;
+				position: relative;
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+				line-height: 22px;
+				border-bottom: 1px dotted #e2e2e2;
+
+
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="layim-chat-main">
+			<ul id="LAY_view"></ul>
+		</div>
+
+		<div id="LAY_page" style="margin: 0 10px;" class="lay_page"></div>
+
+
+		<textarea title="消息模版" id="LAY_tpl" style="display:none;">
+{{# if(d.data.length > 0){ }}
+{{# layui.each(d.data, function(index, item){ }}
+  {{# if(item.id==d.mine){ }}
+    <li class="layim-chat-mine"><div class="layim-chat-user"><img src="{{ item.avatar }}" ><cite><i>{{ layui.data.date(item.timestamp) }}</i>{{ item.username }}</cite></div><div class="layim-chat-text">{{ layui.layim.content(item.content) }}</div></li>
+  {{# } else { }}
+    <li><div class="layim-chat-user"><img src="{{ item.avatar }}" ><cite>{{ item.username }}<i>{{ layui.data.date(item.timestamp) }}</i></cite></div><div class="layim-chat-text">{{ layui.layim.content(item.content) }}</div></li>
+  {{# }
+}); }}
+{{# } else { }} 
+		<li class='layim-msgbox-tips' style="font-size: 16px;">暂无历史回话</li>
+		  {{# } }} 	
+</textarea>
+
+		<!-- 
+上述模版采用了 laytpl 语法，不了解的同学可以去看下文档：http://www.layui.com/doc/modules/laytpl.html
+
+-->
+
+
+
+		<script>
+			layui.use(['layim', 'laypage'], function() {
+				var layim = layui.layim,
+					layer = layui.layer,
+					laytpl = layui.laytpl,
+					$ = layui.jquery,
+					laypage = layui.laypage;
+
+				//聊天记录的分页此处不做演示，你可以采用laypage，不了解的同学见文档：http://www.layui.com/doc/modules/laypage.html
+
+
+				//开始请求聊天记录
+				var param = location.search //获得URL参数。该窗口url会携带会话id和type，他们是你请求聊天记录的重要凭据
+				var res = location.search.substr(1).split("&");
+				var arr = {};
+				for (var i in res) {
+					var para = decodeURI(res[i].split("=")[1]);
+					arr[res[i].split("=")[0]] = para;
+				}
+				console.log(location.search)
+				var history = ""
+				var id = arr.id,
+					type = arr.type
+				var form = {};
+				if (type == "friend") {
+					form = {
+						page: 1,
+						limit: 10,
+						senduser: id,
+						receiveuser:layui.data('mine').id
+					}
+				} else {
+					form = {
+						page: 1,
+						limit: 10,
+						groupid: id
+					}
+				}
+				console.log(form)
+				var historyRes = ""
+				$.post(apiUrl+"/usermessage/list", form, function(res) {
+					historyRes = JSON.parse(res)
+					console.log(historyRes)
+					laypage.render({
+						elem: 'LAY_page',
+						count: historyRes.count,					
+						jump: function(obj, first) {
+							console.log(obj, first)
+							//obj包含了当前分页的所有参数，比如：       
+							//首次不执行
+							var res2 = [];
+							if (!first) {
+								form.page = obj.curr;
+								$.post(apiUrl+"/usermessage/list", form, function(data) {
+
+									var res = eval('(' + data + ')');
+
+									console.log(res.data.content)
+									if (res.code != 0) {
+										return layer.msg(res.msg);
+									}
+									layui.each(res.data, function(index, item) {
+										var content=JSON.parse(item.content)
+										content.timestamp=item.createdate
+										res2.push(content)
+
+										//  res.data[index]['timestamp'] =  formatDate(item.timestamp);
+									});
+									console.log(res2)
+									res2.reverse()
+									var html = laytpl(LAY_tpl.value).render({
+										data: res2,
+										mine: layui.data('mine').id
+									});
+									$('#LAY_view').html(html);
+								});
+							} else {
+
+								res2 = [];
+								console.log(historyRes.data.content)
+								if (historyRes.code != 0) {
+									return layer.msg(historyRes.msg);
+								}
+								layui.each(historyRes.data, function(index, item) {								
+									var content=JSON.parse(item.content)
+									content.timestamp=item.createdate
+									res2.push(content)
+
+									//  res.data[index]['timestamp'] =  formatDate(item.timestamp);
+								});
+								console.log(res2)
+								res2.reverse()
+								var html = laytpl(LAY_tpl.value).render({
+									data: res2,
+									mine: layui.data('mine').id
+								});
+								$('#LAY_view').html(html);
+
+							}
+
+
+						}
+					});
+
+
+
+
+				})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			});
+		</script>
+	</body>
+</html>

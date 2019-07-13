@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang=zh-Hant-TW>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv=Content-Type>
+<meta content=utf-8 http-equiv=encoding>
+<meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>洲际娱乐彩票系统</title>
+<link rel=stylesheet href="js/node_modules/w3-css/w3.css">
+<link rel=stylesheet href="css/font-awesome.min.css">
+<link rel=stylesheet href="js/node_modules/featherlight/release/featherlight.min.css">
+<link rel=stylesheet href="css/main_style.css">
+<script src="js/node_modules/jquery/dist/jquery.js"></script>
+<script src="js/node_modules/featherlight/release/featherlight.min.js"></script>
+<script src="js/mobile-chrome-vh-fix/mobile-chrome-vh-fix.js"></script>
+<script src="js/node_modules/iscroll/build/iscroll.js"></script>
+<script src="js/main_fun.js"></script>
+<link rel=stylesheet href="css/sub_style_news.css">
+<link rel=stylesheet href="css/bootstrap-grid.min.css">
+<script src="js/sub_fun_news.js"></script>
+<script src="js/jquery-cookie/jquery.cookie.js"></script>
+<script src="js/jquery-i18n-properties/jquery.i18n.properties.min.js"></script>
+<script src="js/locale_main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin=anonymous></script>
+<!— Global site tag (gtag.js) - Google Analytics —>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109820959-2"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109820959-2');
+    </script>
+</head>
+<body class=trhide>
+<div id=content-wrapper class="main-container scrollContainer">
+<div class=scrollContent>
+<section class=top-section>
+<img class="w3-display-middle w3-hide-small kv" src="img/1920/bg-joinus.jpg" srcset="img/1920/bg-joinus@2x.jpg 2x">
+<img class="w3-display-middle w3-hide-medium w3-hide-large kv" src="img/375/bg-joinus-phone.jpg" srcset="img/375/bg-joinus-phone@2x.jpg 2x, img/375/bg-joinus-phone@3x.jpg 3x">
+<div class=w3-center>
+<h2 data-locale-msg=news_main_caption>最新消息</h2>
+<h1 data-locale-msg=news_main_description>掌握洲际娱乐最新动态</h1>
+</div>
+</section>
+<div class=section>
+<section class=container>
+<div class=newstitle>
+<h2 data-locale-msg=news>最新消息</h2>
+<div class=newsline></div>
+</div>
+<div id=news>
+</div>
+<div id=imgbox>
+</div>
+<div id=infobox>
+</div>
+<script>
+                var news = [];
+                var imgbox = [];
+                var infobox = [];
+                //资料库数量
+                news.list = [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}];
+                imgbox.list = [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}];
+                infobox.list = [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}];
+                //模版
+
+                var news_html ="<div id='news_{{mun}}' class='news'><div class='imginfo' style='cursor: pointer; '><div type='button' data-toggle='modal' data-target='#imgbox_{{imgboxmun}}'><div  data-locale-msg='news_smimg_{{smimg_tr_mun}}'></div></div></div><div class='newsinfo' data-toggle='modal' data-target='#infobox_{{infoboxmun}}' style='cursor: pointer;'><div class='nameblock'><h10 data-locale-msg='news_title_{{title_tr_mun}}' class='newsname font'></h10></div><div class='artblock'><h11 data-locale-msg='news_info_{{info_tr_mun}}' class='artblock font'></h11></div><div class='noteblock'><h11 data-locale-msg='news_data_{{data_tr_mun}}' class='noteblock font'></h11><button class='botton btn_box draw-border' data-toggle='modal' data-target='#infobox_{{mun}}'><h11 data-locale-msg='news_more'>了解更多</h11></button></div></div></div>";
+
+                var imgbox_html="<div id='imgbox'><div class='modal fade' id='imgbox_{{img_mun}}' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'><div class='modal-dialog modal-dialog-centered' role='document'><div class='modal-content-2'><div data-locale-msg='news_bigvideo_{{bigvideo_tr_mun}}'></div><div data-locale-msg='news_bigimg_{{bigimg_tr_mun}}'><img src='' style='background-size:cover; width:100%;' ></div></div></div></div></div>";
+                
+                var infobox_html="<div id='infobox'><div class='modal fade' id='infobox_{{mun}}' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'><div class='modal-dialog modal-dialog-centered' role='document'><div class='modal-content'><div class='modal-header'><div class='modal-title' id='#infobox_01_title'><h10 data-locale-msg='news_title_{{title_tr_mun}}'></h10></div><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div><div class='modal-body'><div data-locale-msg='news_bigimg_{{bigimg_tr_mun}}'><img src='' style='background-size: cover; width:100%;'></div><div data-locale-msg='news_bigvideo_{{bigvideo_tr_mun}}'></div><hr><h11 data-locale-msg='news_info_{{info_tr_mun}}'></h11></div><div class='modal-footer'><h11 data-locale-msg='news_data_{{data_tr_mun}}' class='noteblock_box font'></h11><button class='botton btn_box draw-border' data-dismiss='modal'><h11>关闭</h11></button></div></div></div></div></div>";
+
+                //加载
+                function infobox_go() {
+                    $("#infobox").html("");
+                    for (var i = 0; i < infobox.list.length; i++) {
+                        var infobox_item = infobox.list[i];
+                        var current_infobox_html =
+                            infobox_html
+                            .replace("{{data_tr_mun}}", i + 1)
+                            .replace("{{mun}}", i + 1)
+                            .replace("{{title_tr_mun}}", i + 1)
+                            .replace("{{bigimg_tr_mun}}", i + 1)
+                            .replace("{{bigvideo_tr_mun}}", i + 1)
+                            .replace("{{info_tr_mun}}", i + 1)
+                            
+                        $("#infobox").append(current_infobox_html);
+                    }
+                }
+                infobox_go();
+
+
+                function imgbox_go() {
+                    $("#imgbox").html("");
+                    for (var i = 0; i < imgbox.list.length; i++) {
+                        var imgbox_item = imgbox.list[i];
+                        var current_imgbox_html =
+                            imgbox_html
+                            .replace("{{mun}}", i + 1)
+                            .replace("{{img_mun}}", i + 1)
+                            .replace("{{bigvideo_tr_mun}}", i + 1)
+                            .replace("{{bigimg_tr_mun}}", i + 1);
+                        $("#imgbox").append(current_imgbox_html);
+                        
+                    }
+                }
+                imgbox_go();
+                
+
+
+                function news_go() {
+                    $("#news").html("");
+                    for (var i = 0; i < news.list.length; i++) {
+                        var news_item = news.list[i];
+                        var current_news_html =
+                            news_html
+                            .replace("{{smimg_tr_mun}}", i + 1)
+                            .replace("{{title_tr_mun}}", i + 1)
+                            .replace("{{info_tr_mun}}", i + 1)
+                            .replace("{{data_tr_mun}}", i + 1)
+                            .replace("{{mun}}", i + 1)
+                            .replace("{{imgboxmun}}", i + 1)
+                            .replace("{{infoboxmun}}", i + 1);
+                        $("#news").append(current_news_html);
+
+                    }
+                }
+                news_go();
+
+
+
+                $(function(){
+                    for(var i = 0; i < 100; i++){
+                        var id="#news_"+i+" "+"h11:empty";
+                        $(id).parent().parent().parent().hide();
+                        }
+                    }
+                )
+
+
+                
+//var vid = document.getElementById("d2");
+
+
+
+
+
+                $('#imgbox').click(function(){
+                //    console.log("小关")
+                    var $video = jQuery('video', jQuery(this));
+                for(var i = 0; i < 100; i++){
+                    $video[i].pause();
+                }
+
+
+
+                })
+
+                $('#infobox').click(function(){
+                //    console.log("大关")
+                    var $video = jQuery('video', jQuery(this));
+                 for(var i = 0; i < 100; i++){
+                    $video[i].pause();
+                }
+                //    let test = $('.pause');
+                //    console.log(test)
+                //    test[0].pause();
+                //    test[1].pause();
+                //    test[2].pause();
+                //    test[3].pause();
+                //    test[4].pause();
+                //    test[5].pause();
+                })
+
+            
+            </script>
+</section>
+</div>
+<section class="section-100 footer-section">
+<div class=w3-center>
+<h2 data-locale-msg=footer_caption>聯繫我們</h2>
+<form class=w3-container>
+<div class="w3-row-padding w3-section">
+<div class=w3-half>
+<div class=w3-half>
+<input class="w3-input w3-border w3-round" id=username name=username required placeholder=" ">
+<label for=username data-locale-msg=footer_input_1>姓名</label>
+</div>
+<div class="w3-half margin-mob">
+<div class="w3-cell w3-padding">
+<input class=w3-radio type=radio name=gender value=male checked>
+<label data-locale-msg=footer_radio_1>先生</label>
+</div>
+<div class="w3-cell w3-padding">
+<input class=w3-radio type=radio name=gender value=female>
+<label data-locale-msg=footer_radio_2>女士</label>
+</div>
+</div>
+</div>
+<div class=w3-half>
+<div class=w3-col>
+<input class="w3-input w3-border w3-round" type=tel pattern="[0-9]*" id=cellphone name=cellphone required placeholder=" ">
+<label for=cellphone data-locale-msg=footer_input_2>手機</label>
+</div>
+</div>
+</div>
+<div class="w3-row-padding w3-section">
+<div class=w3-half>
+<div class=w3-col>
+<input class="w3-input w3-border w3-round" type=email id=email name=email required placeholder=" ">
+<label for=email data-locale-msg=footer_input_3>郵箱</label>
+</div>
+<div class="w3-col w3-section">
+<select class="w3-select w3-border w3-round" id=cantact_acctount name=cantact_acctount required>
+<option value="" disabled selected data-locale-msg=footer_select>通訊帳號</option>
+<option value=1>Skype</option>
+<option value=2>QQ</option>
+<option value=3>Wechat</option>
+</select>
+</div>
+<div class=w3-col>
+<input class="w3-input w3-border w3-round" id=contact_id name=contact_id required placeholder=" ">
+<label for=contact_id data-locale-msg=footer_input_4>通訊帳號ID</label>
+</div>
+</div>
+<div class="w3-half margin-mob-textarea">
+<div class=w3-col>
+<textarea rows=7 class="w3-input w3-border w3-round" type=text id=contact_info name=contact_info required placeholder=" "></textarea>
+<label data-locale-msg=footer_input_5>輸入內容</label>
+</div>
+</div>
+</div>
+<div class="w3-section margin-mob-button">
+<button class="w3-button w3-block w3-padding-large w3-round" data-locale-msg=footer_button>確認送出</button>
+</div>
+</form>
+</div>
+</section>
+</div>
+</div>
+<div class=w3-bar>
+<button class="w3-bar-item w3-button nav-hamburger w3-hide-large">
+<span class=hamburger-icon></span>
+</button>
+<a href=index.html class="w3-bar-item ap-logo">洲际 洲际</a>
+<nav class=w3-right role=navigation id=scroller>
+<div class=nav_container>
+<div class=nav_menu_container>
+<a href=index.html class=w3-bar-item data-locale-msg=menu_home>首頁</a>
+<div class=w3-dropdown-hover>
+<span data-locale-msg=menu_advantage>洲际優勢</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden=true></i>
+<div class=sub-menu>
+<div class="w3-dropdown-content w3-bar-block w3-center">
+<button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden=true></i><span data-locale-msg=menu_advantage>洲际優勢</span></button>
+<a href=advantage.html class=w3-bar-item data-locale-msg=menu_advantage_1>合作優勢</a>
+<a href=deploy.html class=w3-bar-item data-locale-msg=menu_advantage_2>極速建站</a>
+<a href=payment.html class=w3-bar-item data-locale-msg=menu_advantage_3>快捷支付</a>
+</div>
+</div>
+</div>
+<a href=lottery.html class=w3-bar-item data-locale-msg=menu_lottery>洲际彩票</a>
+<div class=w3-dropdown-hover>
+<span data-locale-msg=menu_product>產品介紹</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden=true></i>
+<div class=sub-menu>
+<div class="w3-dropdown-content w3-bar-block w3-center">
+<button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden=true></i><span data-locale-msg=menu_product>產品介紹</span></button>
+<a href=backend.html class=w3-bar-item data-locale-msg=menu_product_1>後台管理系統</a>
+<a href=apigame.html class=w3-bar-item data-locale-msg=menu_product_2>API游戏</a>
+</div>
+</div>
+</div>
+<div class=w3-dropdown-hover>
+<span data-locale-msg=menu_service>特點服務</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden=true></i>
+<div class=sub-menu>
+<div class="w3-dropdown-content w3-bar-block w3-center">
+<button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden=true></i><span data-locale-msg=menu_service>特點服務</span></button>
+<a href=technique.html class=w3-bar-item data-locale-msg=menu_service_1>技術服務</a>
+<a href=market.html class=w3-bar-item data-locale-msg=menu_service_2>市場營銷服務</a>
+<a href=template.html class=w3-bar-item data-locale-msg=menu_service_3>模板設計規劃</a>
+</div>
+</div>
+</div>
+<a href=about.html class=w3-bar-item data-locale-msg=menu_about>關於洲际</a>
+<a href=news.html class=w3-bar-item data-locale-msg=menu_news>最新消息</a>
+<a class=w3-bar-item>
+<select class=w3-bar-selec name=Language>
+<option value=zh-CN>简体中文</option>
+<option value=zh-TW>繁体中文</option>
+...
+</select>
+</a>
+</div>
+</div>
+</nav>
+<nav class=sub-nav role=navigation id=scroller2>
+<div class=nav_container>
+<div class=nav_submenu_container></div>
+</div>
+</nav>
+<div class=nav-bg></div>
+</div>
+<header></header>
+</body>
+</html>

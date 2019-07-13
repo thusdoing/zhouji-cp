@@ -1,0 +1,125 @@
+.shopping-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  div.cart {
+    width: 595px;
+  }
+  div.bet-summary {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 150px;
+    flex: 1 0 150px;
+    margin: 0;
+    position: relative;
+  }
+  div.bet-summary {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  div.bet-summary div.bet-summary-text {
+    text-align: left;
+    margin: 0px 0 0 10px;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 13px;
+    width: 166px;
+  }
+  div.bet-summary .bet-summary-text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  div.bet-summary div.bet-summary-text>div {
+    margin: 8px 20px;
+  }
+  div.bet-summary .bet-summary-text>div,
+  div.bet-summary .bet-summary-text>span {
+    display: inline-block;
+  }
+  div.bet-summary div.bet-summary-text>span.toggle-trace {
+    position: absolute;
+    top: 8px;
+    bottom: 65px;
+    margin: 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  div.bet-summary div.bet-summary-text>span {
+    display: block;
+  }
+  div.bet-summary span.toggle-trace,
+  div.trace-view div.win-stop {
+    display: block;
+    margin: 15px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  div.bet-summary .bet-summary-text>div,
+  div.bet-summary .bet-summary-text>span {
+    display: inline-block;
+  }
+  span.toggle-trace {
+    cursor: pointer;
+    color: #454545;
+    margin-left: 20px;
+  }
+  span.toggle-trace,
+  div.win-stop {
+    display: block;
+    margin: 15px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  span.toggle-trace span.icon-check-cube,
+  span.toggle-trace span.icon-check,
+  #app>.v3 div.trace-view div.win-stop span.icon-check-cube,
+  #app>.v3 div.trace-view div.win-stop span.icon-check {
+    display: inline-block;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+  span.toggle-trace .icon-check-cube,
+  span.toggle-trace .icon-check {
+    color: #db383f;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  div.cart-btns {
+    position: absolute;
+    right: 32px;
+    bottom: 25px;
+  }
+  .high-light {
+    color: #e60b0b;
+  }
+  .main-btn {
+    width: 120px;
+  }
+  /deep/.ivu-table-cell i.iconfont.icon-shanchu{
+    cursor: pointer;
+    color: #c9c9c9;
+    &:hover{
+      color: #db383f;
+    }
+  }
+  /deep/.ivu-table td{
+    height: 35px;
+  }
+}

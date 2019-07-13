@@ -1,0 +1,124 @@
+<html>
+  <head>
+<!-- 字符集设置 -->
+<meta charset="utf-8">
+<!-- 窗口适应配置 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+<!-- 删除苹果默认的工具栏和菜单栏 -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<!-- 设置苹果工具栏颜色 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<!-- 苹果全屏 -->
+<meta name="apple-touch-fullscreen" content="yes">
+<!--忽略页面中的数字识别为电话，忽略email识别 -->
+<meta name="format-detection" content="telephone=no, email=no, address=no"/>
+<!-- 启用360浏览器的极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<!-- 避免IE使用兼容模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+<!-- IE设定 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="stylesheet" type="text/css" href="./index.css"/>
+  <style>
+  .go6h_header{width:100%;height:44px;background-color:#f1592a;position:fixed;left:0;top:0; z-index:999;}
+  .go6h_header .logo { height: 24px; margin: 10px auto; display: block; text-align: center;}
+  .go6h_header .logo img { height: 100%;}
+  
+  .lottery { margin-top: 44px; padding-top: 10px; }
+  .video { margin: 10px;}
+  .video iframe { width: 100%; min-height: 300px; }
+  
+  .screen { width: 100%; }
+  @media screen and (min-width: 1024px) {
+    .screen { width: 1024px; margin: 0 auto; }
+    .video iframe { min-height: 500px; }
+  }
+
+  .baoma-time { font-size: 2rem!important; }
+  .baoma-shuxing,
+  .baoma-redball, .baoma-blueball, .baoma-greenball{ transform: scale(1.6)!important; }
+  .baoma-shuxing {
+    margin: 20px 0 10px!important;
+  }
+  .baoma-jieguo { margin-top: 10px!important;}
+  </style>
+  </head>
+  <body>
+    <div class="go6h_header">
+      <div class="logo"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/></div>
+    </div>
+    <div class="screen">
+    <div class="lottery">
+        <div class="baoma-wrap">
+            <div class="baoma-kaijiang">
+                <div class="baoma-shijian">
+                        <span class="baoma-title">
+                            <span class="baoma-time">
+                                <span>第</span><i class="baoma-qishu">***</i><span>期最新开奖结果:</span>
+                </div>
+                <div class="baoma-jieguo">
+                    <div id="num-1" class="baoma-num">
+                        <span class="baoma-redball">**</span>
+                        <span class="baoma-shuxing">**</span>
+                    </div>
+                    <div id="num-2" class="baoma-num">
+                        <span class="baoma-redball">**</span>
+                        <span class="baoma-shuxing">**</span>
+                    </div>
+                    <div id="num-3" class="baoma-num">
+                        <span class="baoma-redball">**</span>
+                        <span class="baoma-shuxing">**</span>
+                    </div>
+                    <div id="num-4" class="baoma-num">
+                        <span class="baoma-redball">**</span>
+                        <span class="baoma-shuxing">**</span>
+                    </div>
+                    <div id="num-5" class="baoma-num">
+                        <span class="baoma-redball">**</span>
+                        <span class="baoma-shuxing">**</span>
+                    </div>
+                    <div id="num-6" class="baoma-num">
+                        <span class="baoma-redball">**</span>
+                        <span class="baoma-shuxing">**</span>
+                    </div>
+                    <div class="baoma-add"></div>
+                    <div id="num-7" class="baoma-num">
+                        <span class="baoma-redball">**</span>
+                        <span class="baoma-shuxing">**</span>
+                    </div>
+                </div>
+            </div>
+            <div class="baoma-xiaqi">
+                    <span class="baoma-shijian">
+                        <span>下期开奖时间：</span>
+                        <i id="nexttime" class="baoma-time">****年**月**日 ***期</i>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/0GxAd9s3bOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+  <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>

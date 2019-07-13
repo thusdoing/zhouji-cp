@@ -1,0 +1,67 @@
+
+/*字体图标*/
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1464764465'); /* IE9*/
+  src: url('iconfont.eot?t=1464764465#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1464764465') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1464764465') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1464764465#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  display: inline-block;
+  font: normal normal normal 1.4rem "iconfont";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align:initial;
+}
+
+
+.icon-keyboards:before { content: "\e65e"; }
+/*.icon-skin:before { content: "\e65d"; }*/
+.icon-addcircle:before { content: "\e65b"; }
+.icon-notice:before { content: "\e65a"; }
+.icon-secretquestion:before { content: "\e658"; }
+.icon-check2:before { content: "\e654"; }
+.icon-checkout:before { content: "\e653"; }
+.icon-calendar:before { content: "\e645"; }
+.icon-sortdesc:before { content: "\e64a"; }
+/*.icon-list:before { content: "\e64d"; }*/
+.icon-check:before { content: "\e64b"; }
+.icon-list1:before { content: "\e64e"; }
+.icon-question:before { content: "\e651"; }
+.icon-track:before { content: "\e643"; }
+.icon-withdraw:before { content: "\e637"; }
+.icon-userlist:before { content: "\e636"; }
+.icon-gamelimits:before { content: "\e62d"; }
+.icon-individualreport:before { content: "\e62e"; }
+.icon-editpwd:before { content: "\e63d"; }
+/*.icon-refresh:before { content: "\e640"; }*/
+.icon-accountchange:before { content: "\e63f"; }
+.icon-result:before { content: "\e632"; }
+.icon-promotion:before { content: "\e631"; }
+.icon-meila:before { content: "\e630"; }
+.icon-teamreport:before { content: "\e63e"; }
+.icon-anglebottom:before { content: "\e64f"; }
+.icon-close:before { content: "\e650"; }
+/*.icon-angleleft:before { content: "\e644"; }*/
+.icon-logout:before { content: "\e641"; }
+.icon-service:before { content: "\e633"; }
+.icon-user:before { content: "\e635"; }
+.icon-editinfo:before { content: "\e62b"; }
+.icon-adregister:before { content: "\e629"; }
+.icon-lettery:before { content: "\e62f"; }
+.icon-deposit:before { content: "\e62a"; }
+.icon-add:before { content: "\e628"; }
+.icon-team:before { content: "\e634"; }
+.icon-bet:before { content: "\e65c"; }
+.icon-gameinformation:before { content: "\e62c"; }
+.icon-search:before { content: "\e649"; }
+.icon-cardslist:before { content: "\e659"; }
+.icon-trend:before { content: "\e629"; }
+.icon-home:before { content: "\e65f"; }
+.icon-letterylist:before { content: "\e66a"; }
+.icon-lettery1:before { content: "\e66b"; }

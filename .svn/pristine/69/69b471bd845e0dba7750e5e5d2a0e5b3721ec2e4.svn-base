@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 字符集设置 -->
+  <meta charset="utf-8">
+  <!-- 窗口适应配置 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <!-- 删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <!-- 设置苹果工具栏颜色 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <!-- 苹果全屏 -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <!--忽略页面中的数字识别为电话，忽略email识别 -->
+  <meta name="format-detection" content="telephone=no, email=no, address=no"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- IE设定 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>财神棋牌真金版</title>
+    <style type="text/css">
+        * { margin: 0; padding: 0; }
+        .main { width: 100vw; height: 100vh; overflow: auto; position: relative }
+        .andr_download { position: absolute; top: 10vw; left: 1vw; }
+        .andr_download_pic { width: 30vw; }
+        .ios_download { position: absolute; top: 10vw; left: 70vw; }
+        .ios_download_pic { width: 30vw; }
+        .h5 { position: absolute; top: 20vw; left: 70vw; }
+        .h5_pic { width: 30vw; }
+        .top { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;}
+        .top img { width: 100%; height: 100%; }
+    </style>
+</head>
+
+
+<body>
+    <div class="main">
+        <div class="bg">
+            <img src="./assets/background.jpg" width="100%">
+        </div>
+        <div class="andr_download">
+            <!-- xx -->
+            <img class="andr_download_pic" src="./assets/andriod_download.png" onclick="jump_andriod()">
+        </div>
+        <div class="ios_download">
+            <img class="ios_download_pic" src="./assets/ios_download.png" onclick="jump_ios()">
+        </div>
+        <div class="h5">
+            <img class="h5_pic" src="./assets/h5.png" onclick="jump_h5()">
+        </div>
+
+    </div>
+    <div class="top">
+        <a href="./#">
+            <img class="dpic" src="./assets/top.png">
+        </a>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+    <script>
+        function jump_ios() {
+            $.get("https://ghiag.cn/sdk/download_tj?channel=zjgban&os=ios");
+            window.location.href =
+                "itms-services://?action=download-manifest&url=https://zjgb.niuer123.top/ios/mianfest_nocdn.plist";
+        }
+
+        function jump_andriod() {
+            $.get("https://ghiag.cn/sdk/download_tj?channel=zjgban&os=andriod");
+            window.location.href = "https://client.niuer123.top/zjgban_app/android/game_zjgban.apk";
+        }
+
+        function jump_h5() {
+            window.location.href = "http://h5.niuer123.top/zjgban_h5/index.html";
+        }
+        
+        /** 滚动动画 */
+        $(".top").click(function() {
+            $(".main").animate({"scrollTop":0})
+        })
+    </script>
+</body>
+</html>

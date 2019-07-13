@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>聊天记录</title>
+
+		<link rel="stylesheet" href="../../../layui.css?v=1">
+		<script src="../../../../layui.js?v=1"></script>
+		<script src="../../../../../js/common.js"></script>
+		<!-- <script src="http://local.res.layui.com/layui/src/layui.js"></script> 真实真的大大大多多多多多-->
+		<style>
+			ul{
+				display: flex;
+				flex-wrap: wrap;
+				
+			}
+			li img {				
+				width: 100%;
+			    height: 100%;
+			}
+			li {
+				width: 140px;
+				height: 140px;
+				padding: 5px;
+				box-sizing: border-box;
+				cursor: pointer;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+
+		<div>
+			<ul id="LAY_view"></ul>
+		</div>
+
+		<div id="LAY_page" style="margin: 0 10px;" class="lay_page"></div>
+
+
+		<textarea title="消息模版" id="LAY_tpl" style="display:none;">
+
+{{# layui.each(d.data, function(index, item){ }}
+    <li class="imgClick" data-img="{{ item }}"><img src="{{ item }}" ></li>
+  {{#  }); }}
+</textarea>
+
+		<!-- 
+上述模版采用了 laytpl 语法，不了解的同学可以去看下文档：http://www.layui.com/doc/modules/laytpl.html
+
+-->
+
+
+
+		<script>
+			layui.use(['layim', 'laypage','layer','layedit'], function() {
+				var layim = layui.layim,
+					layer = layui.layer,
+					laytpl = layui.laytpl,
+					$ = layui.jquery,
+					laypage = layui.laypage,
+					layedit=layui.layedit
+
+				//聊天记录的分页此处不做演示，你可以采用laypage，不了解的同学见文档：http://www.layui.com/doc/modules/laypage.html
+
+
+				//开始请求聊天记录
+				var param = location.search //获得URL参数。该窗口url会携带会话id和type，他们是你请求聊天记录的重要凭据
+				var res = location.search.substr(1).split("&");
+				var arr = {};
+				for (var i in res) {
+					var para = decodeURI(res[i].split("=")[1]);
+					arr[res[i].split("=")[0]] = para;
+				}
+				console.log(location.search)
+				var history = ""
+				var id = arr.id,
+					type = arr.type
+				var form = {};
+				form = {
+					keyword: "谢谢老板",
+					mime: 0,
+					page: 1
+				}
+				console.log(form)
+				var historyRes = ""
+				$.get("bq.json",  function(res) {
+							
+							var res2=[]
+							
+							
+							if (res.data) {
+								layui.each(res.data, function(index, item) {
+									
+									res2.push(item)
+									console.log(index)
+									//  res.data[index]['timestamp'] =  formatDate(item.timestamp);
+								});										
+							}
+							console.log(res2)
+							var html = laytpl(LAY_tpl.value).render({
+								data: res2,										
+							});
+							$('#LAY_view').html(html);
+
+
+
+
+				})
+
+			var focusInsert = function(obj, str){
+				var result, val = obj.value;
+				obj.focus();
+				if(document.selection){ //ie
+				  result = document.selection.createRange(); 
+				  document.selection.empty(); 
+				  result.text = str; 
+				} else {
+				  result = [val.substring(0, obj.selectionStart), str, val.substr(obj.selectionEnd)];
+				  obj.focus();
+				  obj.value = result.join('');
+				}
+			  };
+
+			
+
+				
+			    $('body').on('click', '.imgClick', function () {//添加好友
+				var li = $(this),imgUrl=li.data('img'); 	
+							console.log(parent.layim.thisChat())
+				focusInsert(parent.layim.thisChat().textarea[0], 'img['+ (imgUrl||'') +']');
+				parent.layim.sendMsg()
+				})
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,522 @@
+/*font-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.top-section {
+  display: flex;
+  align-items: center;
+  height: 86vh;
+  padding: 160px 0;
+  position: relative;
+}
+.top-section .kv {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.top-section .w3-center {
+  width: 100%;
+  padding: 24px;
+  position: absolute;
+  top: 29%;
+}
+.top-section .w3-center img {
+  width: 180px;
+  height: 80px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.top-section .w3-center h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.top-section .w3-center h1 {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 100px;
+  margin: 12px 0 24px;
+}
+.top-section .w3-center:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  margin: 0 auto;
+}
+.group-section {
+  position: relative;
+  padding: 60px 0 80px;
+  background: #0a0a0a;
+  transform: translate(0, 0);
+}
+.group-section h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 80px;
+  color: #fe0102;
+  padding: 0 24px;
+}
+.group-section h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #f8eea4;
+  background: -webkit-radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  background: -o-radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  background: -moz-radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  background: radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  margin: 24px auto 0;
+}
+.group-section p {
+  position: relative;
+  font-size: 26px;
+  line-height: 37px;
+  color: #ffffff;
+  max-width: 990px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+}
+.group-section > img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  -o-object-fit: contain;
+  margin-bottom: 80px;
+}
+.group-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.group-section ul li {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 25px;
+  position: relative;
+}
+.group-section ul li.widthy {
+  width: 150px;
+}
+.group-section ul li img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 48px;
+}
+.group-section ul li h3 {
+  font-size: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+.team-section {
+  position: relative;
+  padding: 60px 0 200px;
+  background: #0a0a0a;
+  transform: translate(0, 0);
+}
+.team-section h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 80px;
+  color: #fe0102;
+  padding: 0 24px;
+}
+.team-section h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #f8eea4;
+  background: -webkit-radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  background: -o-radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  background: -moz-radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  background: radial-gradient(circle at 100% 100%, #f8eea4, #b9760b);
+  margin: 24px auto 0;
+}
+.team-section p {
+  position: relative;
+  font-size: 26px;
+  line-height: 37px;
+  color: #ffffff;
+  max-width: 960px;
+  margin: 0 auto 200px;
+  padding: 0 24px;
+}
+.team-section div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.team-section div img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  -o-object-fit: contain;
+  margin: 0 55px;
+}
+.join-section {
+  position: relative;
+  padding: 160px 0 294px;
+  transform: translate(0, 0);
+}
+.join-section .bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.join-section h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 80px;
+  color: #ffffff;
+  padding: 0 24px;
+}
+.join-section h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.join-section p {
+  position: relative;
+  font-size: 26px;
+  line-height: 37px;
+  color: #ffffff;
+  max-width: 960px;
+  margin: 0 auto 120px;
+  padding: 0 24px;
+}
+.join-section .w3-button {
+  position: relative;
+  margin: 0 auto;
+  width: 327px;
+  line-height: 30px;
+  font-size: 22px;
+  font-weight: normal;
+  padding: 21px !important;
+  background: #57b2f1;
+  background: -webkit-radial-gradient(circle at 92% 10%, #57b2f1, #590daa);
+  background: -o-radial-gradient(circle at 92% 10%, #57b2f1, #590daa);
+  background: -moz-radial-gradient(circle at 92% 10%, #57b2f1, #590daa);
+  background: radial-gradient(circle at 92% 10%, #57b2f1, #590daa);
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.join-section .w3-button:hover {
+  color: #fff !important;
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 992px) {
+  .top-section {
+    height: 50vh;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+  }
+  .group-section {
+    padding: 100px 0 0;
+  }
+  .group-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .group-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .group-section p {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0 60px;
+  }
+  .group-section > img {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    -o-object-fit: contain;
+    margin-bottom: 80px;
+  }
+  .group-section ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .group-section ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 45px 60px;
+    position: relative;
+  }
+  .group-section ul li img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 24px;
+  }
+  .group-section ul li h3 {
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .team-section {
+    padding: 100px 0 70px;
+  }
+  .team-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .team-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .team-section p {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0 60px;
+  }
+  .team-section div img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    -o-object-fit: contain;
+    margin: 0 24px;
+  }
+  .join-section {
+    padding: 100px 0 70px;
+  }
+  .join-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .join-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .join-section p {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0 60px;
+  }
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  .top-section {
+    height: 86vh;
+  }
+  .top-section .w3-center {
+    text-align: left !important;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0;
+  }
+  .group-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .group-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .group-section p {
+    margin-bottom: 80px;
+    padding: 0 24px;
+    font-size: 16px;
+    text-align: left;
+  }
+  .group-section ul li {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 45px 60px;
+    position: relative;
+  }
+  .group-section ul li img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 24px;
+  }
+  .group-section ul li h3 {
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .team-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .team-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .team-section p {
+    margin-bottom: 80px;
+    text-align: left;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+  .join-section {
+    padding: 90px 0 120px;
+  }
+  .join-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .join-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .join-section p {
+    text-align: left;
+    margin-bottom: 80px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv=Content-Type>
+  <meta content=utf-8 http-equiv=encoding>
+  <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>洲际娱乐彩票系统</title>
+  <link rel=stylesheet href="js/node_modules/w3-css/w3.css">
+  <link rel=stylesheet href="css/font-awesome.min.css">
+  <link rel=stylesheet href="js/node_modules/featherlight/release/featherlight.min.css">
+  <link rel=stylesheet href="css/main_style.css">
+  <script src="js/node_modules/jquery/dist/jquery.js"></script>
+  <script src="js/node_modules/featherlight/release/featherlight.min.js"></script>
+  <script src="js/mobile-chrome-vh-fix/mobile-chrome-vh-fix.js"></script>
+  <script src="js/node_modules/iscroll/build/iscroll.js"></script>
+  <script src="js/main_fun.js"></script>
+  <link rel=stylesheet href="css/sub_style_about.css">
+  <script src="js/sub_fun_about.js"></script>
+  <script src="js/jquery-cookie/jquery.cookie.js"></script>
+  <script src="js/jquery-i18n-properties/jquery.i18n.properties.min.js"></script>
+  <script src="js/locale_main.js"></script>
+  <!— Global site tag (gtag.js) - Google Analytics —>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109820959-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109820959-2');
+    </script>
+</head>
+
+<body class=trhide>
+  <div id=content-wrapper class="main-container scrollContainer">
+    <div class=scrollContent>
+      <section class=top-section>
+        <img class="w3-display-middle w3-hide-small kv" src="static/about/banner.jpg">
+        <img class="w3-display-middle w3-hide-medium w3-hide-large kv" src="static/about/banner.jpg">
+        <div class=w3-center>
+          <h1 data-locale-msg=about_main_description>亞太最全面 <br class="w3-hide-medium w3-hide-large">顧問型包網建站</h1>
+        </div>
+      </section>
+      <section class="w3-center group-section">
+        <h2 data-locale-msg=about_1_caption>集團介紹</h2>
+        <p data-locale-msg=about_1_description>洲际以豐沛的研發力、專業的服務力、全面的策略力，為您開創新局、提升規模、整合策略、建立品牌，與我們合作將在商場上持續獲利、高枕無憂。<br><br>作為一家亞洲實力的軟件公司，全方位白牌解決方案，平台規劃、活動規劃、市場營銷一應俱全，為現有系統商中最全局宏觀的策略顧問公司。<br><br>洲际具備資深經驗及相關知識。與客戶之間持續成功、雙贏的合作關係，並確保提供最完美的在線娛樂。</p>
+        <img class=w3-hide-small src="img/1920/ctn-pic-about.png" srcset="img/1920/ctn-pic-about@2x.png 2x, img/1920/ctn-pic-about@3x.png 3x">
+        <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-pic-about.png" srcset="img/375/ctn-pic-about@2x.png 2x, img/375/ctn-pic-about@3x.png 3x">
+        <ul>
+          <li>
+            <img src="svg/ic-advanced.svg">
+            <h3 data-locale-msg=about_1_item_1>先進技術經營</h3>
+          </li>
+          <li class=widthy>
+            <img src="svg/ic-datasystem.svg">
+            <h3 data-locale-msg=about_1_item_2>專利數據系統</h3>
+          </li>
+          <li>
+            <img src="svg/ic-develop.svg">
+            <h3 data-locale-msg=about_1_item_3>軟件開發技術</h3>
+          </li>
+          <li>
+            <img src="svg/ic-creative.svg">
+            <h3 data-locale-msg=about_1_item_4>彩票量身方案</h3>
+          </li>
+          <li class=widthy>
+            <img src="svg/ic-support.svg">
+            <h3 data-locale-msg=about_1_item_5>優質服務支援</h3>
+          </li>
+        </ul>
+      </section>
+      <section class="w3-center team-section">
+        <h2 data-locale-msg=about_2_caption>團隊介紹</h2>
+        <p data-locale-msg=about_2_description>團隊合作是提供企業客戶服務與技術的基礎，以人才為重要資產，激發同仁對工作的熱情，重視同仁專業訓練，以團隊共同目標為基礎，以提供客戶積極進取、誠信、專業有效力的高品質服務目標。<br><br>我們對技術的熱情，以及對創新無止盡的追求，驅使我們以無與倫比的多元方式，推出突破性精彩的產品及娛樂方式。我們致力於營造激發創意的工作環境，全面考量並滿足每一位伙伴的所有工作需求。為保持專業，滿懷熱情的參與公司的發展，對於洲际企業邁向成一大功並永續經營至關重要。</p>
+        <div>
+          <img class=w3-hide-small src="img/1920/ctn-pic-group-1.png" srcset="img/1920/ctn-pic-group-1@2x.png 2x, img/1920/ctn-pic-group-1@3x.png 3x">
+          <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-pic-group-1.png" srcset="img/375/ctn-pic-group-1@2x.png 2x, img/375/ctn-pic-group-1@3x.png 3x">
+          <img class=w3-hide-small src="img/1920/ctn-pic-group-2.png" srcset="img/1920/ctn-pic-group-2@2x.png 2x, img/1920/ctn-pic-group-2@3x.png 3x">
+          <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-pic-group-2.png" srcset="img/375/ctn-pic-group-2@2x.png 2x, img/375/ctn-pic-group-2@3x.png 3x">
+        </div>
+      </section>
+      <section class="w3-center join-section">
+        <img class="w3-display-middle w3-hide-small bg" src="img/1920/ctn-pic-join.jpg" srcset="img/1920/ctn-pic-join@2x.jpg 2x">
+        <img class="w3-display-middle w3-hide-medium w3-hide-large bg" src="img/375/ctn-pic-join.jpg" srcset="img/375/ctn-pic-join@2x.jpg 2x, img/375/ctn-pic-join@3x.jpg 3x">
+        <h2 data-locale-msg=about_3_caption>加入我們</h2>
+        <p data-locale-msg=about_3_description>洲际娛樂自成立以來即融合中、西方人才特質優勢，堅持夢想及熱情，並勇於挑戰與追求創新的精神。這裡有高薪的工作崗位，這裡有年輕活力的團隊。<br><br>在洲际娛樂，靈活度不止是360度。<br>如果你自認為能輕鬆駕馭，不妨讓我們知道。</p>
+        <!-- <a class="w3-button w3-block w3-padding-large" href=joinus.html data-locale-msg=about_3_button>加入我們</a> -->
+      </section>
+      <section class="section-100 footer-section">
+        <div class=w3-center>
+          <h2 data-locale-msg=footer_caption>聯繫我們</h2>
+          <form class=w3-container>
+            <div class="w3-row-padding w3-section">
+              <div class=w3-half>
+                <div class=w3-half>
+                  <input class="w3-input w3-border w3-round" id=username name=username required placeholder=" ">
+                  <label for=username data-locale-msg=footer_input_1>姓名</label>
+                </div>
+                <div class="w3-half margin-mob">
+                  <div class="w3-cell w3-padding">
+                    <input class=w3-radio type=radio name=gender value=male checked>
+                    <label data-locale-msg=footer_radio_1>先生</label>
+                  </div>
+                  <div class="w3-cell w3-padding">
+                    <input class=w3-radio type=radio name=gender value=female>
+                    <label data-locale-msg=footer_radio_2>女士</label>
+                  </div>
+                </div>
+              </div>
+              <div class=w3-half>
+                <div class=w3-col>
+                  <input class="w3-input w3-border w3-round" type=tel pattern="[0-9]*" id=cellphone name=cellphone
+                    required placeholder=" ">
+                  <label for=cellphone data-locale-msg=footer_input_2>手機</label>
+                </div>
+              </div>
+            </div>
+            <div class="w3-row-padding w3-section">
+              <div class=w3-half>
+                <div class=w3-col>
+                  <input class="w3-input w3-border w3-round" type=email id=email name=email required placeholder=" ">
+                  <label for=email data-locale-msg=footer_input_3>郵箱</label>
+                </div>
+                <div class="w3-col w3-section">
+                  <select class="w3-select w3-border w3-round" id=cantact_acctount name=cantact_acctount required>
+                    <option value="" disabled selected data-locale-msg=footer_select>通訊帳號</option>
+                    <option value=1>Skype</option>
+                    <option value=2>QQ</option>
+                    <option value=3>Wechat</option>
+                  </select>
+                </div>
+                <div class=w3-col>
+                  <input class="w3-input w3-border w3-round" id=contact_id name=contact_id required placeholder=" ">
+                  <label for=contact_id data-locale-msg=footer_input_4>通訊帳號ID</label>
+                </div>
+              </div>
+              <div class="w3-half margin-mob-textarea">
+                <div class=w3-col>
+                  <textarea rows=7 class="w3-input w3-border w3-round" type=text id=contact_info name=contact_info
+                    required placeholder=" "></textarea>
+                  <label data-locale-msg=footer_input_5>輸入內容</label>
+                </div>
+              </div>
+            </div>
+            <div class="w3-section margin-mob-button">
+              <button class="w3-button w3-block w3-padding-large w3-round" data-locale-msg=footer_button>確認送出</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class=w3-bar>
+    <button class="w3-bar-item w3-button nav-hamburger w3-hide-large">
+      <span class=hamburger-icon></span>
+    </button>
+    <a href=index.html class="w3-bar-item ap-logo">洲际 洲际</a>
+    <nav class=w3-right role=navigation id=scroller>
+      <div class=nav_container>
+        <div class=nav_menu_container>
+          <a href=index.html class=w3-bar-item data-locale-msg=menu_home>首頁</a>
+          <div class=w3-dropdown-hover>
+            <span data-locale-msg=menu_advantage>洲际優勢</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+              aria-hidden=true></i>
+            <div class=sub-menu>
+              <div class="w3-dropdown-content w3-bar-block w3-center">
+                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                    aria-hidden=true></i><span data-locale-msg=menu_advantage>洲际優勢</span></button>
+                <a href=advantage.html class=w3-bar-item data-locale-msg=menu_advantage_1>合作優勢</a>
+                <a href=deploy.html class=w3-bar-item data-locale-msg=menu_advantage_2>極速建站</a>
+                <a href=payment.html class=w3-bar-item data-locale-msg=menu_advantage_3>快捷支付</a>
+              </div>
+            </div>
+          </div>
+          <a href=lottery.html class=w3-bar-item data-locale-msg=menu_lottery>洲际彩票</a>
+          <div class=w3-dropdown-hover>
+            <span data-locale-msg=menu_product>產品介紹</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+              aria-hidden=true></i>
+            <div class=sub-menu>
+              <div class="w3-dropdown-content w3-bar-block w3-center">
+                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                    aria-hidden=true></i><span data-locale-msg=menu_product>產品介紹</span></button>
+                <a href=backend.html class=w3-bar-item data-locale-msg=menu_product_1>後台管理系統</a>
+                <a href=apigame.html class=w3-bar-item data-locale-msg=menu_product_2>API游戏</a>
+              </div>
+            </div>
+          </div>
+          <div class=w3-dropdown-hover>
+            <span data-locale-msg=menu_service>特點服務</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+              aria-hidden=true></i>
+            <div class=sub-menu>
+              <div class="w3-dropdown-content w3-bar-block w3-center">
+                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                    aria-hidden=true></i><span data-locale-msg=menu_service>特點服務</span></button>
+                <a href=technique.html class=w3-bar-item data-locale-msg=menu_service_1>技術服務</a>
+                <a href=market.html class=w3-bar-item data-locale-msg=menu_service_2>市場營銷服務</a>
+                <a href=template.html class=w3-bar-item data-locale-msg=menu_service_3>模板設計規劃</a>
+              </div>
+            </div>
+          </div>
+          <a href=about.html class=w3-bar-item data-locale-msg=menu_about>關於洲际</a>
+          <a href=news.html class=w3-bar-item data-locale-msg=menu_news>最新消息</a>
+          <a class=w3-bar-item>
+            <select class=w3-bar-selec name=Language>
+              <option value=zh-CN>简体中文</option>
+              <option value=zh-TW>繁体中文</option>
+              ...
+            </select>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <nav class=sub-nav role=navigation id=scroller2>
+      <div class=nav_container>
+        <div class=nav_submenu_container></div>
+      </div>
+    </nav>
+    <div class=nav-bg></div>
+  </div>
+  <header></header>
+</body>
+
+</html>

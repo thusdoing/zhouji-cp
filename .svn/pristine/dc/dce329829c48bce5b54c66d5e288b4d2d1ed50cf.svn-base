@@ -1,0 +1,5 @@
+.play-content .play-content-list{
+  // justify-content: space-between;
+  margin-bottom: 15px;
+  align-items: center;
+}

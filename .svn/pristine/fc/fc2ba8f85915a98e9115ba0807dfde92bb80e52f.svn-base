@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>发现</title>
+		<link rel="stylesheet" href="../../../layui.css?v=1">
+		<link rel="stylesheet" href="../../../layui.demo.css">
+		<script src="../../../../layui.js?v=1"></script>
+		<script type="text/javascript" src="../../../../../js/common.js"></script>
+		<style type="text/css">
+		
+			.layui-find-list li img {
+				position: absolute;
+				left: 15px;
+				top: 8px;
+				width: 36px;
+				height: 36px;
+				border-radius: 100%;
+			}
+
+			.layui-find-list li {
+				position: relative;
+				height: 90px;
+				;
+				padding: 5px 15px 5px 60px;
+				font-size: 0;
+				cursor: pointer;
+			}
+
+			.layui-find-list li * {
+				display: inline-block;
+				vertical-align: top;
+				font-size: 14px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.layui-find-list li span {
+				margin-top: 4px;
+				max-width: 155px;
+			}
+
+			.layui-find-list li p {
+				display: block;
+				line-height: 18px;
+				font-size: 12px;
+				color: #999;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.back {
+				cursor: pointer;
+			}
+
+			.lay_page {
+				position: fixed;
+				bottom: 0;
+				margin-left: -15px;
+				margin-bottom: 20px;
+				background: #fff;
+				width: 100%;
+			}
+
+			.layui-laypage {
+				width: 105px;
+				margin: 0 auto;
+				display: block
+			}
+		</style>
+
+		<script>
+			//config的设置是全局的
+			layui.config({
+			  base: '../../../../../js/' //假设这是你存放拓展模块的根目录
+			}).extend({ //设定模块别名
+			  api: 'api',
+			   main:'main'//如果 mymod.js 是在根目录，也可以不用设定别名
+			});			
+			
+			layui.use([ 'layim','laypage','form','api','main'], function(){
+  var layim = layui.layim
+  , layer = layui.layer
+  ,laytpl = layui.laytpl
+  ,form = layui.form
+  ,$ = layui.jquery
+  ,laypage = layui.laypage,
+  api=layui.api,
+  im=layui.im
+	var cache = parent.layui.layim.cache();  
+	//推荐好友
+	$(function(){getRecommend()});
+			function getRecommend(){					
+						api.getTuiJian()					
+			}
+    $('body').on('click', '.add', function () {//添加好友
+        var othis = $(this), type = othis.data('type');
+		
+		            var li = othis.parents('li') || othis.parent()							
+						, uid = li.data('uid') || li.data('id'),
+						avatar = li.data('avatar') || "../../../../images/0.jpg",
+						approval = li.data('approval')
+						, name = li.data('name');
+						console.log(layui.data("mine").id,uid)
+						if(layui.data("mine").id==uid){
+							layer.msg("不能添加自己为好友")
+						}else{
+							layim.add({
+											  type: type //friend：申请加好友、group：申请加群
+											  ,username: name //好友昵称，若申请加群，参数为：groupname
+											  ,avatar: avatar   //头像
+											  ,submit: function(group, remark, index){ //一般在此执行Ajax和WS，以通知对方
+// 												console.log(group); //获取选择的好友分组ID，若为添加群，则不返回值
+// 												console.log(remark); //获取附加信息
+												layer.close(index); //关闭改面板
+												api.addFriend(uid,remark,group)
+											   
+											  }
+							}); 
+						}
+						     
+    });
+	    $('body').on('click', '.showInfo', function () { //显示个人资料
+	    var othis = $(this), type = othis.data('type');		
+		            var li = othis.parents('li') || othis.parent()	
+											console.log(li)
+					      im.getInformation(li[0].dataset.uid,type)
+	});
+    $('body').on('click', '.createGroup', function () {//创建群
+        var othis = $(this);
+        parent.layui.im.createGroup(othis);
+    });
+    $('body').on('click', '.back', function () {//返回推荐好友
+        getRecommend();
+        $("#LAY_page").css("display","none");
+    });
+
+	$("body").keydown(function(event){ 
+		if(event.keyCode==13){ 
+			$(".find").click(); 
+		} 
+	});   
+	//查找好友
+    $('body').on('click', '.find', function () {
+    	$("#LAY_page").css("display","block");
+        var othis = $(this),input = othis.parents('.layui-col-space3').find('input').val();
+		console.log(othis)
+        var addType = $('input:radio:checked').val();
+		console.log(input,addType)
+        if (input) {
+  			var url = ""; 
+				var res={"code":0,"count":"","data":{"count":"2","limit":16}}
+				// var res = eval('(' + data + ')');
+				console.log(res.code)
+				if(res.code != 0){
+				    return layer.msg(res.msg);
+				}		
+				laypage.render({
+				  elem: 'LAY_page'
+				  ,count: res.data.count
+				  ,limit: res.data.limit
+				  ,prev: '<i class="layui-icon">&#58970;</i>'
+				  ,next: '<i class="layui-icon">&#xe65b;</i>'
+				  ,layout: ['prev', 'next']
+				  ,curr: res.data.limit
+				  ,jump: function(obj, first){
+				    if(first){
+				      var page = res.data.limit;
+				    }else{
+				      var page = obj.curr;
+				    }  
+						api.findFriend(input,addType)
+				  }
+				});    
+
+        }
+    });    
+});
+</script>
+	</head>
+	<body>
+		<div class="layui-form">
+			<div class="layui-container" style="padding:0">
+				<div class="layui-row layui-col-space3">
+					<div class="layui-col-xs7 mt15">
+						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入会员号/昵称/手机号/邮箱" class="layui-input">
+					</div>
+					<div class="layui-col-xs1 mt15">
+						<button class="layui-btn btncolor find">查找</button>
+					</div>
+
+					<div class="layui-col-xs3 mt15">
+						<input type="radio" name="add" value="friend" title="找人" checked="">
+						<!-- <input type="radio" name="add" value="group" title="找群"> -->
+						<!-- <button class="layui-btn layui-btn-xs btncolor createGroup">我要建群</button> -->
+					</div>
+				</div>
+				<div id="LAY_view"></div>
+				<textarea title="消息模版" id="LAY_tpl" style="display:none;">
+			<fieldset class="layui-elem-field layui-field-title">
+			  <legend>{{ d.legend}}</legend>
+			</fieldset>	
+			<div class="layui-row ">
+				{{# if(d.type == 'friend'){ }}
+					{{#  layui.each(d.data, function(index, item){ }}
+					<div class="layui-col-xs3 layui-find-list">
+						<li layim-event="add" data-type="friend" data-index="0" data-uid="{{ item.memberIdx }}" data-name="{{item.memberName}}" data-avatar="{{item.avatar}}">
+							<img src="{{item.avatar}}" onerror="imgerrorfun()" class="showInfo">
+							<span>{{item.memberName}}({{item.memberIdx}})</span>
+							<p>{{item.signature}}  {{#  if(item.signature == ''){ }}我很懒，懒得写签名{{#  } }} </p>
+							<button class="layui-btn layui-btn-xs btncolor add" data-type="friend"><i class="layui-icon">&#xe654;</i>加好友</button>
+						</li>
+					</div>
+					{{#  }); }}
+				{{# }else{ }}
+					{{#  layui.each(d.data, function(index, item){ }}
+					<div class="layui-col-xs3 layui-find-list">
+						<li layim-event="add" data-type="group" data-approval="{{ item.approval }}" data-index="0" data-uid="{{ item.groupIdx }}" data-name="{{item.groupName}}">
+							<img src="{{item.groupImg}} " onerror="imgerrorfun()" >
+							<span>{{item.groupName}}({{item.groupIdx}})</span>
+							<p>{{item.des}}  {{#  if(item.des == ''){ }}无{{#  } }} </p>
+							<button class="layui-btn layui-btn-xs btncolor add" data-type="group"><i class="layui-icon">&#xe654;</i>加群</button>
+						</li>
+					</div>
+					{{#  }); }}
+				{{# } }}
+			</div>	
+        </textarea>
+
+				<div class="lay_page" id="LAY_page"></div>
+			</div>
+		</div>
+
+
+	</body>
+</html>

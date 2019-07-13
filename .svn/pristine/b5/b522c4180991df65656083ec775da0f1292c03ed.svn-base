@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 字符集设置 -->
+  <meta charset="utf-8">
+  <!-- 窗口适应配置 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <!-- 删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <!-- 设置苹果工具栏颜色 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <!-- 苹果全屏 -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <!--忽略页面中的数字识别为电话，忽略email识别 -->
+  <meta name="format-detection" content="telephone=no, email=no, address=no"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- IE设定 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Document</title>
+
+  <link rel="stylesheet" type="text/css" href="./index.css">
+
+  <style type="text/css">
+    .site-icon { display: inline-block; background-position: 0 0; background-size: 100% 100%;}
+    .a-l-W-X-Q { height: 22px; width: 22px;}
+  </style>
+</head>
+
+<body>
+  <div class="a-l-A-B">
+
+      <div class="a-l-o a-l-C-o">
+        <div class="a-l-D"><a class="a-j-k a-l-D-E"></a></div>
+        <div class="a-l-L">
+          <div class="a-l-L-z">
+            <div class="a-l-L-M-y"><input class="a-l-L-M-N" type="text" placeholder="吃闭门羹男子杀死6个月大儿子"></div>
+            <div class="a-l-L-M-z-O">热搜</div>
+            <div class="a-l-L-M-e">
+              <form class="a-l-L-R fc"><select name="select" class="a-l-L-select">
+                  <option value="integrated">搜索+</option>
+                  <option value="baidu">百度</option>
+                  <option value="aol">AOL</option>
+                  <option value="google">GOOGLE</option>
+                </select>
+                <div class="a-l-L-S-T"></div>
+              </form>
+            </div>
+          </div>
+          <div class="a-l-L-m-y">
+            <div class="a-l-m a-l-L-m" site-c-category="m-se-submit-in-WEB" site-c-action="m-se-integrated-submit-click" site-c-label="m-se-integrated">
+              <div class="a-L-m-Q a-j-k"></div>
+            </div>
+          </div>
+          <div class="a-l-H-I-B" style="display: none;">
+            <div class="a-l-p"><a class="a-l-H-I-J" href="http://www.cankaoxiaoxi.com/tg/265/20180917/2327238.shtml" target="_blank">她给自己发2000多个红包</a></div>
+            <div class="a-l-p"><a class="a-l-H-I-J" href="http://www.cankaoxiaoxi.com/tg/265/20180917/2327230.shtml" target="_blank">男子长期偷拍女性臀部近千张</a></div>
+            <div class="a-l-p"><a class="a-l-H-I-J" href="http://www.cankaoxiaoxi.com/tg/265/20180917/2327231.shtml" target="_blank">男子婚内出轨50多次 老婆气炸</a></div>
+            <div class="a-l-p"><a class="a-l-H-I-J" href="http://www.cankaoxiaoxi.com/tg/265/20180917/2327227.shtml" target="_blank">吃闭门羹男子杀死6个月大儿子</a></div>
+            <div class="a-l-p"><a class="a-l-H-I-J" href="http://www.cankaoxiaoxi.com/tg/265/20180917/2327225.shtml" target="_blank">注意！遇到这些网络陷阱要小心</a></div>
+            <div class="a-l-p a-l-H-I-K">
+              <div class="a-j-k a-l-m a-l-H-I-close-m" site-c-category="mobile-page-event" site-c-label="button-close-hottopic">关闭热搜</div>
+            </div>
+          </div>
+        </div>
+        <div class="a-l-C-F">
+          <div class="a-l-C-F-date a-j-k">-</div>
+          <div id="weatherContainer" class="a-l-C-F-G a-j-k"></div>
+        </div>
+      </div>
+
+
+  <div class="a-l-o a-l-q-r a-l-W-X-o">
+    <div class="a-l-p row">
+      <div class="a-j-k a-l-p-Y col"> <div class="a-l-Z-ab"></div><a href="http://www.google.cn" target="_blank" class="a-l-W-X-J"> <span class="a-j-k a-l-W-X-Q a-l-W-X-fb site-icon" style="background-image: url('./icons/bd.png')"></span> <span class="a-l-W-X-e">谷歌</span></a> </div>
+      <div class="a-j-k a-l-p-Y col"> <div class="a-l-Z-ab"></div><a href="http://www.google.cn" target="_blank" class="a-l-W-X-J"> <span class="a-j-k a-l-W-X-Q a-l-W-X-fb site-icon" style="background-image: url('./icons/bd.png')"></span> <span class="a-l-W-X-e">谷歌</span></a> </div>
+    </div>
+    <div class="a-l-p row">
+      <div class="a-j-k a-l-p-Y col"> <div class="a-l-Z-ab"></div><a href="http://www.google.cn" target="_blank" class="a-l-W-X-J"> <span class="a-j-k a-l-W-X-Q a-l-W-X-fb site-icon" style="background-image: url('./icons/bd.png')"></span> <span class="a-l-W-X-e">谷歌</span></a> </div>
+      <div class="a-j-k a-l-p-Y col"> <div class="a-l-Z-ab"></div><a href="http://www.google.cn" target="_blank" class="a-l-W-X-J"> <span class="a-j-k a-l-W-X-Q a-l-W-X-fb site-icon" style="background-image: url('./icons/bd.png')"></span> <span class="a-l-W-X-e">谷歌</span></a> </div>
+    </div>
+  </div>
+
+  <div id="navApp" style="display: none;">
+    <div class="a-l-o a-l-Mb-Nb-o" v-for="d of navigation">
+      <div class="a-l-q-r a-l-q-r-s" site-c-category="mobile-page-event" site-c-label="button-coolsite-toggle"><span class="a-l-b">{{d.name}}</span>
+        <div class="a-j-k a-l-t-m"></div>
+      </div>
+      <div class="a-l-Mb-Nb-z">
+        <div class="a-l-p" v-for="d1 of d.navs">
+          <div class="a-j-k a-l-Mb-Nb-Ob" site-c-category="mobile-page-event" site-c-label="button-news-catalog"><span class="a-l-Mb-Nb-Ob-e">{{d1.name}}</span></div>
+          <div class="a-l-Mb-Nb-Pb" site-c-category="mobile-page-event" site-c-label="links-news-catalog">
+            <div class="a-l-Mb-Nb-Pb-Y" v-for="d2 of d1.links"><a class="a-l-Mb-Nb-J" v-bind:href="d2.link" target="_blank">{{d2.name}}</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="./data.js"></script>
+  <script> new Vue({ el: '#navApp', data: data, created() {
+   document.getElementById("navApp").style.display = "block";
+  }, });</script>
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style>
+			body{
+				height: 100%;
+				min-width: 1600px;
+				background: url(img/pcbj.jpg) no-repeat top center;
+				/* background-size: cover; */
+			}
+			 input:-webkit-autofill {
+				 -webkit-box-shadow: 0 0 0 1000px #CAD3DC inset !important;
+			 }
+			#body_{
+				width:480px;	
+				height: 90%;				
+				overflow: hidden;				
+				margin: auto;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			.logo{
+				width: 30%;				
+				height: auto;
+				margin: 0 auto;
+				/* margin-top: 5%; */
+				margin-bottom: 5%;
+			}
+			.logo img{
+				width: 100%;
+			}
+			.from_login{
+					
+				margin: 0 auto;			
+				padding: 1.875rem 5rem;				
+				background: #EEECED;				
+				border-radius: 10px;
+			}
+			/* .user{
+				background: url(img/zhanghaopc.png) no-repeat 8% center #CAD3DC;
+				background-size: 20px;
+				padding-left: 80px !important;
+			} */
+			.user input{	
+				width: 100%;
+				height: 50px;
+				box-sizing: border-box;
+				margin: 0 auto;
+				border: none;
+				border-bottom: 1px solid #fff;
+				background: #CAD3DC;
+				
+				padding-left: 80px !important;
+				font-size: 20px;
+				margin-bottom: 10%;
+				color: #fff;
+				outline:none;
+				border-radius: 7px;
+			}			
+			.user-icon{
+				width: 10%;
+				height: 49px;
+				box-sizing: border-box;
+				position: absolute;
+				z-index: 3;		
+				background: url(img/zhanghaopc.png) no-repeat right center #CAD3DC;	
+			    background-size: 20px;				
+				border-right: none;
+				border-radius: 7px;
+			}
+			
+			.pwd input{		
+				width: 100%;
+				height: 50px;
+				border-style: none;	
+			     border-bottom: 1px solid #fff;
+				box-sizing: border-box;
+				background: #CAD3DC;
+				padding-left: 80px !important;
+				font-size: 20px;
+				color: #fff;
+				outline:none;
+				border-radius: 7px;
+				
+			}
+			.pwd-icon{
+				width: 10%;
+				height: 49px;
+				box-sizing: border-box;
+				position: absolute;
+				z-index: 3;		
+				background: url(img/mimapc.png) no-repeat right center  #CAD3DC;
+				background-size: 20px;		
+				border-right: none;
+				border-radius: 7px;
+			}
+			 #login {
+				width: 100% !important;
+				display:block;
+				margin: 0 auto;
+				box-sizing: border-box;
+				height: 0;
+				padding-bottom: 17%;
+				background: url(img/dlpc.png) no-repeat ;
+				background-size: 100% auto;				
+				margin-top: 15%;
+				border-style: none;
+				
+				outline:none
+			}
+		
+			.reg_{
+				margin-top: 1.25rem;
+				text-align: center;
+			}
+			.reg_ a{
+				text-decoration: none;
+				
+			}
+			#reg{
+				color:#00C6FF;
+				float: right;
+			}
+			#forgetPwd{
+				color:#fff;
+				float: right;
+			}
+		</style>
+
+	</head>
+	
+	<body>
+
+		<div id="body_">
+
+
+			<div class="logo">
+				<img src="img/logo_.png">
+				<div style="font-size: 35px;text-align: center;font-weight: 600;color: #fff;">
+					搭讪
+				</div>
+			</div>
+			
+			<div class="from_login">
+				<div style="text-align: center;font-size: 20px;margin-bottom: 40px; font-weight: 600;   letter-spacing: 5px;">
+					欢迎登录
+				</div>
+				<div class="user bg_user">
+					<div class="user-icon"></div>
+					<input type="text" name="account" id="account" placeholder="请输入账号" autocomplete="off"/>
+				</div>
+				<div class="pwd">
+					<div class="pwd-icon">						
+					</div>
+					<input type="password" name="password" id="password" placeholder="请输入密码" autocomplete="off"/>
+				</div>
+					<div class="reg_">
+										
+											<a id="reg" href="./res_pc.html">没有账号？立即注册</a>									
+										
+									</div>
+				<button id='login' ></button>
+
+				
+			</div>
+
+		</div>
+
+<script src="layui/layui.js"></script>  
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	layui.use(['layer', 'jquery'], function(layim){
+		var $=layui.jquery,
+			layer=layui.layer;
+			
+            $(function () {
+				 var t=localStorage.getItem("t");
+				if(t){
+					$("#account").val(JSON.parse(t).custName);
+					$("#password").val(JSON.parse(t).password);
+					//login__(JSON.parse(t));
+				}
+				 
+                document.onkeyup = function (e) {
+                    var ev = document.all ? window.event : e;
+                    if (ev.keyCode === 13) {
+                        $('#login').click();
+                    }
+                };
+            });
+            $('#login').click(function () {
+				
+                var custName = $('#account').val();
+                var password = $('#password').val();
+				
+                if (custName == '' || $.trim(custName).length == 0) {
+                    layer.tips('请输入登录名称', '#account', {tips: [3, '#3595cc'], anim: 4});
+                    return false;
+                }
+                if (password == '' || $.trim(password).length == 0) {
+                    layer.tips('请输入登录密码', '#password', {tips: [3, '#3595cc'], anim: 4});
+                    return false;
+                }
+				var t={custName:custName,password:password}
+				 localStorage.setItem("t",JSON.stringify(t))
+				login__(t);
+				
+				/* main.login(name,pwd) */
+			})
+			 var login__=function(d){				   
+			    	try {
+						window.webkit.messageHandlers.getDeviceToken.postMessage(null);
+					  }catch(err) {
+							login_api(d);
+					 }
+				    return false;
+			
+			}
+			function  login_api(d){
+				layer.load(0, {
+					shade: 0.1
+				});
+				xhrAjax('post',apiUrl + "login", d, function(data){
+					
+					if(JSON.parse(data).code=="0"){
+						layer.closeAll('loading');	  
+												  	location.href=JSON.parse(data).msg;		
+													var data_=JSON.parse(data);
+													localStorage.setItem("api_info",data_.data);
+													localStorage.setItem("currentsession",JSON.parse(data_.data).id);
+					}else{
+						layer.closeAll('loading');	  
+												  layer.msg(JSON.parse(data).msg)
+					}
+					
+				})
+				/* $.post(apiUrl+"/login",d,function(data){
+					
+						  if(JSON.parse(data).code=="0"){							 
+							  	location.href=JSON.parse(data).msg;		
+								var data_=JSON.parse(data);
+								localStorage.setItem("api_info",data_.data);
+								localStorage.setItem("currentsession",JSON.parse(data_.data).id);
+						  }else{
+							  layer.msg(JSON.parse(data).msg)
+						  }
+						  
+							
+					  }); */
+			} 
+			function update_iostoken(token){
+				var t=localStorage.getItem("t");
+				if(t){
+					t=JSON.parse(t);
+					var d={custName:t.custName,password:t.password,iostoken:token};
+					login_api(d);
+					return false;
+				}
+			}
+			
+function xhrAjax(type, url, data, success, failed){    
+
+    // 创建ajax对象
+    var xhr = null;
+    if(window.XMLHttpRequest){
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject('Microsoft.XMLHTTP')
+    }
+ 
+    var type = type.toUpperCase();
+    // 用于清除缓存
+    var random = Math.random();
+ 
+    if(typeof data == 'object'){
+        var str = '';
+        for(var key in data){
+            str += key+'='+data[key]+'&';
+        }
+        data = str.replace(/&$/, '');
+    }
+ 
+    if(type == 'GET'){
+        if(data){
+            xhr.open('GET', url + '?' + data, true);
+        } else {
+            xhr.open('GET', url + '?t=' + random, true);
+        }
+        xhr.send();
+ 
+    } else if(type == 'POST'){
+        xhr.open('POST', url, true);
+        // 如果需要像 html 表单那样 POST 数据，请使用 setRequestHeader() 来添加 http 头。
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send(data);
+    }
+ 
+    // 处理返回数据
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            if(xhr.status == 200){
+                success(xhr.responseText);
+            } else {
+                if(failed){
+                    failed(xhr.status);
+                }
+            }
+        }
+    }
+
+
+			
+	}
+	})
+	
+	
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+
+</html>

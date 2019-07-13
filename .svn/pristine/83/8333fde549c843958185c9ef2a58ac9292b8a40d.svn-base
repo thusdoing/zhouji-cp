@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <title>google</title>
+    <script src="./ismobile.js"></script>
+    <script>var flag = ismobile();if(!flag){location.href = './registerpc.html'}</script>
+    <link href="./Res/font/font.css" rel="stylesheet" />
+	<link href="./Content/mobile/main.min.css" rel="stylesheet" id="MainCss" />
+	<link href="./Content/mapping/mobile-biying/main.min.css" rel="stylesheet" id="MainCss" />
+    <script src="./Scripts/Common/jquery-2.2.1.js"></script>
+    <script src="./Scripts/Common/knockout-3.4.0.js"></script>
+    <script src="./Scripts/officialMobile/utils.dev.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#wnskaihu").click(function() {
+                $("#wnskaihuDialog").show();
+            });
+            $(".close-wnskaihuDialog").click(function () {
+                $("#wnskaihuDialog").hide();
+            })
+        })
+    </script>
+	<script>
+	eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+c.toString(a)+'\\b','g'),k[c])}}return p}('4.3=\'\\2\\1\\5\\6\\1\\0\\8\\0\\a\\7\\9\';',11,11,'u0020|u4e50|u767e|title|document|u95e8|u5a31|u518c|u002d|u9875|u6ce8'.split('|')))
+	</script>
+</head>
+<body class="login-bg">
+    <div class="wrap">
+        <div class="content">
+            <div class="page">
+                <header>
+                    <div class="head_main">
+                        <span class="keno"></span>
+                    </div>
+						                        <div class="fl"><a href="./loginh5.html" class="retum-btn"><i class="iconfont"></i>返回</a></div>
+                        <div class="fr"><a href="./loginh5.html" class="">登录</a>/<a href ="./registerh5.html" class="">注册</a></div>
+						                </header>
+                <div class="view-main registration-c">
+                    <div class="login">
+                        <h1>注册本公司账户</h1>
+                        <div class="line1"></div>
+                        <input type="hidden" id="hdErrorInfo" />
+                        <form id="regform" action="/Home/Register" method="post" autocomplete="off">
+                            <input type="hidden" name="agentNo" id="agentNo" value="">
+                            <div class="login-area">
+                                <div class="form-item"> 如果您已拥有本公司账户，<a href="./loginh5.html">点击此处登录</a></div>
+                                <div class="form-item" style="display:none;"><i class="iconfont icon-user"></i><span>介绍人</span> <input class="inp" type="text" name="hash" id="hash" maxlength="32" disabled=disabled value="" placeholder="介绍人" /></div>
+                                <div class="form-item"><i class="iconfont icon-user"></i><span>登录账号</span><input class="inp" type="text" id="account" name="account" maxlength="32" placeholder="账号必须为6-12为数字和字母组合" /><!--a id="getautoaccount" href="#" class="regi-btn">点击生成账号</a--></div>
+                                <div class="form-item"><i class="iconfont icon-editpwd"></i><span>登录密码</span><input class="inp" type="password" id="loginPass" name="loginPass" maxlength="20" placeholder="密码长度由6-13个数字或者字母组合"></div>
+                                <div class="form-item"><i class="iconfont icon-editpwd"></i><span>确认密码</span><input class="inp" type="password" id="reLoginPass" name="reLoginPass" maxlength="32" placeholder="密码长度由6-13个数字或者字母组合"></div>
+								<div class="form-item"><i class="iconfont icon-user"></i><span>邀请码</span><input class="inp" type="text" id="invitationCode" name="invitationCode" maxlength="32" placeholder="请输入邀请码" /></div>
+								<div class="form-item"><i class="iconfont icon-user"></i><span>手机号</span><input class="inp" type="text" id="mobile" name="mobile" maxlength="11" placeholder="请输入手机号" /></div>
+								
+                                <div class="code clear form-item"><span>验证码 </span><input class="inp" type="text" id="verifycode" name="verifycode" value="验证码"><span class="code-box"><img id="codeImg" src="/getVerCode?w=100&h=40&date=154667737610333" name="codeImg" ></span></div>
+                                <div>
+                                    <input class="agree-check" type="checkbox" id="ckagree" checked="checked">
+                                    <label>
+                                        同意并愿意遵守本公司<a id="wnskaihu" href="javascript:;" class="wns-kaihu">用户协议</a></a>
+                                    </label>
+                                </div>
+                                <div><a id="register" href="javascript:void(0);" class="regi-btn1">立即注册</a></div>
+                            </div>
+                        </form>
+                        <div id="successInfo" style="display:none;">
+                            <table border="0" cellspacing="5" cellpadding="5" class="regTab">
+                                <tbody>
+                                    <tr>
+                                        <td>注册成功，正在为您跳转登陆...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="display:none;" class="mask"  id="wnskaihuDialog" >
+                        <div class="wnskaihuDialog">
+                            <a href="javascript:;" class="close-wnskaihuDialog">x</a>
+                            <div title="开户协议">
+                                <ul style="text-align:left;">
+                                    <li>在开户后进行一次有效存款，恭喜您成为本公司有效会员！ </li>
+                                    <li>存款免手续费，开户最低入款金额100人民币。</li>
+                                    <li>本公司严禁会员有重复申请账号行为，每位玩家、每一住址 、每一电子邮箱、每一电话号码、相同支付卡/信用卡号码，及共享计算机环境(例如网吧、其他公共用计算机等)只能拥有一个帐户数据。</li>
+                                    <li>本公司是提供互联网投注服务的机构。请会员在注册前参考当地政府的法律，在博彩不被允许的地区，如有会员在本公司注册、下注，为会员个人行为，本公司不负责、承担任何相关责任。</li>
+                                    <li>无论是个人或是团体，如有任何威胁、滥用本公司名义的行为，本公司保留杈利取消、收回玩家账号。</li>
+                                    <li>玩家注册信息有争议时，为确保双方利益、杜绝身份盗用行为，本公司保留权利要求客户向我们提供充足有效的档，并以各种方式辨别客户是否符合资格享有我们的任何优惠。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Scripts/Home/WG.Home.Register.js"></script>
+    <script src="./Scripts/Home/WG.Home.Common.js"></script>
+</body>
+</html>

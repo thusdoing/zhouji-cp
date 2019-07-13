@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<style type="text/css">
+	.serchInput{
+		width: 300px;		
+    padding: 0 10px;
+    font-size: 12px;
+		margin-right: 10px;
+    margin-bottom: 10px;
+		vertical-align: middle;
+		white-space: nowrap;
+		box-sizing: border-box;
+	}
+	
+	/* #formSumbt{
+		width: 70%;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+	} */
+</style>
+<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+<script src="../../layui/layui.js"></script>
+<script src="../../js/common.js"></script>
+</head>
+<body style="margin: 20px;">
+ <div class="layui-btn-container" style="text-align: center;">	
+ 	<button class="layui-btn layui-btn-sm" data-type="reload" id='serchBtn' lay-event="serch"><i class="layui-icon">&#xe615;</i>搜索</button>
+ 		<div class="layui-inline serchInput">
+ 		  <input class="layui-input" name="gname" id="serch" autocomplete="off" style="height: 30px !important;
+   line-height: 30px;">
+ 		</div>
+ 	<!-- <button class="layui-btn layui-btn-sm" id="add">增加群</button> -->
+ </div>	
+<table class="layui-hide" id="test" lay-filter="test"></table>
+
+<!-- <script type="text/html" id="toolGroup"></script> -->
+<script type="text/html" id="bar">
+	<!--<a class="layui-btn layui-btn-xs" lay-event="edit" >修改</a>-->
+	<a class="layui-btn layui-btn-xs" lay-event="addMember" >好友管理</a>
+	<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del" >删除</a>
+</script>
+</div>	
+
+	 
+ <script src="../../js/generator/userbase.js"></script>  
+</body>
+</html>

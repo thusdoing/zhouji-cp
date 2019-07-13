@@ -1,0 +1,1 @@
+$(function(){$("a[href='news.html']").addClass('active');$("a[href='news.html']").parent().parent().parent().addClass('active');});

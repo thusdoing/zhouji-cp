@@ -1,0 +1,369 @@
+#lhc-class {
+    .lhc-panels{
+        padding: 0 20px;
+    }
+    .toggle-btn-defalue{
+        cursor: pointer;
+        font-size: 13px;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 2px 3px;
+        text-align: center;
+        width: 94px;
+        line-height: 15px;
+        font-weight: 700;
+        box-sizing:content-box;
+        background-image: linear-gradient(180deg,#ff5e3f,#ea0f0f);
+        color: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,.3);
+        background-origin: border-box;
+        border-color: transparent;
+        &:hover{
+            background: #e52e14;
+            border-color: transparent;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+            color: #fff;
+        }
+        &:active{
+            background: linear-gradient(0deg, #ed2500, #a60000);
+            box-shadow: 0 3px 3px rgba(0, 0, 0, .3)
+        }
+
+    }
+
+
+
+
+
+
+    //快速选择按钮
+    .lhc-quick-pick{
+        column-count:2;
+        column-gap: 0;
+        line-height: 15px;
+        >div{
+            display: flex;
+            >div{
+                cursor: pointer;
+                font-size: 13px;
+                border: 1px solid #e6e6e6;
+                border-radius: 5px;
+                padding: 5px 10px;
+                margin: 2px 3px;
+                text-align: center;
+                width: 30px;
+                flex: 1 1 auto;
+                font-weight: 700;
+                box-sizing:content-box;
+            }
+            div.red{
+                color: rgb(231, 85, 89);
+            }
+            div.green{
+                color: rgb(70, 192, 116);
+            }
+            div.blue{
+                color: rgb(45, 146, 223);
+            }
+            >div:hover{
+                background-color: #e6e6e6;
+                box-shadow: none
+            }
+            >div:hover.red{
+                background-color: #fddedc
+            }
+            >div:hover.blue{
+                background-color: #c0f0fd
+            }
+            >div:hover.green{
+                background-color: #dcfddf
+            }
+            >div.active{
+                background-color: gray;
+                color: #fff!important;
+            }
+            >div.active.red{
+                background-image: linear-gradient(180deg, #f87b7e, #e34b4f, #c7282b)
+            }
+            >div.active.blue{
+                background-image: linear-gradient(180deg, #70c1ff, #2f95e3, #1b7bc5)
+            }
+            >div.active.green{
+                background-image: linear-gradient(180deg, #64d68f, #44bf73, #23a755)
+            }
+        }
+        >div.control-btns{
+            div.toggle-btn{
+                background-image: linear-gradient(180deg,#ff5e3f,#ea0f0f);
+                color: #fff;
+                box-shadow: 0 1px 3px rgba(0,0,0,.3);
+                background-origin: border-box;
+                border-color: transparent;
+            }
+            
+            >div:hover{
+                background: #e52e14;
+                border-color: transparent;
+                box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+                color: #fff;
+            }
+            >div:active {
+                background: linear-gradient(0deg, #ed2500, #a60000);
+                box-shadow: 0 3px 3px rgba(0, 0, 0, .3)
+            }
+        }
+        >div.select-btns{
+            flex-flow: column wrap;
+        }
+        >div.left-select-btns{
+            max-height: 130px;
+        }
+        >div.right-select-btns{
+            max-height: 160px;
+        }
+    }
+
+    // 选择号码
+    .lhc-ball-panel{
+        margin-top: 10px;
+        border-bottom: 1px solid #e6e6e6;
+        .lhc-numbers{
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            height: 320px;
+            display: flex;
+            vertical-align: middle;
+            .lhc-number{
+                flex: 0 0 auto;
+                font-size: 13px;
+                margin-right: 2px;
+                cursor: pointer;
+                padding: 0 5px;
+                border: 1px solid transparent;
+                >div{
+                    display: flex;
+                }
+                .number{
+                    display: inline-block;
+                    position: relative;
+                    width: 26px;
+                    height: 26px;
+                    line-height: 22px;
+                    border-radius: 100%;
+                    text-align: center;
+                    font-size: 14px;
+                    color: #fff;
+                    border: 2px solid #8e8e8e;
+                }
+                .number.lhc-ball-red{
+                    background: linear-gradient(180deg,#ff5e3f,#ea0f0f);
+                }
+                .number.lhc-ball-blue{
+                    background: linear-gradient(180deg,#1bc0ff,#0f6ad0);
+                }
+                .number.lhc-ball-green{
+                    background: linear-gradient(180deg,#aef053,#0f9015);
+                }
+                .odds{
+                    flex: 1 1;
+                    text-align: right;
+                    margin-right: .125em;
+                    padding: 6px 6px 0;
+                    color: #4a4a4a;
+                }
+                .lhc-money-input{
+                    flex: 0 0 40px;
+                    width: 40px;
+                    max-width: 40px;
+                    border-radius: 3px;
+                    outline: 0;
+                    border: 1px solid #e6e6e6;
+                    padding: 3px 0;
+                    text-align: center;
+                    height: 20px;
+                    margin-top: 3px;
+                }
+                &.active,&:hover{
+                    background-color: #fff;
+                    border-radius: 0;
+                    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+                    border-color: #d5d5d5;
+                    .lhc-money-input{
+                        border-color: #db383f;
+                    }
+                }
+            }
+        }
+    }
+    //号码二
+    .lhc-half-panel{
+        border-bottom: 1px solid #e6e6e6;
+        padding-bottom: 10px;
+        margin-top: 10px;
+        .lhc-numbers{
+            height: 150px;
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            display: flex;
+            vertical-align: middle;
+            .lhc-number{
+                flex: 0 0 auto;
+                font-size: 13px;
+                margin-right: 2px;
+                cursor: pointer;
+                padding: 0 5px;
+                border: 1px solid transparent;
+                >div{
+                    display: flex;
+                }
+                .number{
+                    position: relative;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: 700;
+                    width: 56px;
+                    text-align: left;
+                    padding-top: 6px;
+                }
+                .ball{
+                    display: inline-block;
+                    position: relative;
+                    width: 26px;
+                    height: 26px;
+                    line-height: 22px;
+                    border-radius: 100%;
+                    text-align: center;
+                    font-size: 14px;
+                    color: #fff;
+                    border: 2px solid #8e8e8e;
+                    margin-right: 5px;
+                }
+                .ball.lhc-ball-red{
+                    background: linear-gradient(180deg,#ff5e3f,#ea0f0f);
+                }
+                .ball.lhc-ball-blue{
+                    background: linear-gradient(180deg,#1bc0ff,#0f6ad0);
+                }
+                .ball.lhc-ball-green{
+                    background: linear-gradient(180deg,#aef053,#0f9015);
+                }
+                .odds{
+                    flex: 1 1;
+                    text-align: right;
+                    margin-right: .125em;
+                    padding: 6px 6px 0;
+                    color: #4a4a4a;
+                }
+                .lhc-money-input{
+                    flex: 0 0 40px;
+                    width: 40px;
+                    max-width: 40px;
+                    border-radius: 3px;
+                    outline: 0;
+                    border: 1px solid #e6e6e6;
+                    padding: 3px 0;
+                    text-align: center;
+                    height: 20px;
+                    margin: 3px 0;
+                    &:focus{
+                        border-color: #db383f;
+                    }
+                }
+                &.active,&:hover{
+                    background-color: #fff;
+                    border-radius: 0;
+                    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+                    border-color: #d5d5d5;
+                    .lhc-money-input{
+                        border-color: #db383f;
+                    }
+                }
+            }
+        }
+        .lhc-numbers.zhengma1-6{
+            .lhc-number {
+                .number{width: 40px;}
+            }
+        }
+    }
+    //选择的柱数 价格
+    .game-control{
+        margin-bottom: 0;
+        padding: 20px 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 300;
+        height: 130px;
+        .game-control-wrap{
+            flex: 4;
+            text-align: center;
+            input{
+                width: 92px;
+                height: 28px;
+                outline: none;
+                border: 1px solid #e6e6e6;
+                text-align: center;
+                border-radius: 3px;
+                padding: 5px;
+                &:active,&:hover,&:focus{
+                    border-color: #db383f;
+                }
+            }
+            .cart-btns{
+                display: flex;
+                justify-content: center;
+                padding: 20px 0;
+                div{
+                    width: 120px;
+                    line-height: 35px;
+                    background-image: linear-gradient(180deg,#ff5e3f,#ea0f0f);
+                    border-radius: 5px;
+                    margin-right: 10px;
+                    font-weight: 700;
+                    color: #fff;
+                    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+                    cursor: pointer;
+                    &:hover{
+                        background: #e52e14;
+                        box-shadow: 0 3px 3px rgba(0,0,0,.3);
+                    }
+                    &:active{
+                        background: linear-gradient(0deg, #ed2500, #a60000);
+                        box-shadow: 0 3px 3px rgba(0, 0, 0, .3)
+                    }
+                }
+            }
+        }
+    }
+    .high-light{
+        color: #e60b0b;
+    }
+    .disable{
+        cursor: not-allowed !important;
+    }
+    .textRed{
+        color: #db383f;
+    }
+    .textBlue{
+        color: #0c84da;
+    }
+    .textGreen{
+        color: #109b08;
+    }
+    .zhengmaTitle{
+        display: flex;
+        justify-content: center;
+        span{
+            flex: 1 1 auto;
+            line-height: 32px;
+            font-weight: 700;
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px dotted #e6e6e6;
+            margin: 0 10px 10px;
+        }
+    }
+}

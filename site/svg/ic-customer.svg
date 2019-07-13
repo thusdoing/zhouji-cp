@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <radialGradient id="a" cx="100%" cy="100%" r="115.371%" fx="100%" fy="100%" gradientTransform="matrix(-.6328 -.77398 .77347 -.63321 .86 2.407)">
+            <stop offset="0%" stop-color="#D41879"/>
+            <stop offset="100%" stop-color="#2A00D7"/>
+        </radialGradient>
+        <radialGradient id="b" cx="100%" cy="100%" r="115.371%" fx="100%" fy="100%" gradientTransform="scale(-.4164 -1) rotate(26.989 3.466 -7.087)">
+            <stop offset="0%" stop-color="#D41879"/>
+            <stop offset="100%" stop-color="#2A00D7"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h60v60H0z"/>
+        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path stroke="url(#a)" d="M28.125 9.369c0 5.175-4.197 9.369-9.375 9.369s-9.375-4.194-9.375-9.37C9.375 4.195 13.572 0 18.75 0s9.375 4.194 9.375 9.369z" transform="translate(11.25 8.75)"/>
+            <path stroke="url(#b)" d="M37.5 43.721H0C0 35.1 6.994 28.107 15.625 28.107h6.25c8.631 0 15.625 6.992 15.625 15.614z" transform="translate(11.25 8.75)"/>
+        </g>
+    </g>
+</svg>

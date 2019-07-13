@@ -1,0 +1,16 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <linearGradient id="a" x1="1.269%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#9F7870"/>
+            <stop offset="27.828%" stop-color="#D39686"/>
+            <stop offset="49.247%" stop-color="#F2CCA9"/>
+            <stop offset="76.038%" stop-color="#C09576"/>
+            <stop offset="100%" stop-color="#D89D75"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="44" cy="44" r="43" stroke="url(#a)" stroke-width="2"/>
+        <path fill="url(#a)" fill-rule="nonzero" d="M26.4 26a.4.4 0 0 0-.4.4v35.2c0 .22.18.4.4.4h35.2a.4.4 0 0 0 .4-.4V26.4a.4.4 0 0 0-.4-.4H26.4zM24 35v-8.6a2.4 2.4 0 0 1 2.4-2.4H34v-5a1 1 0 0 1 2 0v5h7v-5a1 1 0 0 1 2 0v5h7v-5a1 1 0 0 1 2 0v5h7.6a2.4 2.4 0 0 1 2.4 2.4V35h6a1 1 0 0 1 0 2h-6v6h6a1 1 0 0 1 0 2h-6v6h6a1 1 0 0 1 0 2h-6v8.6a2.4 2.4 0 0 1-2.4 2.4H54v5a1 1 0 0 1-2 0v-5h-7v5a1 1 0 0 1-2 0v-5h-7v5a1 1 0 0 1-2 0v-5h-7.6a2.4 2.4 0 0 1-2.4-2.4V53h-6a1 1 0 0 1 0-2h6v-6h-6a1 1 0 0 1 0-2h6v-6h-6a1 1 0 0 1 0-2h6zm11 0h18v18H35V35zm0-2a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V35a2 2 0 0 0-2-2H35z"/>
+    </g>
+</svg>

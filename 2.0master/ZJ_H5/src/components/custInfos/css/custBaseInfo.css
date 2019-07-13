@@ -1,0 +1,5 @@
+.info-photo>>>.weui-media-box_appmsg h4{font-size: 13px;}
+.info-photo>>>.weui-media-box_appmsg img{width: 60px;height: 60px;}
+.info-photo>>>.weui-media-box_appmsg div:first-child{order:1;margin-right: 3px;}
+.info-first>>>.weui-cells{margin-top: 0px;font-size: 13px;}
+.info-item>>>.weui-cells{font-size: 13px;margin-top: 10px;}

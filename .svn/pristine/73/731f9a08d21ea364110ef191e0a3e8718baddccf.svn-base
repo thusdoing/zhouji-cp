@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv=Content-Type>
+    <meta content=utf-8 http-equiv=encoding>
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>洲际娱乐彩票系统</title>
+    <link rel=stylesheet href="js/node_modules/w3-css/w3.css">
+    <link rel=stylesheet href="css/font-awesome.min.css">
+    <link rel=stylesheet href="js/node_modules/featherlight/release/featherlight.min.css">
+    <link rel=stylesheet href="css/main_style.css">
+    <script src="js/node_modules/jquery/dist/jquery.js"></script>
+    <script src="js/node_modules/featherlight/release/featherlight.min.js"></script>
+    <script src="js/mobile-chrome-vh-fix/mobile-chrome-vh-fix.js"></script>
+    <script src="js/node_modules/iscroll/build/iscroll.js"></script>
+    <script src="js/main_fun.js"></script>
+    <link rel=stylesheet href="css/sub_style_lottery.css">
+    <script src="js/node_modules/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="js/node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script src="js/node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script src="js/node_modules/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+    <script src="js/node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+    <script src="js/sub_fun_lottery.js"></script>
+    <script src="js/jquery-cookie/jquery.cookie.js"></script>
+    <script src="js/jquery-i18n-properties/jquery.i18n.properties.min.js"></script>
+    <script src="js/locale_main.js"></script>
+</head>
+
+<body class=trhide>
+    <div id=content-wrapper class="main-container scrollContainer">
+        <div class=scrollContent>
+            <section id=slide1 class=top-section>
+                <img class="w3-hide-small bcg" src="static/lottery/banner.png">
+                <img class="w3-hide-medium w3-hide-large bcg" src="static/lottery/banner.png">
+                <div class=w3-center>
+                    <h2 class="slideInUp slideInUp2" style="text-align: center;">洲际彩票</h2>
+                    <h1 class="slideInUp slideInUp2" data-locale-msg=lottery_main_description>重磅巨獻 完美開發自主彩</h1>
+                </div>
+            </section>
+            <section id=slide2 class="section-100 second-section">
+                <div class="bg-number slideInUp"><img src="svg/ctn-ten-gray.svg"></div>
+                <div class="w3-display-container content">
+                    <img class="w3-display-bottomleft w3-hide-small w3-hide-medium bg" src="static/lottery/iPhone.png"
+                        srcset="img/1920/ctn-phone-lottery@2x.png 2x, img/1920/ctn-phone-lottery@3x.png 3x">
+                    <img class="w3-hide-small ball1" src="img/1920/ctn-ball-pk-10.png" srcset="img/1920/ctn-ball-pk-10@2x.png 2x, img/1920/ctn-ball-pk-10@3x.png 3x">
+                    <img class="w3-hide-medium w3-hide-large ball1" src="img/375/ctn-ball-pk-10.png" srcset="img/375/ctn-ball-pk-10@2x.png 2x, img/375/ctn-ball-pk-10@3x.png 3x">
+                    <img class="w3-hide-small ball2" src="img/1920/ctn-ball-11-choice-5.png" srcset="img/1920/ctn-ball-11-choice-5@2x.png 2x, img/1920/ctn-ball-11-choice-5@3x.png 3x">
+                    <img class="w3-hide-medium w3-hide-large ball2" src="img/375/ctn-ball-11-choice-5.png" srcset="img/375/ctn-ball-11-choice-5@2x.png 2x, img/375/ctn-ball-11-choice-5@3x.png 3x">
+                    <img class="w3-hide-small ball3" src="img/1920/ctn-ball-timelottery.png" srcset="img/1920/ctn-ball-timelottery@2x.png 2x, img/1920/ctn-ball-timelottery@3x.png 3x">
+                    <img class="w3-hide-medium w3-hide-large ball3" src="img/375/ctn-ball-timelottery.png" srcset="img/375/ctn-ball-timelottery@2x.png 2x, img/375/ctn-ball-timelottery@3x.png 3x">
+                    <div class=w3-hide-large>
+                        <img src="img/375/ctn-phone-lottery-phone.png" srcset="img/375/ctn-phone-lottery-phone@2x.png 2x, img/375/ctn-phone-lottery-phone@3x.png 3x">
+                    </div>
+                    <div id=second-trigger class=item>
+                        <h2 class=slideInUp data-locale-msg=lottery_main_sub_1_caption>十年經驗</h2>
+                        <p class="slideInUp slideInUp3" data-locale-msg=lottery_main_sub_1_description>十年以上的彩票經驗；不論在技術、市場、運營及運維上，都具備十足的經驗；利用這些經驗作為基礎，創新開發，蓬勃發展。</p>
+                    </div>
+                    <div class=item>
+                        <h2 class=slideInUp data-locale-msg=lottery_main_sub_2_caption>創新彩種</h2>
+                        <p class="slideInUp slideInUp3" data-locale-msg=lottery_main_sub_2_description>洲际
+                            彩票創新自主彩種，搭配市場熱門彩種，擁有數十種彩票種類，即時開獎數據、彩票資訊、統計及分析服務。不同於其他彩票平台，特別開發智慧操作、投注簡易的界面。</p>
+                    </div>
+                    <div class=item>
+                        <h2 class=slideInUp data-locale-msg=lottery_main_sub_3_caption>高頻轉播</h2>
+                        <p class="slideInUp slideInUp3" data-locale-msg=lottery_main_sub_3_description>提供高頻彩開獎視頻轉播，包括各類時時彩及11選5；畫面清晰流暢穩定，延時少。</p>
+                    </div>
+                </div>
+            </section>
+            <section id=slide3 class="section-100 third-section">
+                <div class=content>
+                    <div class=w3-row-padding>
+                        <div class="w3-third w3-col m12 l4">
+                            <h2 class=slideInUp data-locale-msg=lottery_1_caption>移動 洲际</h2>
+                            <p class="slideInUp slideInUp2" data-locale-msg=lottery_1_description_1>為了暢快玩樂，為了隨手投注，為您呈上洲际彩票移動端。</p>
+                            <p class="slideInUp slideInUp2" data-locale-msg=lottery_1_description_2>電腦、手機網頁版、安卓系統APP、蘋果ios系統完整支援，投注就在彈指間。</p>
+                        </div>
+                        <div class="w3-twothird w3-col m12 l8">
+                            <div class=slideInUp>
+                                <img class=w3-hide-small src="img/1920/ctn-ap-mobile.png" srcset="img/1920/ctn-ap-mobile@2x.png 2x, img/1920/ctn-ap-mobile@3x.png 3x">
+                                <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-ap-mobile.png" srcset="img/375/ctn-ap-mobile@2x.png 2x, img/375/ctn-ap-mobile@3x.png 3x">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id=slide4 class="section-100 fourth-section">
+                <div class="bg-number slideInUp"><img src="svg/ctn-ten-red.svg"></div>
+                <div class=content>
+                    <div class=w3-row-padding>
+                        <div class="w3-third w3-col m12 l4">
+                            <img class=title_bg src="img/1920/ctn-pk-10.png" srcset="img/1920/ctn-pk-10@2x.png 2x, img/1920/ctn-pk-10@3x.png 3x">
+                            <h2 class=slideInUp data-locale-msg=lottery_2_caption>北京PK10</h2>
+                            <p class="slideInUp slideInUp2" data-locale-msg=lottery_2_description>簡單投注，將玩法整合於同一頁面，系統可自行判定玩家的玩法，進行投注；玩家無須因為不同玩法而切換頁面。除完整移植官方玩法，獎金也最為吸引眾多玩家。</p>
+                        </div>
+                        <div class="w3-twothird w3-col m12 l8">
+                            <div class=slideInLeft>
+                                <img class=w3-hide-small src="img/1920/ctn-window-pk-10.png" srcset="img/1920/ctn-window-pk-10@2x.png 2x, img/1920/ctn-window-pk-10@3x.png 3x">
+                                <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-window-pk-10.png" srcset="img/375/ctn-window-pk-10@2x.png 2x, img/375/ctn-window-pk-10@3x.png 3x">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id=slide5 class="section-100 fifth-section">
+                <div class="bg-number slideInUp"><img src="svg/ctn-six.svg"></div>
+                <div class=content>
+                    <div class=w3-row-padding>
+                        <div class="w3-twothird w3-col m12 l8">
+                            <div class=slideInRight>
+                                <img class="w3-hide-small w3-right" src="img/1920/ctn-window-markix.png" srcset="img/1920/ctn-window-markix@2x.png 2x, img/1920/ctn-window-markix@3x.png 3x">
+                                <img class="w3-hide-medium w3-hide-large w3-right" src="img/375/ctn-window-markix.png"
+                                    srcset="img/375/ctn-window-markix@2x.png 2x, img/375/ctn-window-markix@3x.png 3x">
+                            </div>
+                        </div>
+                        <div class="w3-third w3-col m12 l4">
+                            <img class=title_bg src="img/1920/ctn-markix.png" srcset="img/1920/ctn-markix@2x.png 2x, img/1920/ctn-markix@3x.png 3x">
+                            <h2 class=slideInUp data-locale-msg=lottery_3_caption>六合彩</h2>
+                            <p class="slideInUp slideInUp2" data-locale-msg=lottery_3_description>集成賠率版及公彩版，賠率版中，可靈活調整賠率。更為傳統彩票玩家設計符合習慣的公彩版，適用於多層代理體系可調式返點，活力的界面助於開拓業務，更創新了六合彩七碼過關玩法。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id=slide6 class="section-100 sixth-section">
+                <div class="bg-number slideInUp"><img src="svg/ctn-three.svg"></div>
+                <div class=content>
+                    <div class=w3-row-padding>
+                        <div class="w3-third w3-col m12 l4">
+                            <img class=title_bg src="img/1920/ctn-dp-3.png" srcset="img/1920/ctn-dp-3@2x.png 2x, img/1920/ctn-dp-3@3x.png 3x">
+                            <h2 class=slideInUp data-locale-msg=lottery_4_caption>安徽快3</h2>
+                            <p class="slideInUp slideInUp2" data-locale-msg=lottery_4_description>傾力創造操作便利、安全性高的投注方式，打造整合式投注頁面，將快3所有玩法結合同一頁面，增設可調式賠率、主動式調整數據、大小單雙玩法不殺圍骰，提升玩家黏著度。</p>
+                        </div>
+                        <div class="w3-twothird w3-col m12 l8">
+                            <div class=slideInLeft>
+                                <img class=w3-hide-small src="img/1920/ctn-window-dp-3.png" srcset="img/1920/ctn-window-dp-3@2x.png 2x, img/1920/ctn-window-dp-3@3x.png 3x">
+                                <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-window-dp-3.png" srcset="img/375/ctn-window-dp-3@2x.png 2x, img/375/ctn-window-dp-3@3x.png 3x">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id=slide7 class="section-100 seventh-section">
+                <div class="bg-number slideInUp"><img src="svg/ctn-eight.svg"></div>
+                <div class=content>
+                    <div class=w3-row-padding>
+                        <div class="w3-twothird w3-col m12 l8">
+                            <div class=slideInRight>
+                                <img class="w3-hide-small w3-right" src="img/1920/ctn-window-happer-8.png" srcset="img/1920/ctn-window-happer-8@2x.png 2x, img/1920/ctn-window-happer-8@3x.png 3x">
+                                <img class="w3-hide-medium w3-hide-large w3-right" src="img/375/ctn-window-happer-8.png"
+                                    srcset="img/375/ctn-window-happer-8@2x.png 2x, img/375/ctn-window-happer-8@3x.png 3x">
+                            </div>
+                        </div>
+                        <div class="w3-third w3-col m12 l4">
+                            <img class=title_bg src="img/1920/ctn-happer-8.png" srcset="img/1920/ctn-happer-8@2x.png 2x, img/1920/ctn-happer-8@3x.png 3x">
+                            <h2 class=slideInUp data-locale-msg=lottery_5_caption>北京快樂8</h2>
+                            <p class="slideInUp slideInUp2" data-locale-msg=lottery_5_description>整合傳統彩票及綜合娛樂玩法，獨創玩法包含指數、鴿票系列中的冠軍方位、冠軍組別等；高獎金、高中獎率。玩家選擇更多，對於運營商之推廣更有力度。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id=slide8 class="section-100 end-section">
+                <div class=w3-center>
+                    <h2 data-locale-msg=lottery_6_caption>彩種介紹</h2>
+                    <div class=w3-row>
+                        <div class=w3-half>
+                            <div class="w3-col s6 shanghai">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-timelottery-circle-copy-3.svg">
+                                <p>上海时时乐</p>
+                                <img src="svg/ctn-logo-shanghai.svg">
+                            </div>
+                            <div class="w3-col s6 dark timelottery">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-timelottery-circle.svg">
+                                <p>重庆时时彩<br>黑龙江时时彩<br>新疆时时彩<br>上海时时乐<br>天津时时彩</p>
+                                <img src="svg/ctn-logo-timelottery.svg">
+                            </div>
+                            <div class="w3-col s6 dark dp">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-dp-3-circle.svg">
+                                <p>江苏快三<br>安徽快三<br>吉林快三<br>北京快三<br>湖北快三</p>
+                                <img src="svg/ctn-logo-dp-3.svg">
+                            </div>
+                            <div class="w3-col s6 choice">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-11-choice-5-circle.svg">
+                                <p>山东11选5<br>江西11选5<br>广东11选5</p>
+                                <img src="svg/ctn-logo-11-choice-5.svg">
+                            </div>
+                        </div>
+                        <div class=w3-half>
+                            <div class="w3-col s6 pk">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-pk-10-circle.svg">
+                                <p>北京PK10</p>
+                                <img src="svg/ctn-logo-pk-10.svg">
+                            </div>
+                            <div class="w3-col s6 dark arrange">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-arrange-3-circle.svg">
+                                <p>排列三/五</p>
+                                <img src="svg/ctn-logo-arrange-3.svg">
+                            </div>
+                            <div class="w3-col s6 dark f3d">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-3-d-circle.svg">
+                                <p>福彩3D</p>
+                                <img src="svg/ctn-logo-3-d.svg">
+                            </div>
+                            <div class="w3-col s6 happer">
+                                <img class="icon-hover w3-hide-small" src="svg/ctn-logo-happer-8-circle.svg">
+                                <p>北京快乐8</p>
+                                <img src="svg/ctn-logo-happer-8.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-100 footer-section">
+                <div class=w3-center>
+                    <h2 data-locale-msg=footer_caption>聯繫我們</h2>
+                    <form class=w3-container>
+                        <div class="w3-row-padding w3-section">
+                            <div class=w3-half>
+                                <div class=w3-half>
+                                    <input class="w3-input w3-border w3-round" id=username name=username required
+                                        placeholder=" ">
+                                    <label for=username data-locale-msg=footer_input_1>姓名</label>
+                                </div>
+                                <div class="w3-half margin-mob">
+                                    <div class="w3-cell w3-padding">
+                                        <input class=w3-radio type=radio name=gender value=male checked>
+                                        <label data-locale-msg=footer_radio_1>先生</label>
+                                    </div>
+                                    <div class="w3-cell w3-padding">
+                                        <input class=w3-radio type=radio name=gender value=female>
+                                        <label data-locale-msg=footer_radio_2>女士</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=w3-half>
+                                <div class=w3-col>
+                                    <input class="w3-input w3-border w3-round" type=tel pattern="[0-9]*" id=cellphone
+                                        name=cellphone required placeholder=" ">
+                                    <label for=cellphone data-locale-msg=footer_input_2>手機</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w3-row-padding w3-section">
+                            <div class=w3-half>
+                                <div class=w3-col>
+                                    <input class="w3-input w3-border w3-round" type=email id=email name=email required
+                                        placeholder=" ">
+                                    <label for=email data-locale-msg=footer_input_3>郵箱</label>
+                                </div>
+                                <div class="w3-col w3-section">
+                                    <select class="w3-select w3-border w3-round" id=cantact_acctount name=cantact_acctount
+                                        required>
+                                        <option value="" disabled selected data-locale-msg=footer_select>通訊帳號</option>
+                                        <option value=1>Skype</option>
+                                        <option value=2>QQ</option>
+                                        <option value=3>Wechat</option>
+                                    </select>
+                                </div>
+                                <div class=w3-col>
+                                    <input class="w3-input w3-border w3-round" id=contact_id name=contact_id required
+                                        placeholder=" ">
+                                    <label for=contact_id data-locale-msg=footer_input_4>通訊帳號ID</label>
+                                </div>
+                            </div>
+                            <div class="w3-half margin-mob-textarea">
+                                <div class=w3-col>
+                                    <textarea rows=7 class="w3-input w3-border w3-round" type=text id=contact_info name=contact_info
+                                        required placeholder=" "></textarea>
+                                    <label data-locale-msg=footer_input_5>輸入內容</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w3-section margin-mob-button">
+                            <button class="w3-button w3-block w3-padding-large w3-round" data-locale-msg=footer_button>確認送出</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class=w3-bar>
+        <button class="w3-bar-item w3-button nav-hamburger w3-hide-large">
+            <span class=hamburger-icon></span>
+        </button>
+        <a href=index.html class="w3-bar-item ap-logo">洲际 洲际</a>
+        <nav class=w3-right role=navigation id=scroller>
+            <div class=nav_container>
+                <div class=nav_menu_container>
+                    <a href=index.html class=w3-bar-item data-locale-msg=menu_home>首頁</a>
+                    <div class=w3-dropdown-hover>
+                        <span data-locale-msg=menu_advantage>洲际優勢</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+                            aria-hidden=true></i>
+                        <div class=sub-menu>
+                            <div class="w3-dropdown-content w3-bar-block w3-center">
+                                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                                        aria-hidden=true></i><span data-locale-msg=menu_advantage>洲际優勢</span></button>
+                                <a href=advantage.html class=w3-bar-item data-locale-msg=menu_advantage_1>合作優勢</a>
+                                <a href=deploy.html class=w3-bar-item data-locale-msg=menu_advantage_2>極速建站</a>
+                                <a href=payment.html class=w3-bar-item data-locale-msg=menu_advantage_3>快捷支付</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href=lottery.html class=w3-bar-item data-locale-msg=menu_lottery>洲际彩票</a>
+                    <div class=w3-dropdown-hover>
+                        <span data-locale-msg=menu_product>產品介紹</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+                            aria-hidden=true></i>
+                        <div class=sub-menu>
+                            <div class="w3-dropdown-content w3-bar-block w3-center">
+                                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                                        aria-hidden=true></i><span data-locale-msg=menu_product>產品介紹</span></button>
+                                <a href=backend.html class=w3-bar-item data-locale-msg=menu_product_1>後台管理系統</a>
+                                <a href=apigame.html class=w3-bar-item data-locale-msg=menu_product_2>API游戏</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=w3-dropdown-hover>
+                        <span data-locale-msg=menu_service>特點服務</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+                            aria-hidden=true></i>
+                        <div class=sub-menu>
+                            <div class="w3-dropdown-content w3-bar-block w3-center">
+                                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                                        aria-hidden=true></i><span data-locale-msg=menu_service>特點服務</span></button>
+                                <a href=technique.html class=w3-bar-item data-locale-msg=menu_service_1>技術服務</a>
+                                <a href=market.html class=w3-bar-item data-locale-msg=menu_service_2>市場營銷服務</a>
+                                <a href=template.html class=w3-bar-item data-locale-msg=menu_service_3>模板設計規劃</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href=about.html class=w3-bar-item data-locale-msg=menu_about>關於洲际</a>
+                    <a href=news.html class=w3-bar-item data-locale-msg=menu_news>最新消息</a>
+                    <a class=w3-bar-item>
+                        <select class=w3-bar-selec name=Language>
+                            <option value=zh-CN>简体中文</option>
+                            <option value=zh-TW>繁体中文</option>
+                            ...
+                        </select>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <nav class=sub-nav role=navigation id=scroller2>
+            <div class=nav_container>
+                <div class=nav_submenu_container></div>
+            </div>
+        </nav>
+        <div class=nav-bg></div>
+    </div>
+    <header></header>
+</body>
+
+</html>

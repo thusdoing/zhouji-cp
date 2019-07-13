@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>好友/群资料</title>
+		<link rel="stylesheet" href="../../../layui.css?v=1">
+		<script src="../../../../layui.js?v=1"></script>
+		<script src="../../../../../js/common.js"></script>
+
+	</head>
+	<body>
+			<form class="layui-form" action="" id="form" onsubmit="return false" style="margin: 20px; display: none;" >
+				<div class="layui-form-item" style="display: none;">
+					<label class="layui-form-label">群id</label>
+					<div class="layui-input-block">
+						<input type="text" name="gId" lay-verify="required" autocomplete="off" placeholder="请输入群名称" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">群名称</label>
+					<div class="layui-input-block">
+						<input type="text" name="gName" lay-verify="required" autocomplete="off" placeholder="请输入群名称" class="layui-input">
+					</div>
+				</div>
+			
+				<div class="layui-form-item" pane="">
+					<label class="layui-form-label">群状态</label>
+					<div class="layui-input-block">
+						<input type="radio" name="gStatus" value="1" title="正常" checked=checked>
+						<input type="radio" name="gStatus" value="0" title="封禁">
+					</div>
+				</div>
+				<div class="layui-form-item" pane="">
+					<label class="layui-form-label">最大群成员</label>
+					<div class="layui-input-block">
+						<input type="radio" name="maxMemberCount" value="200" title="200" checked="">
+						<input type="radio" name="maxMemberCount" value="500" title="500" checked="">
+						<input type="radio" name="maxMemberCount" value="1000" title="1000" checked="">
+						<input type="radio" name="maxMemberCount" value="1500" title="1500" checked="">
+						<input type="radio" name="maxMemberCount" value="2000" title="2000" checked="">
+						<input type="radio" name="maxMemberCount" value="2500" title="2500" checked="">
+					</div>
+				</div>
+			
+				<div class="layui-form-item layui-form-text">
+					<label class="layui-form-label">群组公告</label>
+					<div class="layui-input-block">
+						<textarea placeholder="请输入群组公告" class="layui-textarea" name="gNotice"></textarea>
+					</div>
+				</div>
+			
+				<div class="layui-form-item">
+					<div class="layui-input-block" style="text-align: center;    margin-left: 0;">
+						<button class="layui-btn" lay-submit="" lay-filter="addGroup">立即提交</button>
+					</div>
+				</div>
+			</form>	
+
+		
+	</body>
+	<script>
+		layui.config({
+			base: '../../../../../js/' //假设这是你存放拓展模块的根目录
+		}).extend({ //设定模块别名
+			main: 'main' //如果 mymod.js 是在根目录，也可以不用设定别名
+		});
+
+		layui.use(['laydate', 'form', 'laytpl', 'layim'], function() {
+			var layim = layui.layim,
+				layer = layui.layer,
+				laytpl = layui.laytpl,
+				$ = layui.jquery,
+				form = layui.form;
+			var showData= function(){
+				data= JSON.parse(sessionStorage.getItem('editData'))  
+				$("[name='gName']").val(data.gName)
+				
+				$("[name='maxMemberCount']").each((j,item)=>{					
+					if(item.value==data.maxMemberCount){						
+						item.checked=true					
+					}
+				})
+				$("[name='gStatus']").each((j,item)=>{					
+					if(item.value==data.gStatus){						
+						item.checked=true					
+					}
+				})
+				$("[name='gNotice']").val(data.gNotice)
+				$("[name='gId']").val(data.gId)
+				form.render()
+				$('#form').show()
+				
+			}()
+				
+				
+				
+				
+			var index = parent.layer.getFrameIndex(window.name);
+			form.on('submit(addGroup)', function(data) {				
+				$.post(apiUrl+"groupbase/update",data.field,function(res){
+					data=JSON.parse(res)
+					if(data.code==1){
+						sessionStorage.setItem('isUpdate','1')
+						parent.layer.msg("修改成功",{time: 1000})
+					}
+				})
+					// parent.reloadTable()
+					parent.layer.close(index);
+					
+			});
+
+
+		});
+	</script>
+</html>

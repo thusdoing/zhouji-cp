@@ -1,0 +1,42 @@
+.index-main>>>.weui-cell_access{font-size: 13px;height: 23px;padding: 10px 20px;}
+.index-main>>>.weui-cell_hd img{width:23px;height: 23px;margin-right: 10px;}
+.index-main>>>.weui-media-box_appmsg{padding: 10px 20px;align-items: center;height: 45px;}
+.index-main>>>.weui-media-box_appmsg .weui-media-box__hd{height: 45px;}
+.index-main>>>.weui-media-box_appmsg .weui-media-box__hd img{height: 45px;width: 45px;}
+.main-lider{background-color: #fff;padding: 10px 0px;}
+.main-lider>>>.weui-grid{width: 25%;padding: 5px 0px;}
+.main-lider>>>.weui-grid:before{border-right: auto;}
+.main-lider>>>.weui-grid__icon{width: 45px;height: 45px;}
+.main-lider>>>.weui-grids:before{border-bottom: auto;}
+.main-lider>>>.weui-grids:after{border-top: auto;}
+.main-lider>>>.weui-grids:before{border-top: auto;}
+.main-lider>>>.weui-grid:before{border-bottom: auto;}
+.main-lider>>>.weui-grid:after{border-bottom-color: #fff;}
+.cust-game-item{font-size: 14px;text-align: center;}
+.cust-game-money{font-size:12px;color: #ec2829;text-align: center;}
+.main-badge{position: absolute;top: 23px;right: 20px;}
+.whirl {
+	-webkit-animation:whirl 2s infinite linear;
+	        animation:whirl 2s infinite linear
+}
+@-webkit-keyframes whirl {
+	0% {
+	-webkit-transform:rotate(0deg);
+	        transform:rotate(0deg)
+}
+to {
+	-webkit-transform:rotate(359deg);
+	        transform:rotate(359deg)
+}
+}
+@keyframes whirl {
+	0% {
+	-webkit-transform:rotate(0deg);
+	        transform:rotate(0deg)
+}
+to {
+	-webkit-transform:rotate(359deg);
+	        transform:rotate(359deg)
+}
+}
+._1ZJpc {	margin:-2.5px 5px 0;	cursor:pointer}

@@ -1,0 +1,639 @@
+/*font-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.top-section {
+  display: flex;
+  align-items: center;
+  height: 86vh;
+  padding: 160px 0;
+  position: relative;
+}
+.top-section .kv {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.top-section .w3-center {
+  width: 100%;
+  padding: 24px;
+  position: absolute;
+  top: 29%;
+}
+.top-section .w3-center img {
+  width: 180px;
+  height: 80px;
+}
+.top-section .w3-center h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.top-section .w3-center h1 {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 100px;
+  margin: 12px 0 24px;
+}
+.top-section .w3-center:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  margin: 0 auto;
+}
+.market-section {
+  position: relative;
+  padding: 60px 0 207px;
+  background: #fff;
+  transform: translate(0, 0);
+}
+.market-section .circle1 {
+  position: absolute;
+  top: 5%;
+  left: 0%;
+}
+.market-section .circle1 img {
+  width: 426px;
+  height: 745px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.market-section .circle2 {
+  position: absolute;
+  top: 16%;
+  right: -10%;
+  width: 813px;
+  height: 813px;
+  background: #6dee88;
+  background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  -webkit-box-shadow: -43px 43px 86px rgba(65, 176, 167, 0.6);
+  -moz-box-shadow: -43px 43px 86px rgba(65, 176, 167, 0.6);
+  box-shadow: -43px 43px 86px rgba(65, 176, 167, 0.6);
+  border-radius: 50%;
+}
+.market-section .circle3 {
+  position: absolute;
+  top: 41%;
+  left: -4%;
+  width: 714px;
+  height: 714px;
+  background: #57b2f1;
+  background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  -webkit-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+  -moz-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+  box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+  border-radius: 50%;
+}
+.market-section .circle4 {
+  position: absolute;
+  top: 71%;
+  right: -4%;
+  width: 786px;
+  height: 786px;
+  background: #e346eb;
+  background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  -webkit-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+  -moz-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+  box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+  border-radius: 50%;
+}
+.market-section .circle5 {
+  position: absolute;
+  top: 83%;
+  left: 0%;
+}
+.market-section .circle5 img {
+  width: 370px;
+  height: 515px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.market-section h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 60px;
+  color: #000;
+  padding: 0 24px;
+}
+.market-section h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.market-section p {
+  position: relative;
+  font-size: 20px !important;
+  line-height: 37px;
+  color: #000;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.market-section .list {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.market-section .list .item {
+  width: 100%;
+  padding: 0 30px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.market-section .list .item .info {
+  width: 390px;
+}
+.market-section .list .item .info .icon {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  background: #FFF;
+  background-clip: padding-box;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  margin: 0;
+}
+.market-section .list .item .info .icon:after {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  border-radius: 50%;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+}
+.market-section .list .item .info .icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  -o-object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.market-section .list .item .info h3 {
+  font-size: 36px !important;
+  font-weight: normal;
+  line-height: 50px;
+  color: #000;
+  margin: 24px 0;
+  text-align: left;
+}
+.market-section .list .item .info p {
+  color: #000;
+  font-size: 18px !important;
+  line-height: 33px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.market-section .list .item .pic img {
+  object-fit: contain;
+  -o-object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.market-section .list .item:nth-child(1) .info {
+  margin-right: 73px;
+}
+.market-section .list .item:nth-child(1) .pic {
+  margin-right: -323px;
+  width: 760px;
+  height: 783px;
+}
+.market-section .list .item:nth-child(2) {
+  flex-direction: row-reverse;
+}
+.market-section .list .item:nth-child(2) .pic {
+  margin-left: -360px;
+  width: 880px;
+  height: 840px;
+}
+.market-section .list .item:nth-child(3) .info {
+  margin-right: 73px;
+}
+.market-section .list .item:nth-child(3) .pic {
+  margin-right: -500px;
+  width: 932px;
+  height: 738px;
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 992px) {
+  .top-section {
+    height: 50vh;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+  }
+  .market-section {
+    padding: 100px 0 70px;
+  }
+  .market-section .circle1 {
+    position: absolute;
+    top: 8%;
+    left: 0%;
+  }
+  .market-section .circle1 img {
+    width: 213px;
+    height: 373px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .market-section .circle2 {
+    position: absolute;
+    top: 11%;
+    right: -10%;
+    width: 456px;
+    height: 456px;
+    background: #6dee88;
+    background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    -webkit-box-shadow: -43px 43px 86px rgba(65, 176, 167, 0.6);
+    -moz-box-shadow: -43px 43px 86px rgba(65, 176, 167, 0.6);
+    box-shadow: -43px 43px 86px rgba(65, 176, 167, 0.6);
+    border-radius: 50%;
+  }
+  .market-section .circle3 {
+    position: absolute;
+    top: 40%;
+    left: -7%;
+    width: 457px;
+    height: 457px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+    -moz-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+    box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+    border-radius: 50%;
+  }
+  .market-section .circle4 {
+    position: absolute;
+    top: 72%;
+    right: -4%;
+    width: 493px;
+    height: 493px;
+    background: #e346eb;
+    background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    -webkit-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+    -moz-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+    box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.6);
+    border-radius: 50%;
+  }
+  .market-section .circle5 {
+    position: absolute;
+    top: 85%;
+    left: 0%;
+  }
+  .market-section .circle5 img {
+    width: 185px;
+    height: 258px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .market-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .market-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .market-section p {
+    font-size: 16px !important;
+    line-height: 22px;
+    text-align: left;
+    padding: 0 60px;
+  }
+  .market-section .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .market-section .list .item {
+    width: 100%;
+    padding: 0 60px;
+    /*height: 265px;*/
+    margin-bottom: 50px;
+  }
+  .market-section .list .item .info {
+    width: 100%;
+    text-align: center;
+  }
+  .market-section .list .item .info .icon {
+    margin: 0 auto;
+  }
+  .market-section .list .item .info h3 {
+    font-size: 22px !important;
+    line-height: 25px;
+    margin-top: 24px;
+    text-align: center !important;
+  }
+  .market-section .list .item .info p,
+  .market-section .list .item .info ul {
+    font-size: 14px !important;
+    line-height: 20px;
+  }
+  .market-section .list .item:nth-child(1) {
+    flex-direction: column-reverse;
+  }
+  .market-section .list .item:nth-child(1) .info {
+    margin: 0 auto;
+  }
+  .market-section .list .item:nth-child(1) .pic {
+    margin: 0 0 60px;
+    width: 500px;
+    height: 500px;
+  }
+  .market-section .list .item:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  .market-section .list .item:nth-child(2) .info {
+    margin: 0 auto;
+  }
+  .market-section .list .item:nth-child(2) .pic {
+    margin: 0 0 60px;
+    width: 500px;
+    height: 500px;
+  }
+  .market-section .list .item:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+  .market-section .list .item:nth-child(3) .info {
+    margin: 0 auto;
+  }
+  .market-section .list .item:nth-child(3) .pic {
+    margin: 0 0 60px;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  .top-section {
+    height: 86vh;
+  }
+  .top-section .w3-center {
+    text-align: left !important;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0;
+  }
+  .market-section .circle1 {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+  }
+  .market-section .circle1 img {
+    width: 133px;
+    height: 296px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .market-section .circle2 {
+    position: absolute;
+    top: 13%;
+    right: -35%;
+    width: 325px;
+    height: 325px;
+    background: #6dee88;
+    background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    -webkit-box-shadow: -17px 17px 34px rgba(65, 176, 167, 0.6);
+    -moz-box-shadow: -17px 17px 34px rgba(65, 176, 167, 0.6);
+    box-shadow: -17px 17px 34px rgba(65, 176, 167, 0.6);
+    border-radius: 50%;
+  }
+  .market-section .circle3 {
+    position: absolute;
+    top: 40%;
+    left: -26%;
+    width: 286px;
+    height: 286px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -17px 17px 34px rgba(155, 108, 226, 0.6);
+    -moz-box-shadow: -17px 17px 34px rgba(155, 108, 226, 0.6);
+    box-shadow: -17px 17px 34px rgba(155, 108, 226, 0.6);
+    border-radius: 50%;
+  }
+  .market-section .circle4 {
+    position: absolute;
+    top: 72%;
+    right: -16%;
+    width: 314px;
+    height: 314px;
+    background: #e346eb;
+    background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    -webkit-box-shadow: -17px 17px 34px rgba(155, 108, 226, 0.6);
+    -moz-box-shadow: -17px 17px 34px rgba(155, 108, 226, 0.6);
+    box-shadow: -17px 17px 34px rgba(155, 108, 226, 0.6);
+    border-radius: 50%;
+  }
+  .market-section .circle5 {
+    position: absolute;
+    top: 78%;
+    left: 0%;
+  }
+  .market-section .circle5 img {
+    width: 80px;
+    height: 206px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .market-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .market-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .market-section p {
+    margin-bottom: 20px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+  .market-section .list .item {
+    height: initial;
+    padding: 0 24px;
+  }
+  .market-section .list .item .info .icon {
+    margin: 0;
+  }
+  .market-section .list .item .info h3 {
+    margin: 24px 0 16px;
+    text-align: left !important;
+  }
+  .market-section .list .item .info p,
+  .market-section .list .item .info ul {
+    max-width: 500px;
+  }
+  .market-section .list .item:nth-child(1) .pic {
+    margin: 0 0 60px;
+    width: 286px;
+    height: 286px;
+  }
+  .market-section .list .item:nth-child(2) .pic {
+    margin: 0 0 60px;
+    width: 332px;
+    height: 336px;
+  }
+  .market-section .list .item:nth-child(3) .pic {
+    margin: 0 0 60px;
+    width: 350px;
+    height: 289px;
+  }
+}

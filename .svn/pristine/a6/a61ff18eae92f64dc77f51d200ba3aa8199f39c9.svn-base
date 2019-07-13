@@ -1,0 +1,722 @@
+/*font-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.top-section {
+  display: flex;
+  align-items: center;
+  height: 86vh;
+  padding: 160px 0;
+  position: relative;
+}
+.top-section .kv {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.top-section .w3-center {
+  width: 100%;
+  padding: 24px;
+  position: absolute;
+  top: 29%;
+}
+.top-section .w3-center img {
+  width: 180px;
+  height: 80px;
+}
+.top-section .w3-center h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.top-section .w3-center h1 {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 100px;
+  margin: 12px 0 24px;
+}
+.top-section .w3-center:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  margin: 0 auto;
+}
+.hosting-section {
+  position: relative;
+  padding: 60px 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.hosting-section .circle1 {
+  position: absolute;
+  top: 8%;
+  left: -11%;
+  width: 538px;
+  height: 538px;
+  background: #6dee88;
+  background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+  -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.hosting-section .circle2 {
+  position: absolute;
+  top: 35%;
+  right: 0%;
+}
+.hosting-section .circle2 img {
+  width: 444px;
+  height: 811px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.hosting-section .w3-center {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  z-index: 1;
+}
+.hosting-section .w3-center h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 60px;
+  color: #000;
+  padding: 0 24px;
+}
+.hosting-section .w3-center h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.hosting-section .w3-center h3 {
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 0.83;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 36px;
+}
+.hosting-section .w3-center > p {
+text-align:center!important; 
+  max-width: 960px;
+  font-size: 20px !important;
+  text-align: center;
+  margin: 0 auto;
+  color: #000000;
+  margin-bottom: 80px;
+}
+.hosting-section .w3-center ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hosting-section .w3-center ul li {
+  display: flex;
+  box-sizing: content-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 388px;
+}
+.hosting-section .w3-center ul li img {
+  object-fit: contain;
+  -o-object-fit: contain;
+  width: 260px;
+  height: 260px;
+  margin-bottom: 32px;
+}
+.hosting-section .w3-center ul li h4 {
+  font-size: 100px;
+  line-height: 140px;
+  font-weight: normal;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+}
+.hosting-section .w3-center ul li h3 {
+  font-size: 36px;
+  line-height: 50px;
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 48px;
+}
+.hosting-section .w3-center ul li p {
+  font-size: 17px;
+  line-height: 26px;
+  color: #000000;
+}
+.hosting-section .w3-center ul li:first-child {
+  margin-right: 92px;
+}
+.hosting-section .w3-center ul li:last-child {
+  margin-left: 92px;
+}
+.feature-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 160px 0 0;
+  position: relative;
+  background: #f8f8f8;
+  background: -webkit-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -o-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -moz-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+}
+.feature-section .circle1 {
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  width: 589px;
+  height: 589px;
+  background: #e346eb;
+  background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+  -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.feature-section .circle2 {
+  position: absolute;
+  top: 8%;
+  right: -12%;
+  width: 758px;
+  height: 758px;
+  background: #57b2f1;
+  background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.feature-section .pic {
+  margin-top: 153px;
+  position: relative;
+  width: 857px;
+  height: 616px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.feature-section ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1144px;
+  z-index: 1;
+}
+.feature-section ul li {
+  width: 472px;
+  height: 253px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 30px 50px;
+}
+.feature-section ul li .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.feature-section ul li .title img {
+  width: 60px;
+  height: 60px;
+  margin-right: 24px;
+}
+.feature-section ul li .title h3 {
+  font-size: 26px !important;
+  line-height: 36px;
+  font-weight: normal;
+  color: #000000;
+}
+.feature-section ul li p {
+  width: 388px;
+  font-size: 17px;
+  text-align: left;
+  color: #000000;
+  margin-left: 84px;
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 992px) {
+  .top-section {
+    height: 50vh;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+  }
+  .hosting-section {
+    padding: 100px 0 70px;
+  }
+  .hosting-section .circle1 {
+    position: absolute;
+    top: 8%;
+    left: -20%;
+    width: 350px;
+    height: 350px;
+    background: #6dee88;
+    background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  .hosting-section .circle2 {
+    position: absolute;
+    top: 58%;
+    right: 0%;
+  }
+  .hosting-section .circle2 img {
+    width: 250px;
+    height: 500px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .hosting-section .w3-center h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .hosting-section .w3-center h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .hosting-section .w3-center h3 {
+    font-size: 24px;
+  }
+  .hosting-section .w3-center > p {
+    font-size: 16px !important;
+    line-height: 22px;
+    padding: 0 60px;
+  }
+  .hosting-section .w3-center ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .hosting-section .w3-center ul li {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .hosting-section .w3-center ul li img {
+    width: 190px;
+    height: 190px;
+    margin-bottom: 15px;
+  }
+  .hosting-section .w3-center ul li h4 {
+    font-size: 50px;
+    line-height: 70px;
+  }
+  .hosting-section .w3-center ul li h3 {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 16px;
+  }
+  .hosting-section .w3-center ul li p {
+    font-size: 14px;
+    line-height: 26px;
+    color: #000000;
+  }
+  .hosting-section .w3-center ul li:first-child {
+    margin-right: 0;
+  }
+  .hosting-section .w3-center ul li:last-child {
+    margin-left: 0;
+  }
+  .feature-section {
+    padding: 100px 0 70px;
+  }
+  .feature-section .circle1 {
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    width: 320px;
+    height: 320px;
+    background: #e346eb;
+    background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  .feature-section .circle2 {
+    position: absolute;
+    top: 4%;
+    right: -25%;
+    width: 430px;
+    height: 430px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  .feature-section .pic {
+    margin-top: 100px;
+    width: 600px;
+    height: 400px;
+  }
+  .feature-section ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0 60px;
+  }
+  .feature-section ul li {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 50px;
+  }
+  .feature-section ul li .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .feature-section ul li .title img {
+    width: 60px;
+    height: 60px;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+  .feature-section ul li .title h3 {
+    font-size: 18px;
+    line-height: 50px;
+    color: #000000;
+  }
+  .feature-section ul li p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+    margin-left: 0;
+  }
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  .top-section {
+    height: 86vh;
+  }
+  .top-section .w3-center {
+    text-align: left !important;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0;
+  }
+  .hosting-section .circle1 {
+    position: absolute;
+    top: 5%;
+    left: -30%;
+    width: 215px;
+    height: 215px;
+    background: #6dee88;
+    background: -webkit-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -o-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: -moz-radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    background: radial-gradient(circle at 84% 14%, #6dee88, #036db5);
+    -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  .hosting-section .circle2 {
+    position: absolute;
+    top: 75%;
+    right: 0%;
+  }
+  .hosting-section .circle2 img {
+    width: 169px;
+    height: 323px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .hosting-section .w3-center h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .hosting-section .w3-center h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .hosting-section .w3-center h3 {
+    padding: 0 24px;
+    text-align: left;
+    line-height: 30px;
+  }
+  .hosting-section .w3-center > p {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left !important;
+    padding: 0 24px;
+  }
+  .hosting-section .w3-center ul {
+    padding: 0 24px;
+  }
+  .hosting-section .w3-center ul li {
+    width: 100%;
+    margin-bottom: 60px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .hosting-section .w3-center ul li img {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 30px;
+  }
+  .hosting-section .w3-center ul li h4 {
+    font-size: 50px;
+    line-height: 70px;
+  }
+  .hosting-section .w3-center ul li h3 {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 16px;
+    padding: 0;
+  }
+  .hosting-section .w3-center ul li p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    text-align: left;
+  }
+  .hosting-section .w3-center ul li:first-child {
+    margin-right: 0;
+  }
+  .hosting-section .w3-center ul li:last-child {
+    margin-left: 0;
+  }
+  .feature-section {
+    align-items: flex-start;
+    padding: 100px 0 120px;
+  }
+  .feature-section .circle1 {
+    position: absolute;
+    top: 12%;
+    left: -20%;
+    width: 150px;
+    height: 150px;
+    background: #e346eb;
+    background: -webkit-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -o-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: -moz-radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    background: radial-gradient(circle at 84% 14%, #e346eb, #0a7cc8);
+    -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  .feature-section .circle2 {
+    position: absolute;
+    top: 2%;
+    right: -30%;
+    width: 253px;
+    height: 253px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    box-shadow: -43px 43px 86px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  .feature-section .pic {
+    width: 317px;
+    height: 229px;
+    margin: 0 auto 0;
+  }
+  .feature-section ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0 24px;
+  }
+  .feature-section ul li {
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 50px;
+  }
+  .feature-section ul li .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .feature-section ul li .title img {
+    width: 60px;
+    height: 60px;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+  .feature-section ul li .title h3 {
+    font-size: 18px;
+    line-height: 50px;
+    color: #000000;
+  }
+  .feature-section ul li p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    color: #000000;
+    margin-left: 0;
+  }
+}

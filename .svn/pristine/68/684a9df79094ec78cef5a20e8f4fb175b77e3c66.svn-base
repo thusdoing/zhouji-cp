@@ -1,0 +1,84 @@
+@bg-head:#fff; //头部条颜色
+@bg-index:#050503; //首页背景色
+@bg-nav:#d00808; //导航条颜色
+.play-content{
+  padding: 5px 10px 30px 10px;
+  background-color: #fff;
+  .play-content-list{
+    padding: 8px 0;
+    align-items: center;
+  }
+  .play-content-list .label{
+    padding: 2px 8px;
+    background-position: -278px -1px;
+    text-align: center;
+    font-weight: bold;
+    color: #7d7d7d;
+    font-size: 14px;
+    line-height: 20px;
+    flex:1;
+    text-align: center;
+    margin-bottom: 15px;
+    .icon-decoration_icon+p{
+      width: 100%;
+    }
+    .icon-decoration_icon{
+      color: #FDAE1F;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+  }
+   .play-content-list .ball-panel{
+    flex:8;
+    flex-wrap: wrap;
+    margin: 0 2px;
+  }
+  .play-content-list .ball-panel>div{
+    position: relative;
+    p{
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 70px 70px, #989595, #ffffff);
+      text-align: center;
+      line-height: 26px;
+      cursor: pointer;
+      box-shadow: 0px 0px 1px 0px #aba5a5 inset;
+      margin: 0 8px 15px 8px;
+    }
+    sup{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .play-content-list .ball-panel>div>p:hover{
+    color: #e41d1d;
+    background: rgba(255, 49, 33, .44);
+  }
+  .play-content-list .ball-panel>div>p.active{
+    color: #fff;
+    background-image: linear-gradient(to bottom, #ff5e3f, #ea0f0f);
+  }
+  .play-content-list .play-btn-box{
+    flex:1;
+    height: 26px;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .play-content-list .play-btn-box>p{
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    background: radial-gradient(circle at 70px 70px, #989595, #ffffff);
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    margin: 0 5px;
+    box-shadow: 0px 0px 1px 0px inset;
+  }
+  .play-content-list .play-btn-box>p:hover,.play-content-list .play-btn-box>p.active:not(:last-child){
+    color: #fff;
+    background-image: linear-gradient(to bottom, #ff5e3f, #ea0f0f);
+  }
+}

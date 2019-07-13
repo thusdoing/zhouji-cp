@@ -1,0 +1,545 @@
+@charset "UTF-8";
+ /********************初始化默认样式************************/
+body, html, div, p, a, input, label, span, h3, table, nav, tr, td, header, footer, section, em, i, ul, li, dl, dt, dd, img, textarea,h3,h4,h1,h2,h5,h6,ol,
+figcaption,figure,article,section,nav,header,footer{ margin: 0; padding: 0; outline: none;}
+a { text-decoration: none; }
+a,img,button,input,textarea,div{-webkit-tap-highlight-color:rgba(255,255,255,0);}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+ul, ul li, dl, dt, dd{ list-style: none; }
+*:not(input,textarea) { -webkit-touch-callout: inherit; -webkit-user-select: auto; }
+*:not(input,textarea) { -webkit-touch-callout: inherit; -webkit-user-select: auto; }
+img{border: 0;vertical-align: middle; width:100%;}
+body{font-family:"Microsoft YaHei" }
+html,body {height: 100%;}
+.container {min-height: 100%;position: relative; padding-bottom: 110px; box-sizing: border-box;}
+
+/********************最外层************************/
+#top_box{width:100%; max-width: 1080px; background:#fff; z-index: 155; margin: 0 auto; position: fixed;} 
+#main{ width: 100%;max-width:1080px;overflow: hidden; margin: 0 auto; padding-bottom:20px;/*border-top: 1px solid #ddd;*/ }
+.quick{ width:100%; max-width:1080px; margin:0 auto;overflow: hidden; }
+#top{position:relative; text-align: center;}
+/*#top .hr{border-color: #ddd; margin: 0 1em;height:2px;border-bottom: 1px solid #ddd; clear: both;}*/
+/********************提示************************/
+.prompt{height:23px; position: relative; overflow: hidden; line-height:30px; margin: 0 0 0 1em;}
+#scroll{ color:#f00;white-space:nowrap; position: absolute; left:1em; top:0; line-height: 30px;}
+.prompt em{ background:#fff; height:25px;  position: absolute;right:0; top:0; width:15px; padding:0 5px; margin:-2px 0 0 0; height:30px; display: inline-block; cursor: pointer;}
+
+/********************头部************************/
+header{ width:100%;max-width: 1080px;border-bottom:2px solid #3181d2;display:inline-block; margin: 0 auto; position: relative;  }
+header .logo {width:2.85em; margin:0.5em 0 0.25em 1em; float: left; }
+header .logo-title{width:75px!important;height:2.65em!important;font-size:20px!important;line-height:2.65em!important;font-weight:500;margin-top:0.5em;}
+header article{ overflow: hidden; margin-top: -5px;z-index:99;}
+header article p{float:right; margin: 1.5em 1em 0 1em; line-height: 25px; font-size: 1.4em; cursor: pointer;}
+/* .nav_btn span{ padding:0; margin: 0 0 0 5px; display: inline-block; overflow:hidden; width:28px; height:25px ;float:right; background:url(../images/more.jpg) no-repeat center; background-size: 62%;} */
+.moreStyle{border: 2px solid #999999;
+padding: 5px 5px 5px 13px;
+border-radius: 0.4em;
+font-size: 1.2em;
+background-color: #f8f8f8;}
+.cav5{color:#3181d2;}
+/* .cav5 span{ padding:0; margin: 0 0 0 5px; display: inline-block; overflow:hidden; width:28px; height:25px ;float:right; background:url(../images/more_1.jpg) no-repeat center; background-size: 62%;} */
+
+/********************导航************************/
+.nav{ width:30%; overflow: hidden;background:#3181d2;  position: absolute; top:88px; right:0;z-index:112;display:none; box-shadow: 3px 2px 1px #ddd; }
+.nav p{ cursor: pointer; line-height: 3em; font-size:1.2em;text-indent: 1em; color:#fff; text-align: left;}
+.nav p:hover,.cav{background:#2c6eb1;} 
+
+
+/********************订单信息************************/
+.order_box{ overflow: hidden; border-bottom: 1px solid #ddd; width:100%; max-width: 1080px; margin:0 auto; padding:90px 0 0 0;}
+/* .order_box h4{ line-height:45px; line-height: 45px; font-size: 1.6em; background:url(../images/hbg.jpg) repeat-x; background-size: 100%; text-indent: 1em;} */
+.order_text{ margin:0.5em 1em 1em 1em; padding-bottom:0.4em;position: relative; overflow: hidden;}
+/* .up,.out{ text-align:right ;font-size:1.2em;position: absolute; bottom:1.5em; right:0; padding:0 23px 0 0; background:url(../images/more.jpg) no-repeat right center;  */
+	/* display: inline-block; z-index: 111; background-size:30%; cursor: pointer;} */
+/* .out{background:url(../images/more_1.jpg) no-repeat right center; background-size:30%;} */
+.order_text li{ line-height: 2em; position: relative; display: none; overflow: hidden;}
+.order_text li span{ font-size: 1em; width:130px;position: absolute; left:0;overflow:hidden;text-align:justify;text-align-last:justify;}
+.order_text li span:after{display:inline-block;content:'';overflow:hidden;width:100%;height:0; color:#333333;}
+.order_text li p{ font-size: 1em;  padding:0 0 0 140px; color:#666;overflow: hidden;}
+
+/********************历史银行************************/
+.bank_list{ margin: 0 1em 0 0; position: relative; overflow: hidden;}
+.already_quick{margin: 0 auto; max-width: 500px;}
+/*.already_quick{ width:100%; max-width: 1080px; margin: 0 auto;}*/
+.bank_list h4,.quick_title2,.already_quick h4,.already_quick h4 span{  overflow: hidden;font-size: 1.1em; line-height: 1.3em; font-weight: bold; color:#000; margin: 1em 1em 0 1em}
+.bank_list ul{ overflow: hidden;}
+.bank_list ul li{ overflow: hidden; width:20%;float:left; padding:0; margin: 0; display: none; }
+.bank_list ul li a{margin:1em 0 0 1em; padding:1;  border:1px solid #ddd; overflow: hidden; display: inline-block;padding:1px; }
+.bank_list ul li a img{ height:auto; width:99%;}
+
+
+/*.new_bank_form{width:500px;}*/
+/********************选择银行************************/
+.li_choose{ overflow: hidden;}
+.border_f00{ }
+.bank_list ul li.border_35c295 a{border:2px solid  #35c295; padding:0;}
+.li_choose{ display: none;}
+.bank_list ul li .upp{ height:100%; text-align: center;  min-height:2em;line-height:2em;border:1px solid #ddd; margin:1em 0 0 1em; color:#666; cursor: pointer;} 
+
+/********************支付按钮************************/
+.button{ margin:0 0 0 72px; overflow: hidden; text-align: center; padding:0 1em;}
+.button button {float:left; line-height: 2.8em; height:2.8em; width:100%; max-width: 250px;  margin: 0; border-radius: 0; cursor: pointer; background:#666; font-size: 1.2em; border:none; color:#fff;}
+.links{padding:0.5em 1em 0 1em; overflow: hidden;}
+.links p{ overflow: hidden; text-align: left; font-size: 1em}
+.links p a{ text-align: left;  margin: 0 auto; font-size:1.1em; color:#35c295; line-height: 2em; display: inline-block; height:2em;}
+
+
+/********************快捷支付************************/
+.quick_tab{ margin: 0 auto; height:51px; background:#f8f8f8; line-height: 51px; text-align:center;}
+.quick_tab span{ cursor: pointer; display: inline-block; float: left; width:50%; line-height: 50px; height:50px;border-bottom: 1px solid #ddd; overflow: hidden; font-size: 1.4em;color:#666;}
+.quick_tab span.cav2{ color:#3181d2; border-color: #3181d2;}
+.tel{ position:relative; margin: 1em;}
+.tel span{ position: absolute; left:0; height:2em; line-height:2em; color:#666666; display: inline-block;}
+.tel p{  margin: 0 0 0 70px; line-height: 2em; overflow: hidden;}
+.tel p input{  line-height: 2.5em; text-indent: 1em; height:2.5em; border:1px solid #ddd; border-radius: 0; width:99%; max-width:250px; color:#888;}
+#chPhoneNumber{ position: absolute; bottom:0em; left:340px; margin: 0; padding: 0;  text-align: left; font-size: 11px; line-height: 2.5em}
+.bank_button{margin: 0;  margin: 1em; padding:0;}
+.bank_button button{ padding:0;}
+
+.ceiling{ margin: 1em;}
+.ceiling table{ width:100%; border:1px solid #ddd; border-collapse:collapse; text-align: center;}
+.ceiling table th{background:#dddddd; line-height: 2em; color:#333;}
+.ceiling table tr td{border:1px solid #ddd; width:33%; line-height: 2em; color:#666; height:2em; }
+
+#agreement_btn{color:#0099cc; }
+#bank_list1 ul li.border_35c2951_1 a{border:2px solid  #35c295; padding:0;}
+
+/********************已开通快捷支付************************/
+.already_quick{ overflow: hidden; position:relative;}
+.new_quick{ position: absolute;top:40px; left:225px; line-height: 4em; padding:0 1em; color:#35c295; }
+.already_quick h4{ position: relative; }
+.already_quick ul{margin: 0 1em 0 0; overflow: hidden; padding:0; cursor:pointer;}
+.already_quick ul li{ overflow: hidden; width:264px; display: block;border:1px solid #ddd; margin: 1em 0 0 1em; padding:1px; position: relative; }
+.already_quick ul li a{width:180px; display: inline-block;}
+.already_quick ul li span{ display: inline-block;position: absolute; left:169px; color:#555; font-size: 1.2em; line-height:50px; }
+.already_quick ul li.cav6{ border-color:#35c295; border-width: 2px;padding:0;}
+.fl{float:left}
+.add-div-m{margin-top:.4em;}
+.ew_card_up{ font-size: 1em;color:#35c295;margin-top:.6em;display:block;}
+.clear{clear:both;}
+.validation{ margin: 1em 1em 1em 1em; position: relative;}
+.validation span{ color:#333; width:100px; display: inline-block; position: absolute; left:0; line-height: 2em}
+.validation div{padding: 0 0 0 108px; position: relative; }
+.access{font-size:1em;  margin: 0 auto; background:#eee; color:#666; width:50% ;display: inline-block; float: right; line-height: 2.5em; text-align: center; /*margin: 0 1% 0 0;*/ border:1px solid #ddd;  }
+
+.already_quick h4 span{font-size:1em; padding:0 1em; color:#35c295; cursor: pointer; position: absolute;right:0; top:0;margin: 0;}
+
+/********************新卡绑定 选择银行***********************/
+.new_card_bg,.new_card_bg1{width:100%; height:100%; background-color: #000; position:fixed; top:0; z-index: 1000; opacity: 0.5; display: none; }
+.new_card,.agreement,.agreement1,.agreement2,.agreement3{ overflow: hidden; background:#fff; width:60%; overflow: hidden; position: fixed; top:50%;  left:50%; margin: -280px 0 0 -30%; z-index: 1001; display: none;}
+.agreement,.agreement1,.agreement2,.agreement3{ width:60%; margin: 0 0 0 -30%;}
+
+.agreement3{ overflow: hidden; background:#fff; width:60%; overflow: hidden; position: fixed; top:50%;  left:50%; margin: -280px 0 0 -30%; z-index: 1001; display: none;}
+.agreement3{ width:60%; margin: 0 0 0 -30%;}
+.agreement_top3{height:50px; line-height: 50px;  color:#fff; font-size: 1.3em; text-align: center; background:#3181d2; position: relative;}
+
+.new_card_top,.agreement_top,.agreement_top2,.agreement_top3{height:50px; line-height: 50px;  color:#fff; font-size: 1.3em; text-align: center; background:#3181d2; position: relative;}
+.new_card_top span,.agreement_top2 span,.agreement_top span,.agreement_top3 span{ overflow:hidden; right:1em; top:0; height:40px; width:16px; padding: 0; display: inline-block; cursor: pointer; position: absolute;}
+.new_card_btn{ height:55px; line-height: 55px; background-color: #eeeeee; text-align: center;}
+.agreement_top span img{margin: 0; padding:0;}
+.new_card_btn span{ cursor: pointer; width:50%; float:left; display:inline-block; height:54px; font-size: 1.2em; border-bottom: 1px solid #eee;}
+.new_card_btn span.cav3{ border-bottom: 1px solid #3181d2; color:#3181d2;}
+.new_card_main,.agreement_main{ height:400px; overflow:auto;margin:1em;}
+.new_card_main{margin: 0;}
+.new_card_main ul { overflow: hidden; margin: 0 1em 0 0; display: none;}
+.new_card_main ul li { float: left; width:20%; overflow: hidden; }
+.new_card_main li span{display: none;}
+.new_card_main ul li p{  margin:1em 1px 0 1em; border: 1px solid #ddd; cursor: pointer;padding:1px; }
+.new_card_main ul li.cav4{}
+.new_card_main ul li.cav4 p{ border-color: #35c295;padding:0px; border-width: 2px; }
+.new_card_submit,.agreement_submit,.new_card_submit1{height:55px; background:#eee; line-height: 50px; text-align: center;  }
+.new_card_submit button,.new_card_submit1 button,.agreement_submit button{ cursor: pointer; font-size: 1.1em; height:40px; line-height: 40px;  width:60%; margin: 7px auto; color:#fff; background:#66aef6; border-radius: 0; border:none;}
+.new_card_submit1 button{background:#666;}
+ .new_card_submit1 button.yes{background:#66aef6;}
+.agreement_main p{ color:#666; margin: 1em 0;line-height: 1.4em;}
+.agreement_main h4{ color:#333; }
+
+
+
+/********************切换dome 绑新卡************************/
+.credit_box{ margin: 0 auto; overflow: hidden; max-width: 500px;}
+.credit{ margin: 1em;}
+.credit li{ margin: 1.2em 0; position: relative; display: block; overflow: hidden;}
+.credit li span { font-size:1em;line-height: 2.8em; position: absolute; width:100px;}
+.credit li .input_box{ padding: 0 0 0 110px; margin: 0 auto;}
+.areaCodeStyle{ color:#666; font-size: 1em;padding:0 3%; width:76%; border:1px solid #ddd; border:1px solid #ddd; line-height:2.5em;height:2.5em; border-radius: 0;margin-left: 7.8em;}
+.bank_ico{}
+.credit li .input_box input{ color:#666; font-size: 1em;padding:0 3%; width:93%; border:1px solid #ddd; border:1px solid #ddd; line-height:2.5em;height:2.5em; border-radius: 0;}
+.validation div input,.credit li .result_code input{padding:0 3%; line-height: 2.5em; height:2.5em; border-radius:0; border:1px solid #ddd; width:40%;}
+
+.bank_ico p{ width:200px; border:2px solid #35c295; float: left;}
+.bank_ico p img{ width:100%; height:auto;}
+.bank_ico a{/*float:left;*/ line-height: 2em; margin: 1em 0 0 1em; color:#35c295;}
+.add-card{float:left;}
+.add-card>a{display:block;line-height:1.1em; margin: 1em 0 0 1em; color:#35c295;}
+.bank_ico span{ display: none;}
+/*.ew_card_up{ font-size: 1em; float:left; color:#35c295; position: absolute; left:311px; line-height: 4em; top:3em;}*/
+.result_code{}
+
+
+
+/********************日期************************/
+.credit li .date{ display: inline-block;}
+.credit li .date dl{ width:50%; float: left;line-height: 2.8em;}
+.credit li .date dl dt{ width:20%;float: right; text-align: right; color:#666;}
+.credit li .date dl dd{ width:65%;float: right;}
+/* .credit li .date dl dd input { text-indent:10px; width:89%; float: right; background: url(../images/more_2.jpg) no-repeat 90% center ; background-size: 10%; } */
+.credit li .date dl dd.date_text{width:71%;}
+/********************日期下拉************************/
+.date_text{ box-shadow: 0 0 5px #000; height:300px; width:100%; border:1px solid #ddd; overflow: auto;display: none; position: fixed; bottom:0; z-index: 100;background:#fff; left:0; }
+.date_text p{line-height: 3.5em; height:3.5em; text-indent: 10px; border-bottom: 1px dotted #ddd;}
+.date_text p:hover{background:#eee;}
+
+/********************绑卡按钮部分***********************/
+.credit_new_bottom{ max-width:1080px; margin: 0 auto; padding:0 0 0 108px; margin:0 1em 0 1em;}
+.credit_new_bottom div{ overflow: hidden; margin:0 auto; text-align: center;}
+.credit_new_bottom button{ width:100%;background:#35c295; border:none; font-size: 1.2em; color: #fff; height:40px; padding:0; }
+.credit_new_bottom span{ width:100%; text-align: center; display: inline-block; margin: 0 auto; line-height:3em; height:3em; cursor: pointer; font-size: 1.1em;color:#0099cc}
+.credit_new_bottom .warning{ font-size: 0.9em; color:#ff0000;text-align: center; padding:0 1.5em;/* display: none;*/}
+
+
+/********************常见问题************************/
+.successful,.faq{ margin: 1em; max-width: 1080px; overflow: hidden;}
+.faq_title{ line-height: 65px; display: inline-block; font-size: 1.4em; text-indent: 1em; }
+.faq li{ padding: 0.5em 0; overflow: hidden;}
+.faq li h6{ font-size: 1em; color:#333; line-height: 2.6em;font-weight: bold; }
+.faq li p{ font-size: 0.9em; color:#666; line-height: 1.4em; overflow: hidden;}
+
+.service{ margin: 0 1em;}
+.service h5{ line-height: 1.4em; font-size: 1.2em; color:#333; margin:1em auto 0.5em auto;  }
+.service p{ line-height: 1.2em; font-size: 1em; color:#666; margin: 0.5em auto 1em auto}
+/********************成功回执************************/
+.successful{ margin-top:5em; text-align: center; }
+.successful figure{width:80%; margin: 0  auto; text-align: center;}
+.successful figure img{width: 80px;  margin: 0 auto}
+.successful figure figcaption{ font-size: 2.5em; line-height: 2em; margin: 1em auto 1em auto; color:#666666; font-weight: bold;}
+.successful ul{ display: inline-block; margin:1em auto }
+.successful ul li{ line-height: 2em; position:relative;}
+.successful ul li span{ font-size: 1em; color:#0957a5; width:130px;position: absolute; left:0;overflow:hidden;text-align:justify;text-align-last:justify;}
+.successful ul li p{ text-align: left;  padding:0 0 0 120px; color:#666666;}
+.successful ul li p input{width: 100%;  text-align: left;  padding:0 0 0 120px; color:#666666;}
+.return{ font-size: 1em; color:#666; margin: 1em auto; line-height: 1.1em}
+
+/********************失败回执*********************/
+.error{}
+.error ul{}
+.error ul li{}
+.error ul li p{ padding:0 0 0 90px; color:#f64427;}
+.error ul li span{width:100px; color:#333333;}
+
+/********************提示*********************/
+.tips{ margin:2em 1em 0 1em;}
+.tips h6,.tips p,.tips div{margin: 1em 0; color:#333333;}
+.tips h6{}
+.tips p{overflow: hidden; line-height: 2em;}
+.tips p em{ padding:0; margin: 0 5px 0 0; width:15px; height: auto; overflow: hidden; display: inline-block;float:left;}
+.tips p em img{ width:100%; height: auto;}
+.tips p a,.tips p span{ padding:0 0.2em;color: #3181d2; text-decoration: underline;}
+.tips div{ border-top: 1px solid #ddd; height:3em; line-height: 3em;text-align: center; color:#3181d2;}
+button.active{ background:#2bb085; padding:0; cursor: pointer;  }
+.button .dirpay{ margin:20px 0px 10px 0px}
+.drpbtn{margin-left:0px;}
+/********************底部************************/
+footer{ width:100%;  background:#0957a5; overflow: hidden; text-align: center; padding:15px 0; position: absolute; bottom: 0;}
+footer p{ line-height: 1.6em; color:#fff;}
+footer p a{  color:#efefef;}
+footer p span{ padding:0 0.2em;}
+footer p span.comp { font-family:arial; padding:0;}
+
+
+/*******************媒体查询***********************/
+@media only screen and (max-width:1400px){
+	.new_card_main ul li {width:20%; }
+	
+
+}
+
+@media only screen and (max-width:1079px){
+	.validation span,.validation div p input,.areaCodeStyle,.credit li .input_box input{ height:2.5em; line-height:2.5em;}
+	.new_card_main ul li {width:25%; }
+	.access{ line-height: 2.5em;}
+	.new_card,.agreement,.agreement1{ width:80%; margin: -218px 0 0 -40%;}
+   
+}
+
+@media only screen and (max-width:880px){
+	.validation span{font-size:1em; }
+	.new_card_main ul li { width:33%;}
+}
+@media only screen and (max-width:700px){	
+	.bank_list h4,.quick_title2,.already_quick h4,.already_quick h4 span{font-size:1em; line-height: 1.5em;}
+	.bank_list ul li{width:25%;}
+    .credit_new_bottom button{ font-size: 1.4em}   
+	.new_card_main ul li { float: left; width:33.3%;}
+	.agreement_main{ height:420px;}
+	.new_quick{ font-size: 1.3em;}
+
+	.credit_new_bottom .warning{ font-size:0.9em;}
+	.new_card_top,.agreement_top,.agreement_top2{ font-size: 1.2em; height:45px;  line-height: 45px;}
+	.agreement,.agreement_top2{ width:80%; margin: 0 0 0 -40%;}
+	
+}
+
+@media only screen and (max-width:600px){
+	.nav{top:67px;}
+	.order_box{padding:70px 0 0 0;}
+	 .bank_list h4,.quick_title2,.already_quick h4,.already_quick h4 span{line-height: 1.5em; font-size: 1.3em; }
+	.validation span,.credit li .input_box input,.validation div input,.areaCodeStyle{ height:3em; line-height:3em;}
+	.access{ line-height: 3em; font-size: 1.2em; }
+	.credit li .input_box,.credit_new_bottom,.validation div{ padding: 0 0 0 90px;}
+
+	html{ font-size:11px;}
+	header .logo{ width:35px; margin: 0.25em 0.5em }
+    .nav{width:100%;}
+    .nav p{ line-height: 4em; height:4em; font-size: 1.5em; }
+    header article p{ margin: 0.85em 1em 0.5em;} 
+    #main{margin: 0}
+    .order_box{z-index:999}
+    .order_box h4{height:35px; line-height:40px; font-size: 1.35em;}
+    .order_text li{ line-height: 2em; }
+    .order_text li span{width:100px; font-size: 1.3em;}
+	.order_text li p{ padding:0 0 0 100px;font-size: 1.3em;}
+	.up{background-size:30%;}
+	/*	.bank_list h4,.quick_title2,.already_quick h4,.already_quick h4 span{font-size:1.6em; line-height: 1.5em;}*/
+	.bank_list ul li{width:33.3%;}
+	.bank_list ul li .upp{font-size: 1.3em;} 
+	.button button{ height:3.5em; line-height: 3.5em}
+	.faq li h6{ font-size: 1.3em; line-height: 1.8em; }
+	.faq li p{ font-size: 1.1em;  line-height: 1.5em; padding-top: 0.5em;}
+	.successful figure figcaption{  line-height: 3em;}
+	.successful ul li p{padding:0 0 0 105px;font-size: 1.4em;}
+	.successful ul li span{font-size: 1.4em;}
+	.return{ font-size: 1.4em; line-height: 1.6em}
+	.error ul li p{ padding:0 0 0 60px; font-size: 1.3em}
+	.error ul li span{width:70px; font-size: 1.2em;}
+	.error .return{ margin-top:1em;}
+	.credit_new_bottom span{ line-height:2em;font-size: 1.2em;}
+	.new_card_btn{ height:40px; line-height: 40px; }
+	.new_card_btn span{ height:39px; }
+	.new_card_main { height:250px;  }	
+	.new_card_submit button,.new_card_submit1 button,.bank_ico a{font-size: 1.4em; }
+	.ew_card_up{ font-size: 1em;color:#35c295;display:block;margin-top:.7em;}
+	.agreement_main p{  font-size: 1.2em; line-height: 1.5em;}
+	.agreement_main h4{  font-size: 1.3em; }
+	.already_quick ul li span{ font-size: 1.3em; }
+	.new_card_main ul li {  width:50%;}
+	.new_card_submit,.agreement_submit,.new_card_submit1{height:45px;}
+	.new_card_submit button,.agreement_submit button,.new_card_submit1 button{height:30px; line-height: 30px; font-size: 1.4em;}
+	.new_quick{ font-size: 1.3em;}	#agreement_btn{text-align:center; }
+	.credit_new_bottom .warning{ font-size:1.2em;}
+	.new_card_top,.agreement_top,.agreement_top2{ font-size: 1.5em; height:45px;  line-height: 45px;}
+	.faq_title{line-height: 45px ;font-size: 1.6em; text-indent: 0em;}
+	.service h5{ line-height: 1.7em; font-size: 1.5em;  }
+	.service p{ line-height: 1.5em; font-size: 1.3em;  }
+	#chPhoneNumber{ position:static;  padding: 0; margin:0 0 0 72px; line-height: 2.5em}
+
+
+}
+@media only screen and (max-width:500px){
+	
+     .validation div,.credit li .input_box { padding: 0 0 0 80px;}	 
+     .credit_new_bottom { padding:0px;}
+    .ew_card_up{margin-top:.8em;}
+	.bank_list ul li{width:50%;}
+    .button button{width:100%;margin:0.5em 0; font-size: 1.5em; line-height: 3.8em; height:3.8em;}
+	.container{padding-bottom: 80px;}
+	.quick_tab{  line-height: 41px; height:41px; }
+	.quick_tab span{ height:40px; line-height: 40px;}
+	
+	.successful ul{margin: 0.5em auto;}
+	.bank_ico p{ width:150px; float: left;}
+	.credit li span { font-size:1.1em;}	
+	.new_card_top,.agreement_top,.agreement_top2{ font-size: 1.6em; height:45px;  line-height: 45px;}
+	.new_card{ height:420px; margin: -200px 0 0 -40%;}
+	.new_card_main{ height:290px;}
+	.credit_new_bottom{ padding:0px; width:auto;}
+	.credit_new_bottom button{ width:100%;}
+	.credit_new_bottom .warning{ text-align: center; padding:0.5em 0;}
+	.new_card_btn span{ font-size: 1.3em; }
+	.new_card_top span,.agreement_top span{ width:13px; margin: 0 0 0}
+	.prompt em{ width:12px;}
+	.validation span{ font-size:1.1em;}
+	.button{ margin: 0 auto;}
+	.button button{width:100%; margin: 0; max-width: 100%}
+	.tel span{height:2.5em; line-height:2.5em;}
+	.tel p{  margin: 0 0 0 60px; line-height: 2.5em; }
+	.tel p input{ width:99%; max-width:99%;}
+	.inputInfo{ width:99%; max-width:99%;}
+	#chPhoneNumber{ position:static;margin: 0 0;  padding: 0 0 0 63px; }
+	.bank_button{margin: 1em; padding:0;}
+	.links,.links p,.links p a{ text-align: center;}
+
+}
+
+@media only screen and (max-width:430px){
+.validation div,.credit li .input_box { padding: 0 0 0 75px;}
+.validation div input,.credit li .result_code input{ width:40%;}
+.access{width:50%; font-size: 1em;}
+.already_quick h4{ position: relative; font-size: 1.3em;}
+.already_quick ul li{ overflow: hidden; width:230px; display: block;border:1px solid #ddd; margin: 1em 0 0 1em; padding:1px; position: relative; }
+.already_quick ul li a{width:170px; display: inline-block;}
+.already_quick ul li span{ display: inline-block;position: absolute; left:150px; color:#555; font-size: 1.5em; line-height:50px; }
+.already_quick ul li.cav6{ border-color:#35c295; border-width: 2px;padding:0;}
+.ew_card_up{ font-size: 1em;color:#35c295;display:block;margin-top:1em;}
+
+.bank_ico p{ width:120px; float: left;}
+.bank_ico a{margin: 0.5em 0 0 0.5em;}
+.date_text p{ line-height:4em;}
+.agreement_main{ height:310px;}
+}
+
+
+
+.banks_upp{
+	display: block !important;
+}
+
+.hidden_div{
+	display: none;
+}
+.error_msg{ padding:0 0 0 90px; color:#f64427;}
+
+.inputInfo{  line-height: 2.5em; text-indent: 1em; height:2.5em; border:1px solid #ddd; border-radius: 0; width:99%; max-width:99%; color:#888;}
+.formInfo{margin: 1em 1em 0 1em;}
+.infoTitle{ font-size: 1.1em;  color:#666;font-weight: normal;}
+.commonInput{margin-top: 3em;}
+.formInfo dl dt{ font-size: 1.1em;  color:#666;font-weight: normal; margin-top: 1em;}
+.main{width: 100%;max-width: 1080px;overflow: hidden;margin: 0 auto;padding-bottom: 20px;
+ }
+ 
+.formSelect {margin-bottom: 15px;margin-left:120px;}
+*{margin: 0; padding: 0; font: 14px/22px Microsoft YaHei;}
+.erweima{width:100%; height: 200px;margin: 40px auto;}
+@media  only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+    .links p{ text-align: center;}
+    .scanPayTips{margin-left: 34%;margin-bottom: 4%;}
+    .scanPayTips p{text-align: left; margin-left:1em;}
+	
+	
+}
+.scanPayTips{margin-left:1em;}
+/***微信或支付宝支付失败****/
+
+.pays-div{height: 135px;width: 90%;min-width:325px;background: #edffcc;margin: 0.55em auto 0.5em auto;}
+.payf-div{background: #fcefe9;height: 155px;}
+.pays-con{padding-top: 40px;overflow: hidden;width:29em;min-width:320px; margin:0 auto;}
+/* .pays-fail{background: url(../images/no.png) no-repeat center;background-size:cover; width: 4em;height:4em;float: left;} */
+.pays-txt{margin-left: 1.5em; width:23em;}
+.pays-txt p{color: #666666;font-size: 0.8em;}
+.pays-txt p.f-20{color: #333;font-size:1.4em;margin-bottom: 0.8em;}
+.fl { float: left; }
+
+/*********************收款通道微信和支付宝支付******************************/
+.tisp{background:#757575; position:fixed; left:50%; top:50%; z-index: 111112; margin: -156px 0 0 -250px;display: none; }
+.tisp_bg{ display: none; background:#000; z-index:156; position:fixed;left:0; top:0; height:100%; width:100%; overflow: hidden;filter:Alpha(Opacity=50);opacity:0.5; -moz-opacity:0.5; }
+.tisp_main{ width:520px; margin: 6px; background:#fff; padding:10px 20px 20px 20px;}
+/* .tisp_main h4{ font-weight:bold;line-height: 45px;height:45px; border-bottom: 1px solid #ddd; font-size: 18px; color:#333; background:url(../images/tips_icon1_03.jpg) no-repeat 0 center;  text-indent: 30px; } */
+/* .tisp_main h4 span{ font-weight: normal; cursor:pointer; float: right; display: inline-block;  text-indent:18px;color:#00aaef; font-size: 15px; background:url(../images/tips_icon1_06.jpg) no-repeat 0 center; margin: 10px auto;} */
+.tisp_main ul{ margin: 15px auto 0 auto;}
+.tisp_main ul li{ line-height: 30px; color:#666666; font-size:14px; margin: 5px auto 10px 0;}
+/* .tisp_main ul span{text-indent:25px; background:url(../images/tisp_icon_1_11.jpg) no-repeat 0 center; line-height: 30px; overflow: hidden; color:#333; font-size:13px;  display: inline-block; line-height: 30px; float: left;} */
+/* .tisp_main ul span.span1{background:url(../images/tisp_icon_1_14.jpg) no-repeat 0 center;} */
+.tisp_main ul li a{ color:#01a9f0; margin: 0 10px 0 0 ;  display: inline-block; text-decoration: none;}
+.tisp_main ul li em{ position: relative;}
+.tisp_main ul li em div{position: absolute;left:-257px; top:35px; padding:5px 20px 10px 12px; width:480px; height:50px; line-height:25px; border:1px solid #ddd; background:#f7f7f7; display:none;}
+.tisp_main ul li em img{ position: absolute;;left:30px; top:25px; z-index: 111113; display: none;}
+.tisp_main ul li em div p{  font-size: 14px; line-height:25px; color:#666; }
+.tisp_main ul li em:hover div,.tisp_main ul li em:hover img{ display: block;}
+
+.white_content {
+			display:none;
+            position:fixed;
+            top: 15%;
+            left: 50%;
+            width: 565px;
+            margin-left: -280px;
+            border: 6px solid #757575;
+            background-color: white;
+            z-index:1002;
+            overflow: hidden;
+			
+        }
+.white_content .tit{
+	color:#666;
+	overflow:hidden;
+	margin:30px 50px;
+	line-height:18px;
+	}	
+.white_content .tit1{
+	color:#666;
+	overflow:hidden;
+	margin:30px 50px;
+	line-height:18px;
+	}
+.scan_main{ width:520px;margin: 6px;padding:10px 20px; display: block; height:40px;}
+.scan_main h4{ font-weight:bold;line-height: 45px;height:45px; font-size: 18px; color:#333; text-indent: 30px; }
+.scan_main h4 span{ font-weight: normal; cursor:pointer; float: right; display: inline-block;  text-indent:18px;color:#00aaef; font-size: 15px; margin: 10px auto;}
+.tisp_main_bottom{ width:520px;margin: 6px;padding:10px 20px; display: block; height:120px;}
+/* .tisp_main_bottom h4{ font-weight:bold;line-height: 45px;height:45px; border-bottom: 1px solid #ddd; font-size: 18px; color:#333; background:url(../images/tips_icon1_03.jpg) no-repeat 0 center;  text-indent: 30px; } */
+/* .tisp_main_bottom h4 span{ font-weight: normal; cursor:pointer; float: right; display: inline-block;  text-indent:18px;color:#00aaef; font-size: 15px; background:url(../images/tips_icon1_06.jpg) no-repeat 0 center; margin: 10px auto;} */
+.tisp_main_bottom ul{ margin: 0 auto;}
+.tisp_main_bottom ul li{ line-height: 25px; color:#666666; font-size:14px; margin: 0;}
+/* .tisp_main_bottom ul li span{text-indent:25px; background:url(../images/tisp_icon_1_11.jpg)no-repeat 0 center;line-height: 25px; overflow: hidden; color:#333; font-size:13px;  display: inline-block; float: left;} */
+/* .tisp_main_bottom ul span.span1{background:url(../images/tisp_icon_1_14.jpg)no-repeat 0 center;} */
+.tisp_main_bottom ul li a{ color:#01a9f0; margin: 0 10px 0 0 ;  display: inline-block; text-decoration: none;}
+.tisp_main_bottom ul li em{ position: relative;}
+.tisp_main_bottom ul li em div{position: absolute;left:-257px; top:35px; padding:5px 8px; width:480px; height:50px; line-height:25px; border:1px solid #ddd; background:#f7f7f7; display:none;}
+.tisp_main_bottom ul li em img{ position: absolute;;left:30px; top:25px; z-index: 111114; display: none;}
+.tisp_main_bottom ul li em div p{  font-size: 14px; line-height:25px; color:#666; }
+.tisp_main_bottom ul li em:hover div,.tisp_main_bottom ul li em:hover img{ display: block;}
+#scan_window_excption{
+	background-color:#ecf7fd;
+	text-align: center;
+}	
+.errorcontent{
+	border:1px solid #ecf7fd;
+	width:80%;
+	margin:0 auto;
+    height: 200px;
+	}
+.errorcontent .right{   
+	width:100%;
+	height:200px; 
+	}
+.errorcontent .returninfo{
+	text-align:left; 
+	height:145px;  
+	margin:0 auto;
+	display: inline-block;
+	}
+.errorcontent .right h1{ 
+    margin:-20px auto 20px  auto;
+	color:#333333;
+	font:bold 25px/180% "微软雅黑"}
+.errorcontent .right p{ 
+	color:#666;
+	font:bold 14px/120% '宋体';
+	margin-top:10px;
+	text-align: left;
+		
+	}
+.errorcontent .right p span{
+	color:#F00;
+	font-weight:normal;
+	margin:0 0 0 80px;
+	display: inline-block;
+  
+	}
+.errorcontent .right p em{
+	position:absolute;
+	font-style:normal;
+	font-weight:normal;
+	flaot:left;	
+	display:inlien-block;
+	}
+	
+.bank_img {
+	width:15em; 
+	height:4.6em;
+	float:left; 
+	margin-left:1em;
+}
+.bank_img >img{
+	width:100%;
+}
+/*********************end******************************/

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    // 采用的模块系统
+    "module": "esnext",
+    // 如何处理模块
+    "moduleResolution": "node",
+    // 编译输出目标 ES 版本
+    "target": "es5",
+    // 解析非相对模块名的基准目录
+    "baseUrl": "./src2",
+    // 允许编译javascript文件
+    "allowJs": true,
+     // 启用装饰器
+     "experimentalDecorators": true,
+     // 启用设计类型元数据（用于反射）
+     "emitDecoratorMetadata": true,
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,user-scalable=no">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name=apple-touch-fullscreen content=yes>
+    <meta name=format-detection content="telephone=no, email=no, address=no">
+    <meta name=renderer content=webkit>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=HandheldFriendly content=true>
+    <meta name=MobileOptimized content=320>
+    <meta name=screen-orientation content=portrait>
+    <meta name=x5-orientation content=portrait>
+    <meta name=full-screen content=yes>
+    <meta name=x5-fullscreen content=true>
+    <meta name=browsermode content=application>
+    <meta name=x5-page-mode content=app>
+    <meta name=msapplication-tap-highlight content=no>
+    <title>洲际棋牌</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script src="./static/js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <img class="bg" src="./static/img/tg_bg.jpg">
+        <img class="btn" src="./static/img/button.png">
+        <form class="closeed">
+            <img class="albg" src="./static//img/alert_bg.png">
+            <img class="formi ljzc" src="./static/img/ljzc.png">
+            <img class="formi close" src="./static/img/close.png">
+            <div class="formi forminput">
+                <div>
+                    <img class="label" src="./static/img/zh.png">
+                    <input name="name" type="text" placeholder="请输入账号">
+                    <div class="tips">账号格式为数字/大小写字母组合6-12位</div>
+                </div>
+                <div>
+                    <img class="label" src="./static/img/password.png">
+                    <input name="password" type="password" placeholder="请输入密码">
+                    <div class="tips">密码格式为数字/大小写字母组合6-12位</div>
+                </div>
+                <!-- <div>
+                    <img class="label" src="./static/img/yqm.png">
+                    <input name="InvitationCode" type="text" placeholder="请输入邀请码">
+                </div> -->
+                <div>
+                    <img class="label" src="./static/img/yzm.png">
+                    <input name="verCode" type="text" style="width:27%" placeholder="请输入验证码">
+                    <img class="yzm" src="">
+                </div>
+            </div>
+            <img class="formi arrow" src="./static/img/arrow.png">
+            <img class="formi submit" src="./static/img/sure_bt.png">
+        </form>
+    </div>
+    <script>
+        $(function () {
+            $('.btn').on('click', function () {
+                $('form').removeClass('closeed')
+            })
+
+            $('.yzm').on('click', function () {
+                $(this).attr('src', '/api/getVerCode?w=70&h=30&d=' + Date.now())
+            })
+            $('.close').on('click', function () {
+                $('form').addClass('closeed')
+            })
+
+            $('.yzm').click()
+            $('.submit').on('click', function () {
+                console.log()
+                var obj = {}
+                obj.custName = $('input[name="name"]').val()
+                obj.signPasswd = $('input[name="password"]').val()
+                // obj.invitationCode = $('input[name="InvitationCode"]').val()
+                var verCode = $('input[name="verCode"]').val()
+                if (!/^[0-9a-zA-Z]{6,12}$/.test(obj.custName)) {
+                    return alert('姓名格式不正确')
+                }
+                if (!/^[0-9a-zA-Z]{6,12}$/.test(obj.signPasswd)) {
+                    return alert('密码格式不正确')
+                }
+                // if (!obj.custName) {
+                //     return alert('邀请码不能为空')
+                // }
+                if (!verCode) {
+                    return alert('验证码不能为空')
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/crypto/register',
+                    data: JSON.stringify({
+                        params: obj,
+                        verCode: verCode
+                    }),
+                    contentType: 'application/json;charset=UTF-8',
+                    success: function (data) {
+                        if (data.success && data.map) {
+                            window.location.href = data.map.downloadurl
+                            alert(data.message)
+                        } else {
+                            alert(data.message)
+                        }
+                    },
+                    error: function () {
+                        alert('链接出错')
+                    },
+                })
+
+            })
+            $('input').on('focus', function () {
+                $(this).next().addClass('opacity')
+            })
+            $('input').on('blur', function () {
+                $(this).next().removeClass('opacity')
+                if ($(this).attr('name') == 'name' || $(this).attr('name') == 'password') {
+                    if (!/^[0-9a-zA-Z]{6,12}$/.test($(this).val())) {
+                        $(this).css('border-color', '#f00')
+                    } else {
+                        $(this).css('border-color', '#666')
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title></title>
+<link href="../../../layui.css" rel="stylesheet" />
+<script src="../../../../../js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../../../layui.js" charset="utf-8"></script>
+
+<script src="../../../../../js/common.js"></script>
+<script src="../../../../../js/api.js"></script>
+<script type="text/javascript">
+        layui.use('upload',function(){
+            var upload = layui.upload;
+            upload.render({
+                elem: '#fileBtn'
+                ,url: apiUrl+'imgupload'
+                ,accept: 'file'
+                ,auto: true
+                ,bindAction: '#uploadBtn'
+                ,done: function(res){
+                    $("[name=userImage]").val(res.data.src);
+                    $("#avatar").attr("src",res.data.src+"?t="+Math.random);
+                    $.ajax({
+                        type : "PUT",
+                        url : apiUrl+"user-infos?currentsession="+localStorage.getItem("currentsession"),
+                        contentType: "application/json;charset=utf-8",
+                        data:JSON.stringify({avatar:res.data.src}),
+                        async : false,
+                        success : function(data){			    
+                            alert(res.msg);
+                        }
+                    });
+                   		
+                }
+            });
+        });
+
+        $(function(){
+            $("#userName").val(JSON.parse(localStorage.getItem("mine")).username);
+            $("#avatar").attr("src",JSON.parse(localStorage.getItem("mine")).avatar+"?t="+Math.random);
+        });
+    </script>
+
+</head>
+<body>
+        <div class="layui-input-block" style="margin-top:140px">
+                <img id="avatar" width=100vw; height=100vh; src="" class="layui-circle"> 
+         </div>
+         <div class="layui-upload" style="margin-top:40px;">
+                <div class="layui-upload layui-input-block">
+                    <input type="hidden" name="userImage" value="" required lay-verify="required" />
+                    <button type="button" class="layui-btn layui-btn-primary" id="fileBtn">
+                        <i class="layui-icon">&#xe67c;</i>更换头像</button>
+                </div>
+        </div>
+</body>
+</html>

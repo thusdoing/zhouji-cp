@@ -1,0 +1,537 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:v=xmlns:v>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>开奖结果</title>
+
+  <link rel="shortcut icon" href="static_pc/logo.ico" type="image/x-icon">
+  <link href="./content/default/officialGames/css/result.css" rel="stylesheet" />
+  <link href="./content/mapping/haocai-red/home/css/report.css" rel="stylesheet" />
+  <link href="./content/mapping/haocai-red/officialGames/css/result.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./content/default/officialGames/css/base.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./content/default/officialGames/css/js-ui.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./content/default/officialGames/css/lhc.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./content/default/officialGames/css/pagination.css" rel="stylesheet"/>
+
+  <script src="./script/common/jquery-1.11.3.min.js"></script>
+  <script src="./script/common/vue2/vue.min.js"></script>
+  <script src="./script/ball.js"></script>
+  
+
+  <script>
+    /* var gamelist = [];
+
+        $.ajax({
+            url: '/getGameTypeAll',
+            method: 'get',
+            success: function(ret) {
+                if (ret.success) {
+                    console.log(ret)
+                    ret.list.forEach(el => {
+                        el.gameSetting.forEach(item => {
+                            item.id = item.gameNo
+                            item.gamename = item.gameName
+                            gamelist.push(item)
+                        })
+                    })
+                }
+            },
+            error: function() {
+
+            }
+        }) */
+        var gamelist1 = [
+            {gamename:'重庆时时彩[官]',id:'1111',type:'SSC'},
+            {gamename:'北京快三[官]',id:'2222',type:'3D'}
+            // {gamename:'⑥合彩[信]',id:'1'},
+            // {gamename:'广东快十[信]',id:'5'},
+            // {gamename:'广西快十[信]',id:'6'},
+            // {gamename:'重庆时时彩[信]',id:'7'},
+            // {gamename:'天津时时彩[信]',id:'9'},
+            // {gamename:'新疆时时彩[信]',id:'10'},
+            // {gamename:'重庆快十[信]',id:'13'},
+            // {gamename:'北京PK拾[信]',id:'15'},
+            // {gamename:'江苏快三[信]',id:'22'},
+            // {gamename:'北京快乐8[官]',id:'28'},
+            // {gamename:'北京PK拾[官]',id:'29'},
+            // {gamename:'福彩3D[官]',id:'30'},
+            // {gamename:'山东11选5[官]',id:'32'},
+            // {gamename:'江苏快三[官]',id:'39'},
+            // {gamename:'新疆时时彩[官]',id:'40'},
+            // {gamename:'天津时时彩[官]',id:'42'},
+            // {gamename:'排列三、五[官]',id:'44'},
+            // {gamename:'江西11选5[官]',id:'46'},
+            // {gamename:'黑龙江11选5[官]',id:'50'},
+            // {gamename:'韩式1.5分彩[官]',id:'51'},
+            // {gamename:'韩式1.5分彩[信]',id:'53'},
+            // {gamename:'黑龙江11选5[信]',id:'55'},
+            // {gamename:'江西11选5[信]',id:'56'},
+            // {gamename:'北京时时彩[官]',id:'57'},
+            // {gamename:'山东11选5[信]',id:'58'},
+            // {gamename:'北京时时彩[信]',id:'59'},
+            // {gamename:'台湾5分彩[信]',id:'60'},
+            // {gamename:'台湾5分彩[官]',id:'61'},
+            // {gamename:'台湾宾果[官]',id:'62'},
+            // {gamename:'加拿大3.5分[官]',id:'64'},
+            // {gamename:'加拿大3.5分[信]',id:'65'},
+            // {gamename:'加拿大快乐8[官]',id:'66'},
+            // {gamename:'澳洲3分彩[官]',id:'67'},
+            // {gamename:'澳洲3分彩[信]',id:'68'},
+            // {gamename:'澳洲快乐8[官]',id:'69'},
+            // {gamename:'斯洛伐克[官]',id:'70'},
+            // {gamename:'斯洛伐克5分[信]',id:'71'},
+            // {gamename:'斯洛伐克5分[官]',id:'72'},
+            // {gamename:'江苏11选5[信]',id:'73'},
+            // {gamename:'江苏11选5[官]',id:'74'},
+            // {gamename:'上海11选5[信]',id:'75'},
+            // {gamename:'上海11选5[官]',id:'76'},
+            // {gamename:'新疆11选5[信]',id:'77'},
+            // {gamename:'新疆11选5[官]',id:'78'},
+            // {gamename:'腾讯分分彩[信]',id:'79'},
+            // {gamename:'QQ分分彩[信]',id:'80'},
+            // {gamename:'腾讯分分彩[官]',id:'81'},
+            // {gamename:'QQ分分彩[官]',id:'82'},
+            // {gamename:'安徽快3[官]',id:'84'},
+            // {gamename:'安徽快3[信]',id:'85'},
+            // {gamename:'河北快3[信]',id:'87'},
+            // {gamename:'河北快3[官]',id:'88'},
+            // {gamename:'河南快3[信]',id:'97'},
+            // {gamename:'河南快3[官]',id:'98'},
+            // {gamename:'湖北快3[信]',id:'99'},
+            // {gamename:'湖北快3[官]',id:'100'},
+            // {gamename:'上海快3[信]',id:'101'},
+            // {gamename:'上海快3[官]',id:'102'},
+            // {gamename:'北京快3[信]',id:'103'},
+            // {gamename:'北京快3[官]',id:'104'},
+            // {gamename:'广西快3[信]',id:'105'},
+            // {gamename:'广西快3[官]',id:'106'},
+            // {gamename:'上海时时乐[官]',id:'107'},
+            // {gamename:'东京1.5分彩[信]',id:'108'},
+            // {gamename:'东京1.5分彩[官]',id:'109'},
+            // {gamename:'幸运飞艇[信]',id:'112'},
+            // {gamename:'幸运飞艇[官]',id:'113'},
+            // {gamename:'幸运28[信]',id:'114'},
+            // {gamename:'斯洛伐克28[信]',id:'115'},
+            // {gamename:'澳洲28[信]',id:'116'},
+            // {gamename:'加拿大28[信]',id:'117'},
+            // {gamename:'韩式28[信]',id:'118'},
+            // {gamename:'台湾28[信]',id:'119'},
+            // {gamename:'东京28[信]',id:'120'}
+        ];
+    </script>
+  <style>
+    .result-body span.missing01, .result-body span.missing02 {
+            color: #999999;
+        }
+
+        .result-con table {
+            table-layout: fixed;
+            border-spacing: 0;
+            border: #ddd solid;
+            border-width: 0 0 1px 1px;
+        }
+
+            .result-con table td, .result-con table th {
+                border: #ddd solid;
+                border-width: 1px 1px 0 0;
+            }
+
+        .result-con td.col-line, .result-con th.col-line {
+            border-right: 1px solid #ff0000;
+        }
+
+        .result-con tr.row-line td, .result-con tr.row-line th {
+            border-bottom: 1px solid #ff0000;
+        }
+
+        .result-con .txt-sm {
+            font-size: 11px;
+        }
+
+        .result-con .txt-xs {
+            font-size: 10px;
+        }
+        .result-con .ball01{
+            background-image: none;
+            background-color: #2B9FF8;
+            border-radius: 50%;
+        }
+        .result-con .ball02{
+            background-image: none;
+            background-color: #E30D0D;
+            border-radius: 50%;
+        }
+        .result-con .ball-blue{
+            background-image: none;
+            background-color: #00A0E9;
+            border-radius: 50%;
+        }
+        .result-con .ball-orange{
+            background-image: none;
+            background-color: #FF6501;
+            border-radius: 50%;
+        }
+        .result-con .ball-red{
+            background-image: none;
+            background-color: #e30d0d;
+            border-radius: 50%;
+        }
+        .result-head{position:static;width:auto;}
+        .result-head .result-head-in{width:1472px;background-color:#2d2d2d;}
+        .result-body{padding-top:0px;}
+        .result-head-in div{height:45px;}
+    </style>
+
+</head>
+
+<body>
+  <div class="report-top" style="display: none;">
+
+    <dl class="gf">
+      <dt><i class="luck-icon"></i></dt>
+      <dd class="clear">
+        <a class=on href="/Result/index?game=26">重庆时时彩</a>
+        <a href="/Result/index?game=28">北京快乐8</a>
+        <a href="/Result/index?game=29">北京PK拾</a>
+        <a href="/Result/index?game=30">福彩3D</a>
+        <a href="/Result/index?game=32">山东11选5</a>
+        <a href="/Result/index?game=39">江苏快三</a>
+        <a href="/Result/index?game=40">新疆时时彩</a>
+        <a href="/Result/index?game=42">天津时时彩</a>
+        <a href="/Result/index?game=44">排列三、五</a>
+        <a href="/Result/index?game=46">江西11选5</a>
+        <a href="/Result/index?game=50">黑龙江11选5</a>
+        <a href="/Result/index?game=51">韩式1.5分彩</a>
+        <a href="/Result/index?game=57">北京时时彩</a>
+        <a href="/Result/index?game=61">台湾5分彩</a>
+        <a href="/Result/index?game=62">台湾宾果</a>
+        <a href="/Result/index?game=64">加拿大3.5分</a>
+        <a href="/Result/index?game=66">加拿大快乐8</a>
+        <a href="/Result/index?game=67">澳洲3分彩</a>
+        <a href="/Result/index?game=69">澳洲快乐8</a>
+        <a href="/Result/index?game=70">斯洛伐克</a>
+        <a href="/Result/index?game=72">斯洛伐克5分</a>
+        <a href="/Result/index?game=74">江苏11选5</a>
+        <a href="/Result/index?game=76">上海11选5</a>
+        <a href="/Result/index?game=78">新疆11选5</a>
+        <a href="/Result/index?game=81">腾讯分分彩</a>
+        <a href="/Result/index?game=82">QQ分分彩</a>
+        <a href="/Result/index?game=84">安徽快3</a>
+        <a href="/Result/index?game=88">河北快3</a>
+        <a href="/Result/index?game=98">河南快3</a>
+        <a href="/Result/index?game=100">湖北快3</a>
+        <a href="/Result/index?game=102">上海快3</a>
+        <a href="/Result/index?game=104">北京快3</a>
+        <a href="/Result/index?game=106">广西快3</a>
+        <a href="/Result/index?game=107">上海时时乐</a>
+        <a href="/Result/index?game=109">东京1.5分彩</a>
+        <a href="/Result/index?game=113">幸运飞艇</a>
+      </dd>
+
+    </dl>
+
+    <dl class="xy">
+      <dt><i class="luck-icon"></i></dt>
+      <dd class="clear">
+        <a href="/Result/index?game=1">⑥合彩</a>
+        <a href="/Result/index?game=5">广东快十</a>
+        <a href="/Result/index?game=6">广西快十</a>
+        <a href="/Result/index?game=7">重庆时时彩</a>
+        <a href="/Result/index?game=9">天津时时彩</a>
+        <a href="/Result/index?game=10">新疆时时彩</a>
+        <a href="/Result/index?game=13">重庆快十</a>
+        <a href="/Result/index?game=15">北京PK拾</a>
+        <a href="/Result/index?game=22">江苏快三</a>
+        <a href="/Result/index?game=53">韩式1.5分彩</a>
+        <a href="/Result/index?game=55">黑龙江11选5</a>
+        <a href="/Result/index?game=56">江西11选5</a>
+        <a href="/Result/index?game=58">山东11选5</a>
+        <a href="/Result/index?game=59">北京时时彩</a>
+        <a href="/Result/index?game=60">台湾5分彩</a>
+        <a href="/Result/index?game=65">加拿大3.5分</a>
+        <a href="/Result/index?game=68">澳洲3分彩</a>
+        <a href="/Result/index?game=71">斯洛伐克5分</a>
+        <a href="/Result/index?game=73">江苏11选5</a>
+        <a href="/Result/index?game=75">上海11选5</a>
+        <a href="/Result/index?game=77">新疆11选5</a>
+        <a href="/Result/index?game=79">腾讯分分彩</a>
+        <a href="/Result/index?game=80">QQ分分彩</a>
+        <a href="/Result/index?game=85">安徽快3</a>
+        <a href="/Result/index?game=87">河北快3</a>
+        <a href="/Result/index?game=97">河南快3</a>
+        <a href="/Result/index?game=99">湖北快3</a>
+        <a href="/Result/index?game=101">上海快3</a>
+        <a href="/Result/index?game=103">北京快3</a>
+        <a href="/Result/index?game=105">广西快3</a>
+        <a href="/Result/index?game=108">东京1.5分彩</a>
+        <a href="/Result/index?game=112">幸运飞艇</a>
+        <a href="/Result/index?game=114">幸运28</a>
+        <a href="/Result/index?game=115">斯洛伐克28</a>
+        <a href="/Result/index?game=116">澳洲28</a>
+        <a href="/Result/index?game=117">加拿大28</a>
+        <a href="/Result/index?game=118">韩式28</a>
+        <a href="/Result/index?game=119">台湾28</a>
+        <a href="/Result/index?game=120">东京28</a>
+      </dd>
+    </dl>
+  </div>
+  <div id="VueRoot">
+    <div class="result-head">
+      <div class="result-head-in">
+        <div class="game">
+          <!-- <label>{{gameID}}</label> -->
+          <label v-text="gameList.length&&gameList.find(function(el){return ''+el.id+el.gameMode==gameID}).gamename"></label>
+          <select class="gamelist" v-model="gameID" v-on:change="switchGame">
+            <option v-for="item in gameList" v-bind:value="item.value">{{item.gamename}}</option>
+          </select>
+        </div>
+        <div class="checkbox-box" data-bind="visible:gameinfo.totalTpl">
+          标注形式选择<label class="checkbox" v-bind:class="{select:polyline}" for="polyline-ck">
+            <input style="opacity:0;filter:alpha(opacity=0);margin-left:-12px;" type="checkbox" v-model="polyline" id="polyline-ck" />显示走势折线
+          </label>
+          <label class="checkbox" v-bind:class="{select:displayTemperature}" for="displayTemperature-ck">
+            <input style="opacity:0;filter:alpha(opacity=0);margin-left:-12px;" type="checkbox" v-model="displayTemperature"
+              id="displayTemperature-ck" />显示号温
+          </label>
+          <label class="checkbox" v-bind:class="{select:displayMissingFloor}" for="displayMissingFloor-ck">
+            <input style="opacity:0;filter:alpha(opacity=0);margin-left:-12px;" type="checkbox" v-model="displayMissingFloor"
+              id="displayMissingFloor-ck" />显示遗漏分层
+          </label>
+          <label class="checkbox" v-bind:class="{select:displayMissing}" v-show="canDisplayMissing" for="displayMissing-ck">
+            <input style="opacity:0;filter:alpha(opacity=0);margin-left:-12px;" type="checkbox" v-model="displayMissing"
+              id="displayMissing-ck" />显示遗漏
+          </label>
+          <label class="checkbox" v-bind:class="{select:displayStatistics}" for="displayStatistics-ck">
+            <input style="opacity:0;filter:alpha(opacity=0);margin-left:-12px;" type="checkbox" v-model="displayStatistics"
+              id="displayStatistics-ck" />显示统计
+          </label>
+          <label class="checkbox" v-bind:class="{select:displayAssist}" for="displayAssist-ck">
+            <input style="opacity:0;filter:alpha(opacity=0);margin-left:-12px;" type="checkbox" v-model="displayAssist"
+              id="displayAssist-ck" />显示辅助线
+          </label>
+        </div>
+        <div class="period">
+          <a href="#" v-on:click="tab(30)" v-bind:class="{active:pageSize==30}">最近30期</a>
+          <a href="#" v-on:click="tab(50)" v-bind:class="{active:pageSize==50}">最近50期</a>
+          <a href="#" v-on:click="tab(100)" v-bind:class="{active:pageSize==100}">最近100期</a>
+          <a href="#" v-on:click="tab(200)" v-bind:class="{active:pageSize==200}">最近200期</a>
+          <a href="#" v-on:click="tab(300)" v-bind:class="{active:pageSize==300}">最近300期</a>
+        </div>
+      </div>
+    </div>
+    <div class="result-body">
+      <div v-show="isLoading" style="margin:10%;">正在获取数据中...</div>
+      <div v-show="!isLoading" class="result-con" style="min-width:initial;position:relative;display:none">
+        <div v-show="polyline">
+          <div id="LINE-CONTAINER" class="line-container">
+
+          </div>
+        </div>
+        <table style="position:relative" v-if="gameInfo">
+          <thead>
+            <tr>
+              <th rowspan="2">期数</th>
+              <th rowspan="2" v-bind:colspan="gameInfo.ballPos" class="col-line">开奖号码</th>
+              <th v-bind:colspan="gameInfo.ballCount" v-for="(d,i) in gameInfo.titles" v-bind:class="{'col-line':i!=gameInfo.ballPos}">{{d}}</th>
+            </tr>
+            <tr is="my-th" v-bind:ball-pos="gameInfo.ballPos" v-bind:ball-count="gameInfo.ballCount" v-bind:start="gameInfo.start"
+              v-bind:is-bottom="false"></tr>
+          </thead>
+
+          <tbody v-if="list.length > 0" id="trend-body">
+            <tr v-for="(item, idx) in list" v-bind:class="{'blue-ball':idx%2===0,  'yellow-ball': idx%2!==0, 'row-line': displayAssist && idx % 5 == 4}">
+              <th>{{item.period}}</th>
+              <td v-for="(d, ri) in item.resultArr" v-bind:class="{'col-line':ri==item.resultArr.length- 1}"><span
+                  class="ball">{{d}}</span></td>
+              <td v-for="(cm, ci) in item.continuousMissing" v-bind:id="ci == 0 && idx==0?'first-td':''" v-bind:class="{'col-line':(ci + 1)%gameInfo.ballCount==0}"
+                v-bind:style="{backgroundColor: displayMissingFloor?cm.bgColor:''}">
+                <span v-bind:class="[cm.className,(['','txt-sm','txt-xs'][getNumTxt(cm).length-1]),((cm.count == 0&&displayTemperature)?temperature[ci]:'')]">{{getNumTxt(cm)}}</span>
+              </td>
+              <td v-for="(cm, ci) in item.numberDistributions">
+                <span class="base-ball" v-bind:class="{'ball-grey':cm.count==1, 'ball-multip': cm.count>1, 'missing02':cm.count==0}">{{cm.count!=0?cm.num:(canDisplayMissing&&displayMissing?cm.missing:'')}}</span>
+              </td>
+            </tr>
+          </tbody>
+          <tbody v-if="list.length<=0">
+            <tr>
+              <td v-bind:colspan="gameInfo.ballCount * (gameInfo.ballPos + 2) + 2">没有符合条件的记录</td>
+            </tr>
+          </tbody>
+          <tbody v-if="list.length > 0 && displayStatistics">
+            <tr v-for="(item, idx) in statisticsInfos" v-bind:style="{color:item.color}">
+              <th v-bind:colspan="gameInfo.ballPos + 1" class="col-line">{{item.title}}</th>
+              <td v-for="(d,i) in item.data" v-bind:class="{'col-line':(((i + 1)%gameInfo.ballCount==0) && (i!=item.data.length - 1)),'txt-sm':String(d).length==2,'txt-xs':String(d).length==3}">{{d}}</td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr is="my-th" v-bind:ball-pos="gameInfo.ballPos" v-bind:ball-count="gameInfo.ballCount" v-bind:start="gameInfo.start"
+              v-bind:is-bottom="true"></tr>
+            <tr>
+              <th v-bind:colspan="gameInfo.ballCount" v-for="(d,i) in gameInfo.titles" v-bind:class="{'col-line':i!=gameInfo.ballPos}">{{d}}</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+    <div v-if="GameCode=='lhc'" class="chart-section" id="J-chart-area" style="margin-top: -10px;">
+        <table class="chart-table" id="J-chart-table">
+            <thead class="thead">
+                <tr class="title-text">
+                    <th rowspan="2" class="border-bottom border-right">期号</th>
+                    <th colspan="7" class="border-bottom border-right">彩球号码</th>
+                    <th rowspan="2" class="border-bottom border-right">总和</th>
+                    <th rowspan="2" class="border-bottom border-right">总大小</th>
+                    <th rowspan="2" class="border-bottom border-right">总单双</th>
+                    <th class="border-bottom border-right" colspan="6">特码</th>
+                    <th rowspan="2" class="border-bottom border-right">波段</th>
+                </tr>
+                <tr class="title-number">
+                    <th class="border-bottom"><i class="ball-noraml">正码1</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">正码2</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">正码3</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">正码4</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">正码5</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">正码6</i></th>
+                    <th class="border-bottom border-right"><i class="ball-noraml">特码</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">单双</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">大小</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">合单双</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">合大小</i></th>
+                    <th class="border-bottom"><i class="ball-noraml">合尾大小</i></th>
+                    <th class="border-bottom border-right"><i class="ball-noraml">家禽野兽</i></th>
+                </tr>
+            </thead>
+            <tbody class="tbody table-guides" id="J-chart-content">
+                <tr v-for="(item, index) in lhcData" :key="index">
+                    <td class="issue-numbers border-right">{{item[0]}}</td>
+                    <td class="border-right">
+                        <div :class="{'ballColorBlue':item[1].color=='blue','ballColorRed':item[1].color=='red','ballColorGreen':item[1].color=='green'}">{{item[1].num}}</div>{{item[1].zoo}}</td>
+                    <td class="border-right">
+                        <div :class="{'ballColorBlue':item[2].color=='blue','ballColorRed':item[2].color=='red','ballColorGreen':item[2].color=='green'}">{{item[2].num}}</div>{{item[2].zoo}}</td>
+                    <td class="border-right">
+                        <div :class="{'ballColorBlue':item[3].color=='blue','ballColorRed':item[3].color=='red','ballColorGreen':item[3].color=='green'}">{{item[3].num}}</div>{{item[3].zoo}}</td>
+                    <td class="border-right">
+                        <div :class="{'ballColorBlue':item[4].color=='blue','ballColorRed':item[4].color=='red','ballColorGreen':item[4].color=='green'}">{{item[4].num}}</div>{{item[4].zoo}}</td>
+                    <td class="border-right">
+                        <div :class="{'ballColorBlue':item[5].color=='blue','ballColorRed':item[5].color=='red','ballColorGreen':item[5].color=='green'}">{{item[5].num}}</div>{{item[5].zoo}}</td>
+                    <td class="border-right">
+                        <div :class="{'ballColorBlue':item[6].color=='blue','ballColorRed':item[6].color=='red','ballColorGreen':item[6].color=='green'}">{{item[6].num}}</div>{{item[6].zoo}}</td>
+                    <td class="border-right">
+                        <div :class="{'ballColorBlue':item[7].color=='blue','ballColorRed':item[7].color=='red','ballColorGreen':item[7].color=='green'}">{{item[7].num}}</div>{{item[7].zoo}}</td>
+                    <td class="border-right border-bottom">{{item[8]}}</td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[9]=='总大'?'blue':'red'};`">{{item[9]}}</span>
+                    </td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[10]=='总双'?'blue':'red'};`">{{item[10]}}</span>
+                    </td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[11]=='双'?'blue':'red'};`">{{item[11]}}</span>
+                    </td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[12]=='大'?'blue':'red'};`">{{item[12]}}</span>
+                    </td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[13]=='合双'?'blue':'red'};`">{{item[13]}}</span>
+                    </td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[14]=='合大'?'blue':'red'};`">{{item[14]}}</span>
+                    </td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[15]=='合尾大'?'blue':'red'};`">{{item[15]}}</span>
+                    </td>
+                    <td class="border-right border-bottom">
+                        <span :style="`color:${item[16]=='家禽'?'blue':'red'};`">{{item[16]}}</span>
+                    </td>
+                    <td class="border-right border-bottom" :class="{'bgGreen':item[17]=='绿波','bgRed':item[17]=='红波','bgBlue':item[17]=='蓝波'}">{{item[17]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  <script id="th-template" type="text/html">
+    <tr>
+            <th v-if="isBottom" rowspan="2">期号</th>
+            <th v-if="isBottom" v-bind:colspan="ballPos" rowspan="2" class="col-line">开奖号码</th>
+            <template v-for="m in (ballPos+1)">
+                <th v-for="n in ballCount" v-bind:class="{'col-line':n==ballCount && m!= ballPos+1}">{{n - 1 + start}}</th>
+            </template>
+        </tr>
+    </script>
+    <script type="text/javascript">
+        var gamelist = [];
+    
+        $.ajax({
+          url: '/getGameTypeAll',
+          method: 'get',
+          success: function (ret) {
+            if (ret.success) {
+              // console.log(ret)
+              ret.list.forEach(el => {
+                el.gameSetting.forEach(item => {
+                  item.id = item.gameNo
+                  item.gameMode = '030001'
+                  item.gamename = item.gameName + (item.gameMode == '030001' ? '[官方]' : '[信用]')
+                  item.value = '' + item.gameNo + item.gameMode
+                  gamelist.push(item)
+                })
+              })
+            }
+          },
+          error: function () {
+    
+          }
+        })
+    
+        //var GameCode = 'SSC';
+        var GameType = [{
+            id: '11',
+            type: 'SSC'
+          },
+          {
+            id: '22',
+            type: 'K3'
+          },
+          {
+            id: '33',
+            type: 'K3'
+          },
+          {
+            id: '44',
+            type: '11X5'
+          },
+          {
+            id: '55',
+            type: 'PK10'
+          },
+          {
+            id: '66',
+            type: 'lhc'
+          },
+          {
+            id: '88',
+            type: 'PCDD'
+          }
+        ]
+    
+        var gameNo = location.href.match(/game=(\d+)/)[1]
+    
+        var GameCode = ''
+    
+        for (var i = 0; i < GameType.length; i++) {
+          if (gameNo.indexOf(GameType[i].id) == 0) {
+            GameCode = GameType[i].type
+            break
+          }
+        }
+        if(GameCode=='lhc'){
+            $('.checkbox-box')[0].style.display = 'none'
+        }
+    
+      </script>
+  <script src="./script/dist/result/pc.vue.js"></script>
+</body>
+
+</html>

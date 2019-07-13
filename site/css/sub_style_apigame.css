@@ -1,0 +1,449 @@
+/*font-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*animation--------------------------------------------------*/
+.slideInUp,
+.slideInLeft,
+.slideInRight {
+  visibility: hidden;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.7s ease-out;
+  -moz-transition: all 0.7s ease-out;
+  -o-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  -webkit-transform: translate(0, 50px);
+  -moz-transform: translate(0, 50px);
+  -o-transform: translate(0, 50px);
+  -ms-transform: translate(0, 50px);
+  transform: translate(0, 50px);
+}
+.slideInUp.slideInUp2,
+.slideInLeft.slideInUp2,
+.slideInRight.slideInUp2 {
+  transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  /* Firefox 4 */
+  -webkit-transition-delay: 0.2s;
+  /* Safari 和 Chrome */
+  -o-transition-delay: 0.2s;
+  /* Opera */
+}
+.slideInUp.slideInUp3,
+.slideInLeft.slideInUp3,
+.slideInRight.slideInUp3 {
+  transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  /* Firefox 4 */
+  -webkit-transition-delay: 0.4s;
+  /* Safari 和 Chrome */
+  -o-transition-delay: 0.4s;
+  /* Opera */
+}
+.slideInLeft {
+  -webkit-transform: translate(50px, 0);
+  -moz-transform: translate(50px, 0);
+  -o-transform: translate(50px, 0);
+  -ms-transform: translate(50px, 0);
+  transform: translate(50px, 0);
+}
+.slideInRight {
+  -webkit-transform: translate(-50px, 0);
+  -moz-transform: translate(-50px, 0);
+  -o-transform: translate(-50px, 0);
+  -ms-transform: translate(-50px, 0);
+  transform: translate(-50px, 0);
+}
+.slideInRight:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.is-active .slideInUp,
+.is-active .slideInLeft,
+.is-active .slideInRight {
+  visibility: visible;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.bcg {
+  object-fit: cover;
+  -o-object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.top-section {
+  display: flex;
+  align-items: center;
+  height: 86vh;
+  padding: 160px 0;
+  position: relative;
+}
+.top-section .bcg {
+  z-index: -1;
+}
+.top-section .w3-center {
+  width: 100%;
+  padding: 24px;
+  padding-right: 30px;
+  position: absolute;
+  top: 30%;
+}
+.top-section .w3-center h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.top-section .w3-center h1 {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 100px;
+  margin: 12px 0 24px;
+}
+.top-section .w3-center:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  margin-left: calc(50% - 45px);
+  background: #f8eea4;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.7s ease-out;
+  -moz-transition: all 0.7s ease-out;
+  -o-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  -webkit-transform: translate(0, 50px);
+  -moz-transform: translate(0, 50px);
+  -o-transform: translate(0, 50px);
+  -ms-transform: translate(0, 50px);
+  transform: translate(0, 50px);
+  transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  /* Firefox 4 */
+  -webkit-transition-delay: 0.4s;
+  /* Safari 和 Chrome */
+  -o-transition-delay: 0.4s;
+  /* Opera */
+}
+.top-section.is-active .w3-center:after {
+  visibility: visible;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.second-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 160px 0;
+}
+.second-section .content {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.second-section .content .w3-row-padding {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.second-section .content .w3-row-padding .w3-col {
+  padding: 0 10px;
+}
+.second-section .content .w3-row-padding .w3-col.txt {
+  z-index: 2;
+}
+.second-section .content .w3-row-padding .w3-col .bg1,
+.second-section .content .w3-row-padding .w3-col .bg2 {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  z-index: 1;
+}
+.second-section .content .w3-row-padding .w3-col .bg2 {
+  left: 10%;
+  top: 55%;
+}
+.second-section .content .w3-row-padding .w3-col h2 {
+  line-height: 84px;
+  font-size: 60px;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+.second-section .content .w3-row-padding .w3-col h2:after {
+  content: "";
+  display: block;
+  margin-top: 24px;
+  width: 0;
+  height: 6px;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  background: #f8eea4;
+  background: -webkit-radial-gradient(circle at 78% 20%, #f8eea4, #b9760b);
+  background: -o-radial-gradient(circle at 78% 20%, #f8eea4, #b9760b);
+  background: -moz-radial-gradient(circle at 78% 20%, #f8eea4, #b9760b);
+  background: radial-gradient(circle at 78% 20%, #f8eea4, #b9760b);
+  transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  /* Firefox 4 */
+  -webkit-transition-delay: 0.2s;
+  /* Safari 和 Chrome */
+  -o-transition-delay: 0.2s;
+  /* Opera */
+}
+.second-section .content .w3-row-padding .w3-col p {
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 60px;
+}
+.second-section .content .w3-row-padding .w3-col .ic-logo-ap {
+  width: 100%;
+  max-width: 300px;
+}
+.second-section .content .w3-row-padding .w3-col .logo_wall .w3-col {
+  padding: 0;
+  min-height: initial;
+  text-align: center;
+}
+.second-section .content .w3-row-padding .w3-col .logo_wall .w3-col img {
+  width: 100%;
+  max-width: 171px;
+}
+.second-section.is-active .content .w3-row-padding .w3-col h2:after {
+  width: 195px;
+}
+.third-section .content .w3-row-padding .w3-col .bg1,
+.fifth-section .content .w3-row-padding .w3-col .bg1,
+.third-section .content .w3-row-padding .w3-col .bg2,
+.fifth-section .content .w3-row-padding .w3-col .bg2 {
+  left: initial;
+  right: 0;
+  top: 0;
+}
+.third-section .content .w3-row-padding .w3-col .bg1,
+.fifth-section .content .w3-row-padding .w3-col .bg1 {
+  float: right;
+}
+.third-section .content .w3-row-padding .w3-col .bg2,
+.fifth-section .content .w3-row-padding .w3-col .bg2 {
+  top: 34%;
+  right: 7%;
+}
+.third-section .content .w3-row-padding .w3-col .bg3,
+.fifth-section .content .w3-row-padding .w3-col .bg3 {
+  position: absolute;
+  right: 8%;
+  top: 85%;
+  z-index: 1;
+}
+.third-section.is-active .content .w3-row-padding .w3-col h2:after,
+.fifth-section.is-active .content .w3-row-padding .w3-col h2:after {
+  width: 235px;
+}
+.fourth-section .content .w3-row-padding .w3-col .bg1,
+.sixth-section .content .w3-row-padding .w3-col .bg1 {
+  top: -15%;
+}
+.fourth-section .content .w3-row-padding .w3-col .bg2,
+.sixth-section .content .w3-row-padding .w3-col .bg2 {
+  left: 0;
+  top: 38%;
+}
+.fourth-section .content .w3-row-padding .w3-col .bg3,
+.sixth-section .content .w3-row-padding .w3-col .bg3 {
+  position: absolute;
+  top: 107%;
+  left: 28%;
+  z-index: 1;
+}
+.fourth-section .content .w3-row-padding .w3-col .ic-logo-oneworks,
+.sixth-section .content .w3-row-padding .w3-col .ic-logo-oneworks {
+  width: 171px;
+}
+.fourth-section.is-active .content .w3-row-padding .w3-col h2:after,
+.sixth-section.is-active .content .w3-row-padding .w3-col h2:after {
+  width: 235px;
+}
+.fifth-section .content .w3-row-padding .w3-col .bg1 {
+  top: 0;
+  right: -10%;
+}
+.fifth-section .content .w3-row-padding .w3-col .bg2 {
+  right: 16%;
+  top: 13%;
+}
+.sixth-section .content .w3-row-padding .w3-col .bg1 {
+  top: 0;
+  left: 6%;
+}
+.sixth-section .content .w3-row-padding .w3-col .bg2 {
+  top: 26%;
+}
+
+@media screen and (max-width: 992px) {
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+  }
+  .second-section {
+    padding: 200px 0 100px;
+  }
+  .second-section .content .w3-row-padding {
+    flex-direction: column;
+  }
+  .second-section .content .w3-row-padding .w3-col {
+    padding: 0 60px;
+    min-height: 200px;
+  }
+  .second-section .content .w3-row-padding .w3-col .bg1,
+  .second-section .content .w3-row-padding .w3-col .bg2 {
+    width: 80%;
+  }
+  .second-section .content .w3-row-padding .w3-col h2 {
+    line-height: 33px;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .second-section .content .w3-row-padding .w3-col h2:after {
+    height: 3px;
+  }
+  .second-section .content .w3-row-padding .w3-col p {
+    line-height: 22px;
+    font-size: 16px;
+  }
+  .second-section.is-active .content .w3-row-padding .w3-col h2:after {
+    width: 80px;
+  }
+  .third-section .content .w3-row-padding,
+  .fifth-section .content .w3-row-padding {
+    flex-direction: column-reverse;
+  }
+  .third-section .content .w3-row-padding .w3-col .bg3,
+  .fifth-section .content .w3-row-padding .w3-col .bg3 {
+    width: 43px;
+  }
+  .third-section.is-active .content .w3-row-padding .w3-col h2:after,
+  .fifth-section.is-active .content .w3-row-padding .w3-col h2:after {
+    width: 100px;
+  }
+  .fourth-section .content .w3-row-padding .w3-col .bg3,
+  .sixth-section .content .w3-row-padding .w3-col .bg3 {
+    width: 50px;
+  }
+  .fourth-section .content .w3-row-padding .w3-col .ic-logo-container,
+  .sixth-section .content .w3-row-padding .w3-col .ic-logo-container {
+    text-align: center;
+  }
+  .fourth-section.is-active .content .w3-row-padding .w3-col h2:after,
+  .sixth-section.is-active .content .w3-row-padding .w3-col h2:after {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top-section .w3-center {
+    text-align: left !important;
+  }
+  .top-section .w3-center:after {
+    margin: 0;
+  }
+  .second-section .content .w3-row-padding .w3-col {
+    padding: 0 24px;
+    min-height: 200px;
+  }
+  .second-section .content .w3-row-padding .w3-col .bg1,
+  .second-section .content .w3-row-padding .w3-col .bg2 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,176 @@
+.item {
+  margin-top: 10px;
+}
+
+.game-item /deep/ .el-badge__content.is-fixed {
+  top: -14px;
+  right: 25px;
+}
+
+.index-header {
+  background: #ec2829;
+  color: #fff;
+  padding: 0px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  height: 45px !important;
+  text-align: center;
+}
+
+.index-header h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.index-header i {
+  margin-right: 6px;
+  font-size: 22px;
+  margin-top: -32px;
+}
+
+.index-main {
+  padding: 0;
+  background-color: #eee;
+  margin-top: 44px;
+  margin-bottom: 60px;
+  height: 100%;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.header {
+  z-index: 10001;
+  height: 44px;
+  background-color: #ec2829 !important;
+}
+
+.header /deep/ .wv-header-title {
+  font-size: 17px;
+}
+
+.brack-icon {
+  font-size: 23px;
+}
+
+.brack-icon i {
+  width: 20px;
+  height: 20px;
+}
+
+.login-btn {
+  background: #ec2829;
+  margin-top: -8px;
+}
+
+.login-btn /deep/ .weui-btn:after {
+  border-color: #ec2829;
+}
+
+.custom-header {
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.custom-right {
+  text-align: right;
+  margin-right: 5px;
+  align-items: center;
+  margin: 9px;
+}
+
+.custom-center {
+  align-items: center;
+  text-align: center;
+  margin: 6px;
+}
+
+.custom-left {
+  margin: 5px;
+}
+
+.active {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #ec2829 !important;
+}
+
+.custom-center /deep/ .el-button--primary {
+  color: #fff;
+  background-color: #ec2829;
+  border-color: #fff;
+}
+
+.w-20 {
+  width: 20px;
+  height: 100%;
+}
+
+.w-60 {
+  width: 60px;
+  height: 100%;
+}
+
+.footers {
+  background-color: #fff;
+  border-top: 1px solid #e6e6e6;
+}
+
+.footers i {
+  font-size: 23px;
+}
+
+.footers /deep/ .weui-tabbar__label {
+  margin-top: -10px;
+}
+
+.footers /deep/ .weui-bar__item_on {
+  color: #ec2829;
+}
+
+.footers /deep/ .weui-bar__item_on .weui-tabbar__label {
+  color: #ec2829;
+}
+
+.sz-s1 {
+  background-image: url('/static/saizi/s1.png');
+}
+
+.sz-s2 {
+  background-image: url('/static/saizi/s2.png');
+}
+
+.sz-s3 {
+  background-image: url('/static/saizi/s3.png');
+}
+
+.sz-s4 {
+  background-image: url('/static/saizi/s4.png');
+}
+
+.sz-s5 {
+  background-image: url('/static/saizi/s5.png');
+}
+
+.sz-s6 {
+  background-image: url('/static/saizi/s6.png');
+}
+
+table tr td {
+  border-style: none !important;
+  /* border-width: 1px !important; */
+}
+
+table tr th {
+  border-style: none !important;
+  /* border-width: 1px !important; */
+}

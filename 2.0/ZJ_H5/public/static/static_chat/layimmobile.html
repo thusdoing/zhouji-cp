@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<title>搭讪</title>
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="js/lib/build/build.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			require('boot');
+		</script>
+		
+		<link rel="stylesheet" href="layui/css/layui.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.mobile.css"/>
+		<link rel="stylesheet" href="layui/myicon/iconfont.css" />
+		<script src="js/xuanfu.js"></script>
+	</head>
+
+
+	<body>
+
+		<script src="layui/layui.js"></script>
+		<script src="js/client.js"></script>
+		<script src="js/common.js"></script>
+	<div id="xuanhu" class="qiehuan" onclick="showCaipiao()">
+		</div>
+
+
+		<script>
+			if(!localStorage.getItem("currentsession")){
+				location.href="index.html";
+			}
+	
+	function showCaipiao(){
+		var el2=document.getElementById("xuanhu");
+		if(!$("#layui-layer1").css("display")){
+			var index = layui.layer.open({
+							title:'',
+								type: 2,
+								content: '/',
+								maxmin: true
+						});
+
+						$(".layui-layer-move").remove();
+						$(".layui-layer-setwin").remove();
+						layui.layer.full(index);
+						return;
+		}
+		if($("#layui-layer1").css("display")=='none' ){
+			$("#layui-layer-shade1").css("display","block");
+			$("#layui-layer1").css("display","block");
+			el2.style.backgroundImage="url(img/chat.png)";
+		}else{
+			$("#layui-layer-shade1").css("display","none")
+			$("#layui-layer1").css("display","none");
+			el2.style.backgroundImage="url(img/cai.png)";
+		}		
+	}
+ 
+//调用安卓方法
+function andorid_fun(nickname,msgCon){
+	try {
+	   	 var res = window.JavaScriptFunction.getData(nickname,msgCon);
+	   	}
+	   	catch(err) {
+	   		
+	   	}
+}
+var msgs =null;
+var lm = null;
+ 
+layui.config({
+	  version: true
+	}).use(['jquery','mobile' ], function(){
+	    var mobile = layui.mobile
+         ,layim = mobile.layim
+         ,$ = layui.jquery 
+         ,laytpl = layui.laytpl
+         ,layer = mobile.layer;
+	     data = null; 
+			 timeId=0;
+	
+			 if(localStorage.getItem("relogin")){
+				 $("#xuanhu").remove();
+					top.layer.alert('账号已在其他设备上登录，请退出后重新登录', {
+						skin: 'layui-layer-molv' //样式类名
+						,closeBtn: 0
+					  }, function(){
+						top.layer.closeAll();
+						location.href="index.html";
+						return;
+						});
+			}
+		  //发送消息
+	      var sendMsg=function(msg,receiver,group){ 
+			var jsondata={
+	        	   senduser:localStorage.getItem("currentsession"),//发送人
+	        	   sendusername:"",//发送人昵称或姓名
+	        	   avatar:group?"layui/images/avatar_group.png":"",//发送人头像
+	        	   receiveuser:receiver,//接收人
+	        	   groupid:group,//群ID
+	        	   isread:0,//是否已读 0 未读  1 已读
+	        	   type:0,//类型 0 单聊消息  1 群消息
+		           content:msg	//消息内容
+	           }
+						 $.get(apiUrl+"user/imuser/sendmsg",{userMessageEntityString:JSON.stringify(jsondata)},function(d){
+										if(!d){
+											layui.layer.msg("发送失败");
+											return;
+										};
+										if(d.indexOf("禁止")>=0){layui.layer.msg('发送失败：已被禁止发言'); return;}
+										sendMessage(jsondata,d,function(data){
+											if(JSON.stringify(data)){
+												layui.layer.msg("发送成功");
+											}
+										}); 
+						   });
+						 
+		  }
+				//等待接收服务端消息
+				localStorage.setItem("hearttimestamp",(new Date()).getTime());//心跳时间戳
+				pomelo.on('onChat', function(data) {
+					localStorage.setItem("hearttimestamp",(new Date()).getTime());//收到消息，更新心跳时间戳
+					var dataObj_=data.msg;
+					if(dataObj_ == '1'){
+						return;
+					}
+					dataObj_=JSON.parse(dataObj_);
+					var json_=JSON.parse(dataObj_.content);
+					if(dataObj_.senduser == localStorage.getItem("currentsession")){
+						return;
+					}
+					if(dataObj_.groupid){
+						layim.getMessage({
+							username: json_.username,
+							avatar: json_.avatar + "?" + new Date().getTime(),
+							id: dataObj_.groupid,	
+							userid:	dataObj_.senduser,									
+							type: "group",
+							content: json_.content,
+							timestamp: dataObj_.createdate
+						});
+					}else{
+						layim.getMessage({
+							username: json_.username,
+							avatar: json_.avatar + "?" + new Date().getTime(),
+							id: dataObj_.senduser,
+							type: "friend",
+							content: json_.content,
+							timestamp: dataObj_.createdate
+						});
+					}
+						//唤起安卓通知栏
+						if (json_.username && json_.content) {
+									andorid_fun(json_.username, json_.content);
+							}
+					//console.log(JSON.stringify(data));
+				});
+				
+					//有人上线了
+				pomelo.on('onAdd', function(data) {
+					var user = data.user;
+					//console.log(user+"上线了！");
+					//layim.setFriendStatus(user, 'online');
+			});
+
+				//有人下线了
+				pomelo.on('onLeave', function(data) {
+					var user = data.user;
+					//console.log(user+"已下线！");
+				});
+	 	 //拉取离线消息
+			var showOfflineMsg = function(layim) {
+					//console.log('timeId',timeId)
+					//消息最大版本号
+					var msglastversion=localStorage.getItem("msglastversion")?localStorage.getItem("msglastversion"):1;
+					//一次性拉取消息数量
+					var limit=localStorage.getItem("limit")?localStorage.getItem("limit"):10;
+					$.ajax({
+						type: "get",
+						url: apiUrl+"getofflinemsg?currentsession=" + localStorage.getItem("currentsession")+"&msgversion="+msglastversion+"&limit="+limit,
+						async: true,
+						success: function(data) {
+							if ($("input").style) {
+								$("input").disabled = false;
+								$("input").style.backgroundColor = "";
+							}
+
+							var dataObj = eval("(" + data + ")");
+							//dataObj=JSON.parse(dataObj);
+							if (dataObj != null && dataObj.length > 0) {
+								if(limit>40){
+									localStorage.setItem("limit",5);
+								}else{localStorage.setItem("limit",Number(limit)*2);}
+								for (var i = 0; i < dataObj.length; i++) {
+									localStorage.setItem("msglastversion",dataObj[i].msgversion);
+									var dataObj_=dataObj[i];
+									var json_=JSON.parse(dataObj_.content);
+									if(dataObj_.type == 1){
+										layim.getMessage({
+											username: json_.username,
+											avatar: json_.avatar + "?" + new Date().getTime(),
+											id: dataObj_.groupid,	
+											userid:	dataObj_.senduser,									
+											type: "group",
+											content: json_.content,
+											timestamp: dataObj_.createdate,
+											fromid:dataObj_.senduser,
+											mine:layui.mobile.layim.cache().mine.id==dataObj_.senduser?true:false
+										});
+									}else{
+										layim.getMessage({
+											username: json_.username,
+											avatar: json_.avatar + "?" + new Date().getTime(),
+											id: dataObj_.senduser,
+											type: "friend",
+											content: json_.content,
+											timestamp: dataObj_.createdate,
+											fromid:dataObj_.senduser,
+											mine:layui.mobile.layim.cache().mine.id==dataObj_.senduser?true:false
+										});
+									}
+								}
+								timeId=setTimeout(function(){showOfflineMsg(layim);},800);
+							}else{localStorage.setItem("limit",10);}
+						},
+						 error:function(XMLHttpRequest, textStatus, errorThrown){
+							layui.layer.msg(textStatus);
+		                  }
+					});
+				};
+
+	     
+	     
+	     $.get(apiUrl+'getusers?currentsession='+localStorage.getItem("currentsession"),  function(str){
+	    	var json =eval("("+str+")")
+		    data = json.data;
+			if(!data || !data.mine){localStorage.removeItem("t");}
+	    	  //基础配置
+	  	  layim.config({
+	  		  init: data,
+	  	    title:data.mine.username
+	  	    ,notice:true
+	  	    //获取群员接口（返回的数据格式见下文）
+	  	   /* ,members: {
+	  	      url: '' //接口地址（返回的数据格式见下文）
+	  	      ,type: 'get' //默认get，一般可不填
+	  	      ,data: {currentsession:localStorage.getItem("currentsession")} //额外参数
+	  	    }, */	  	   
+	  	    //上传图片接口（返回的数据格式见下文）
+	  	    ,uploadImage: {
+	  	    	url: apiUrl+'imgupload' //接口地址
+	  	    		,
+	  	    	type: 'post', //默认post
+	  	    	data:{currentsession:localStorage.getItem("currentsession")}
+	  	    },
+	  	    //上传文件接口（返回的数据格式见下文）
+	  	  /*  uploadFile: {
+	  	    	url: apiUrl+'fileupload' //接口地址
+	  	    		,
+	  	    	type: 'post', //默认post
+	  	    	data:{currentsession:localStorage.getItem("currentsession")}
+	  	    }, */
+		    //扩展“更多”的自定义列表，下文会做进一步介绍（如果无需扩展，剔除该项即可）
+		    moreList: [{
+		        alias: 'mineInfo'
+		            ,title: '我的资料'
+		            ,iconUnicode: '&#xe62a;' //图标字体的unicode，可不填
+		            ,iconClass: '' //图标字体的class类名
+		          },{
+		        alias: 'find'
+		            ,title: '发现'
+		            ,iconUnicode: '&#xe628;' //图标字体的unicode，可不填
+		            ,iconClass: '' //图标字体的class类名
+		          },{
+		            alias: 'cancel'
+		            ,title: '退出账号'
+		            ,iconUnicode: '&#xe61f;' //图标字体的unicode，可不填
+		            ,iconClass: 'myiconfont' //图标字体的class类名
+		          }],
+	  	    brief:false,
+	  		min:true,
+	  		isNewFriend:false,
+	  		isgroup:true,
+	  		voice:'default.mp3',
+	  		copyright:true
+	  	   ,msgbox: 'message' //消息盒子页面地址，若不开启，剔除该项即可
+	  	    //,find: layui.cache.dir + 'css/modules/layim/html/find.html' //发现页面地址，若不开启，剔除该项即可
+					,chatLog: layui.cache.dir + 'css/modules/layim/html/chatlog.html' //聊天记录页面地址，若不开启，剔除该项即可
+						
+					//,chatLog: 'historymessage' //聊天记录页面地址，若不开启，剔除该项即可
+	  	  });
+		});
+	   
+	    //查看聊天信息
+		  layim.on('detail', function(data){
+			  
+				layim.panel({
+					   title: '与 '+ data.name +' 的聊天记录' //标题
+					   ,tpl:'<iframe height="100%" width="100%" src="'+layui.cache.dir + 'css/modules/layim/html/chatlog.html?id='+data.id +'&type='+data.type+'"></iframe>'
+					   ,data: { //数据
+//	 				     list: result,
+//	 				     id:data.id
+					   }
+					});
+		  //console.log(data); //获取当前会话对象，包含了很多所需要的信息
+		  //以查看群组信息（如成员）为例
+	
+		});
+	    
+// 	    layim.on('tool(caipiao)', function(){ //事件中的tool为固定字符，而code则为过滤器，对应的是工具别名（alias）
+// 						console.log(layer)
+// 						  layer.open({
+// 										type: 1
+// 										,content: '<iframe src="https://www.lm978.com"></iframe>'
+// 									});
+// 					}); 
+	  
+	  //监听查看更多记录
+	    layim.on('chatlog', function(data, ul){
+				layim.panel({
+				   title: '与 '+ data.name +' 的聊天记录' //标题
+				   ,tpl:'<iframe height="100%" width="100%" src="'+layui.cache.dir + 'css/modules/layim/html/chatlog.html?id='+data.id +'&type='+data.type+'"></iframe>'
+				   ,data: { //数据
+// 				     list: result,
+// 				     id:data.id
+				   }
+				});
+
+
+				
+				
+// 	      $.post('historymessageajax',{id:data.id,pageSize:2000},  function(str){
+// 		    	var json =eval("("+str+")")
+// 			     result = json.data;
+// 		    	var insertData =   { list: result,  id:data.id }
+// 		    	var template = '<div class="layui-unselect layim-content"><div class="layim-chat layim-chat-friend"><div class="layim-chat-main" style="height:98%"><ul> '
+// 			    	+'{{#  layui.each(d.list, function(index, item){ }}<li class="layim-chat-li {{#  if(d.id === item.senduser){ }}layim-chat-mine {{#  } }} "><div class="layim-chat-user"><img src="{{ item.avatar}}"><cite>{{ item.sendusername}}</cite></div>'
+// 			    	+'<div class="layim-chat-text">{{item.content}}</div></li>{{#  }); }}</ul></div></div></div>'
+// 			    	
+// 		    	var temphtml = "";
+// 		    	 laytpl(template).render(insertData, function(html){
+// 		    		 temphtml =html;
+// 		    	 }); 
+// 			     layim.panel({
+// 			        title: '与 '+ data.name +' 的聊天记录' //标题
+// 			        ,tpl: temphtml//模版
+// 			        ,data: { //数据
+// 			          list: result,
+// 			          id:data.id
+// 			        }
+// 			     });
+// 	      })
+	  
+	    });
+	  
+	  //监听点击“新的朋友”
+
+	    layim.on('newFriend', function(){
+	      //弹出面板
+	    
+	      layim.panel({
+	        title: '新的朋友' //标题
+	        ,tpl: '<iframe height="100%" width="100%" src="'+layui.cache.dir + 'css/modules/layim/mobile/msgbox.html'+'"></iframe>' //模版，基于laytpl语法
+	        ,data: { //数据
+	          test: '<div class="layui-layim"><div class="layim-tab-content layui-show"><ul class="layim-list-friend"><ul class="layui-layim-list layui-show layim-list-history"><li layim-event="chat" data-type="history" data-index="group1" class="layim-group1 "><div><img src="http://tva2.sinaimg.cn/crop.0.0.199.199.180/005Zseqhjw1eplix1brxxj305k05kjrf.jpg"></div><span>公司群</span><p>s</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend" class="layim-friend "><div><img src="layui/images/0.jpg?1555138784072"></div><span>佚名</span><p>121212</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend24" class="layim-friend24 "><div><img src="layui/images/0.jpg?1555131743703"></div><span>小冰</span><p>jkkkkk</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend11" class="layim-friend11 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>九天</span><p>1</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend0" class="layim-friend0 "><div><img src="/img/logo.png"></div><span>系统消息</span><p>... ...：1555075571669</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend100001" class="layim-friend100001 "><div><img src="http://tp1.sinaimg.cn/1571889140/180/40030060651/1"></div><span>贤心</span><p>嗨，你好！演示标记：1555074995927</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend23" class="layim-friend23 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>远坂凛</span><p>111</p><span class="layim-msg-status">new</span></li></ul></ul></div><div class="layim-tab-content"><ul class="layim-list-top"><li layim-event="newFriend"><i class="layui-icon"></i>新的朋友<i class="layim-new" id="LAY_layimNewFriend"></i></li><li layim-event="group"><i class="layui-icon"></i>群聊<i class="layim-new" id="LAY_layimNewGroup"></i></li></ul><ul class="layim-list-friend"><li><h5 layim-event="spread" lay-type="true"><i class="layui-icon"></i><span>我的好友</span><em>(<cite class="layim-count">2</cite>)</em></h5><ul class="layui-layim-list  layui-show"><li layim-event="chat" data-type="friend" data-index="0" class="layim-friend24 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>小冰</span><p></p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="friend" data-index="0" class="layim-friend0 "><div><img src="layui/images/0.jpg"></div><span>客服</span><p>有什么问题尽管问我把</p><span class="layim-msg-status">new</span></li></ul></li><li><h5 layim-event="spread" lay-type="true"><i class="layui-icon"></i><span>高中同学</span><em>(<cite class="layim-count"> 2</cite>)</em></h5><ul class="layui-layim-list  layui-show"><li layim-event="chat" data-type="friend" data-index="1" class="layim-friend11 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>九天</span><p>天下无双2</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="friend" data-index="1" class="layim-friend23 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>远坂凛</span><p></p><span class="layim-msg-status">new</span></li></ul></li></ul></div><div class="layim-tab-content"><ul class="layim-list-top"><li layim-event="moreList" lay-filter="find"><i class="layui-icon "></i>发现<i class="layim-new" id="LAY_layimNewfind"></i></li><li layim-event="moreList" lay-filter="share"><i class="layui-icon "></i>分享<i class="layim-new" id="LAY_layimNewshare"></i></li></ul></div></div>'
+	        }
+	      });
+	      //也可以直接跳转页面，如：
+	      //location.href = layui.cache.dir + 'css/modules/layim/mobile/msgbox.html';
+	    });
+	
+	    layim.on('moreList', function(obj){
+	    	 switch(obj.alias){ //alias即为上述配置对应的alias
+					 case 'mineInfo': //资料
+					 layim.panel({
+						title: '我的资料' //标题
+						,tpl: '<iframe height="100%" width="100%" src="'+layui.cache.dir + 'css/modules/layim/mobile/mobilemyinfo.html'+'"></iframe>' //模版，基于laytpl语法
+						,data: { //数据
+							test: '<div class="layui-layim"><div class="layim-tab-content layui-show"><ul class="layim-list-friend"><ul class="layui-layim-list layui-show layim-list-history"><li layim-event="chat" data-type="history" data-index="group1" class="layim-group1 "><div><img src="http://tva2.sinaimg.cn/crop.0.0.199.199.180/005Zseqhjw1eplix1brxxj305k05kjrf.jpg"></div><span>公司群</span><p>s</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend" class="layim-friend "><div><img src="layui/images/0.jpg?1555138784072"></div><span>佚名</span><p>121212</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend24" class="layim-friend24 "><div><img src="layui/images/0.jpg?1555131743703"></div><span>小冰</span><p>jkkkkk</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend11" class="layim-friend11 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>九天</span><p>1</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend0" class="layim-friend0 "><div><img src="/img/logo.png"></div><span>系统消息</span><p>... ...：1555075571669</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend100001" class="layim-friend100001 "><div><img src="http://tp1.sinaimg.cn/1571889140/180/40030060651/1"></div><span>贤心</span><p>嗨，你好！演示标记：1555074995927</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="history" data-index="friend23" class="layim-friend23 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>远坂凛</span><p>111</p><span class="layim-msg-status">new</span></li></ul></ul></div><div class="layim-tab-content"><ul class="layim-list-top"><li layim-event="newFriend"><i class="layui-icon"></i>新的朋友<i class="layim-new" id="LAY_layimNewFriend"></i></li><li layim-event="group"><i class="layui-icon"></i>群聊<i class="layim-new" id="LAY_layimNewGroup"></i></li></ul><ul class="layim-list-friend"><li><h5 layim-event="spread" lay-type="true"><i class="layui-icon"></i><span>我的好友</span><em>(<cite class="layim-count">2</cite>)</em></h5><ul class="layui-layim-list  layui-show"><li layim-event="chat" data-type="friend" data-index="0" class="layim-friend24 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>小冰</span><p></p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="friend" data-index="0" class="layim-friend0 "><div><img src="layui/images/0.jpg"></div><span>客服</span><p>有什么问题尽管问我把</p><span class="layim-msg-status">new</span></li></ul></li><li><h5 layim-event="spread" lay-type="true"><i class="layui-icon"></i><span>高中同学</span><em>(<cite class="layim-count"> 2</cite>)</em></h5><ul class="layui-layim-list  layui-show"><li layim-event="chat" data-type="friend" data-index="1" class="layim-friend11 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>九天</span><p>天下无双2</p><span class="layim-msg-status">new</span></li><li layim-event="chat" data-type="friend" data-index="1" class="layim-friend23 layim-list-gray"><div><img src="layui/images/0.jpg"></div><span>远坂凛</span><p></p><span class="layim-msg-status">new</span></li></ul></li></ul></div><div class="layim-tab-content"><ul class="layim-list-top"><li layim-event="moreList" lay-filter="find"><i class="layui-icon "></i>发现<i class="layim-new" id="LAY_layimNewfind"></i></li><li layim-event="moreList" lay-filter="share"><i class="layui-icon "></i>分享<i class="layim-new" id="LAY_layimNewshare"></i></li></ul></div></div>'
+						}
+					});
+							
+			    break;   
+		    	 case 'find': //发现
+					 layui.layer.msg('发现');
+	    	    break; 
+	    	    case 'cancel':
+							for(var i in localStorage){
+							 if(i.indexOf('msglastversion')>=0){
+									continue;
+								}
+								localStorage.removeItem(i);
+						};
+	    	    	location.href="index.html";
+	    	    break;
+	    	  } 
+	    	});
+	
+	  layim.on('ready', function(res){
+		  
+		  lm =  mobile.layim; 
+		  //添加
+		  /**
+			 * lm.addList({
+			  type: 'group' //列表类型，只支持friend和group两种
+				  ,avatar: "layui/images/avatar_group.png" //好友头像
+				  ,username: JSON.parse(localStorage.getItem("api_info")).invitCode //好友昵称
+				  ,groupid: 1 //所在的分组id
+				  ,id: "0" //好友id
+				  ,sign: "公共频道" //好友签名
+		  }); 
+			 * **/
+		   
+		  //取得离线消息
+		  showOfflineMsg(layim);
+			layim.setFriendStatus(localStorage.getItem("currentsession"), 'oline');
+		
+	   }); 
+	  //监听发送消息
+	  layim.on('sendMessage', function(data){
+		     var To = data.to; 
+	    	 var my = data.mine;
+	    	 	/**
+		    	  发送消息时  改为 ： 发送消息json对象（包括发送方的头像和昵称）;
+		    	 var message = my.content;  =====>     var message = JSON.stringify(my);
+		    	 ======解决以下问题====
+		    	 1.在群聊中，由于各个群成员之间不是好友，本地缓存也没有消息发送方的用户信息
+		    	 2.在私聊和群聊中，发送方修改头像和昵称时接收方不可知
+		    	 3.采取广播通知所有"好友" ，同时通知群成员非好友的形式 （X）
+		    	 4.从数据库定时刷新获取（X）
+		    	 ========================
+		    	 数据格式 "{"username":"小象","avatar":"http://45.126.180.121:9001/upload/img/temp/21a57c265d-6e83-41ae-90f9-c3dd49bd1ba6.png?1555907181010","id":21,"mine":true,"content":"消息内容"}"
+	    		**/
+	    	 var message = JSON.stringify(my);
+		     var receiver =To.id+"";
+		     if($.trim(localStorage.getItem("currentsession"))=='' ){
+		       return;
+		     } 
+		     if($.trim(message)==''){
+					layui.layer.msg("请输入要发送的消息!");
+		       return;
+		     }   
+		     if(To.type=="friend"){
+	    		 sendMsg(message,receiver,null)
+	    	 }else{
+	    		 sendMsg(message,null,receiver)
+	    	 }  
+	  }); 
+	   
+	  layim.on('online', function(status){
+		  //console.log(status); //获得online或者hide
+		  /*  var stateVal = "";
+		  if(status=="hide"){
+			  stateVal ="hide";
+		  }
+		  $.get("/user/onlinestate",{ state: stateVal }); */
+	   });  
+	  //createWebSocket(websocketurl,initEventHandle);
+	  
+ }); 
+</script>
+
+		<!--<iframe src="http://www.lm978.com" class="iframClass" id="_caipiao"></iframe>-->
+		<style type="text/css">
+			.iframClass {
+				position: absolute;
+				z-index: 0;
+				width: 100%;
+				height: 100vh;
+				box-sizing: border-box;
+			}
+
+			.qiehuan {
+				position: absolute;
+				z-index: 999999999;
+				right: 10%;
+				top: 50%;
+				bottom: 0;
+				line-height: 50px;
+				width: 50px;
+				color: blue;
+				text-align: center;
+				font-size: 1.4rem;
+				height: 50px;
+				font-weight: 600;
+				border-radius: 25px;
+				background: url(img/chat.png) no-repeat;
+				background-size: 100% 100%;
+				display: none;
+			}
+		</style>
+	</body>
+</html>

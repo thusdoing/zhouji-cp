@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <radialGradient id="a" cx="77.546%" cy="20.309%" r="122.816%" fx="77.546%" fy="20.309%">
+            <stop offset="0%" stop-color="#F8EEA4"/>
+            <stop offset="100%" stop-color="#B9760B"/>
+        </radialGradient>
+        <radialGradient id="b" cx="77.546%" cy="20.309%" r="122.816%" fx="77.546%" fy="20.309%" gradientTransform="scale(-1 -.9891) rotate(-46.075 -.48 1.822)">
+            <stop offset="0%" stop-color="#F8EEA4"/>
+            <stop offset="100%" stop-color="#B9760B"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="44" cy="44" r="43" stroke="url(#a)" stroke-width="2"/>
+        <path fill="url(#b)" fill-rule="nonzero" d="M2.261 36.572h35.152a1 1 0 0 1 0 2H1.261a1 1 0 0 1-.978-1.21 1.004 1.004 0 0 1-.022-.21V1a1 1 0 1 1 2 0v35.572zm9.036-28.266a1 1 0 0 1 0-2h9.038a1 1 0 0 1 0 2h-9.038zm0 13.872a1 1 0 0 1 0-2h22.595a1 1 0 1 1 0 2H11.297z" transform="translate(27.25 24.25)"/>
+    </g>
+</svg>

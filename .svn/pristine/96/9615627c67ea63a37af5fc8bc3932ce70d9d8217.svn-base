@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>洲际娱乐彩票系统</title>
+    <!--MAIN CSS-->
+    <link rel="stylesheet" href="js/node_modules/w3-css/w3.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="js/node_modules/featherlight/release/featherlight.min.css">
+    <link rel="stylesheet" href="css/main_style.css">
+    <!--MAIN JS-->
+    <script src="js/node_modules/jquery/dist/jquery.js"></script>
+    <script src="js/node_modules/featherlight/release/featherlight.min.js"></script>
+    <script src="js/mobile-chrome-vh-fix/mobile-chrome-vh-fix.js"></script>
+    <script src="js/node_modules/iscroll/build/iscroll.js"></script>
+    <script src="js/main_fun.js"></script>
+    <!--SUB CSS-->
+    <link rel="stylesheet" href="css/sub_style_deploy.css">
+    <!--SUB JS-->
+    <script src="js/sub_fun_deploy.js"></script>
+    <!--Locale JS-->
+    <script src="js/jquery-cookie/jquery.cookie.js"></script>
+	<script src="js/jquery-i18n-properties/jquery.i18n.properties.min.js"></script>
+	<script src="js/locale_main.js"></script>
+
+    
+</head>
+
+<body class="trhide">
+    <!-- MAIN CONTAINER START -->
+    <div id="content-wrapper" class="main-container scrollContainer">
+        <div class="scrollContent">
+            <section class="w3-display-container  top-section">
+                <div data-locale-msg="bg_build_website"><img class="w3-display-middle w3-hide-small kv" src="static/deploy/banner.jpg"></div>
+                    <div data-locale-msg="bg_build_website_phone"><img class="w3-display-middle w3-hide-medium w3-hide-large kv" src="static/deploy/banner.jpg"></div>
+                <div class="w3-center">
+                    <h2 data-locale-msg="deploy_main_caption">极速建站</h2>
+                    <h1 data-locale-msg="deploy_main_description">网站建设全方位，卓越品质零距离</h1>
+                </div>
+            </section>
+            <section class="w3-center step-section">
+                <h2 data-locale-msg="deploy_1_caption">極速建站</h2>
+                <h3 data-locale-msg="deploy_1_description">滿足所有您的建站需求</h3>
+                <p data-locale-msg="deploy_1_sub_1_description">洲际自主研發的快捷建站功能，配置大量精美模板，支援各種主題，可快速完成建站！只需5步，即可完成建站。</p>
+
+                <ul class="flow">
+                    <li>
+                        <h4>1</h4>
+                        <div class="icon"><img src="svg/ic-web.svg"></div>
+                        <h5 data-locale-msg="deploy_1_item_1">挑選精品模板</h5>
+                    </li>
+                    <li>
+                        <h4>2</h4>
+                        <div class="icon"><img src="svg/ic-signed.svg"></div>
+                        <h5 data-locale-msg="deploy_1_item_2">簽訂協議</h5>
+                    </li>
+                    <li>
+                        <h4>3</h4>
+                        <div class="icon"><img src="svg/ic-design.svg"></div>
+                        <h5 data-locale-msg="deploy_1_item_3">設計及架站</h5>
+                    </li>
+                    <li>
+                        <h4>4</h4>
+                        <div class="icon"><img src="svg/ic-test.svg"></div>
+                        <h5 data-locale-msg="deploy_1_item_4">完美測試</h5>
+                    </li>
+                    <li>
+                        <h4>5</h4>
+                        <div class="icon"><img src="svg/ic-set.svg"></div>
+                        <h5 data-locale-msg="deploy_1_item_5">站點維護</h5>
+                    </li>
+                </ul>
+            </section>
+            <section class="w3-display-container solution-section">
+                <div class="circle1"></div>
+                <div class="circle2">
+                    <img class="w3-hide-small" src="img/1920/ctn-change-website-2.png" srcset="img/1920/ctn-change-website-2@2x.png 2x, img/1920/ctn-change-website-2@3x.png 3x">
+                    <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-change-website-2.png" srcset="img/375/ctn-change-website-2@2x.png 2x, img/375/ctn-change-website-2@3x.png 3x">
+                </div>
+                <div class="w3-center">
+                    <h2 data-locale-msg="deploy_2_caption">無痕轉站技術</h2>
+                    <h3 data-locale-msg="deploy_2_description">短時間完成新老平臺隱形過渡</h3>
+                    <p data-locale-msg="deploy_2_sub_1_description">長期投入鉅額廣告，營收仍無法提升？平臺服務態度差，操作又極易卡頓？甚至玩家經常投訴站點無法正常訪問？</p>
+                    <ul class="feature">
+                        <li class="idn" data-locale-msg="deploy_2_sub_1_description_1">・洲际無痕轉站技術，助您喚醒業務“疲勞期”，創造更大的收益！</li>
+                        <li class="idn" data-locale-msg="deploy_2_sub_1_description_2">・短時間完成，新站點即可上線運營，老平臺所有客戶將無感知過渡至新平臺，100%繼承原站點推廣資源，前期投入不再打水漂！</li>
+                    </ul>
+                    <div data-locale-msg="ctn_change_website_big"><img class="w3-hide-small pic" src="static/deploy/image.png"/></div>
+                <div data-locale-msg="ctn_change_website_small"><img class="w3-hide-medium w3-hide-large pic" src="static/deploy/image.png"/></div>
+                </div>
+            </section>
+<!-- FOOTER CONTACT US START -->
+<section class="section-100 footer-section">
+    <div class="w3-center">
+        <h2 data-locale-msg="footer_caption">聯繫我們</h2>
+        <!-- FORM -->
+        <form class="w3-container">
+            <div class="w3-row-padding w3-section">
+                <div class="w3-half">
+                    <div class="w3-half">
+                        <input class="w3-input w3-border w3-round" type="text" id="username" name="username" required placeholder=" ">
+                        <label for="username" data-locale-msg="footer_input_1">姓名</label>
+                    </div>
+                    <div class="w3-half margin-mob">
+                        <div class="w3-cell w3-padding">
+                            <input class="w3-radio" type="radio" name="gender" value="male" checked>
+                            <label data-locale-msg="footer_radio_1">先生</label>
+                        </div>
+                        <div class="w3-cell w3-padding">
+                            <input class="w3-radio" type="radio" name="gender" value="female">
+                            <label data-locale-msg="footer_radio_2">女士</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-col">
+                        <input class="w3-input w3-border w3-round" type="tel" pattern="[0-9]*" id="cellphone" name="cellphone" required placeholder=" ">
+                        <label for="cellphone" data-locale-msg="footer_input_2">手機</label>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-half">
+                    <div class="w3-col">
+                        <input class="w3-input w3-border w3-round" type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email" data-locale-msg="footer_input_3">郵箱</label>
+                    </div>
+                    <div class="w3-col w3-section">
+                        <select class="w3-select w3-border w3-round" id="cantact_acctount" name="cantact_acctount" required>
+                            <option value="" disabled selected data-locale-msg="footer_select">通訊帳號</option>
+                            <option value="1">Skype</option>
+                            <option value="2">QQ</option>
+                            <option value="3">Wechat</option>
+                        </select>
+                    </div>
+                    <div class="w3-col">
+                        <input class="w3-input w3-border w3-round" type="text" id="contact_id" name="contact_id" required placeholder=" ">
+                        <label for="contact_id" data-locale-msg="footer_input_4">通訊帳號ID</label>
+                    </div>
+                </div>
+                <div class="w3-half margin-mob-textarea">
+                    <div class="w3-col">
+                        <textarea rows="7" class="w3-input w3-border w3-round" type="text" id="contact_info" name="contact_info" required placeholder=" "></textarea>
+                        <label data-locale-msg="footer_input_5">輸入內容</label>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-section margin-mob-button">
+                <button class="w3-button w3-block w3-padding-large w3-round" data-locale-msg="footer_button">確認送出</button>
+            </div>
+        </form>
+        
+    </div>
+</section>
+<!-- FOOTER CONTACT US END -->
+</div>
+</div>
+<!-- MAIN CONTAINER END -->
+<!-- NAVIGATION BAR START -->
+<div class="w3-bar">
+    <button class="w3-bar-item w3-button nav-hamburger w3-hide-large">
+        <span class="hamburger-icon"></span>
+    </button>
+    <a href="index.html" class="w3-bar-item ap-logo">洲际 洲际</a>
+    <nav class="w3-right" role="navigation" id="scroller">
+        <div class="nav_container">
+            <div class="nav_menu_container">
+                <a href="index.html" class="w3-bar-item" data-locale-msg="menu_home">首頁</a>
+                <div class="w3-dropdown-hover">
+                    <span data-locale-msg="menu_advantage">洲际優勢</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden="true"></i>
+                    <div class="sub-menu">
+                        <div class="w3-dropdown-content w3-bar-block w3-center">
+                            <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden="true"></i><span data-locale-msg="menu_advantage">洲际優勢</span></button>
+                            <a href="advantage.html" class="w3-bar-item" data-locale-msg="menu_advantage_1">合作優勢</a>
+                            <a href="deploy.html" class="w3-bar-item" data-locale-msg="menu_advantage_2">極速建站</a>
+                            <a href="payment.html" class="w3-bar-item" data-locale-msg="menu_advantage_3">快捷支付</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="lottery.html" class="w3-bar-item" data-locale-msg="menu_lottery">洲际彩票</a>
+                <div class="w3-dropdown-hover">
+                    <span data-locale-msg="menu_product">產品介紹</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden="true"></i>
+                    <div class="sub-menu">
+                        <div class="w3-dropdown-content w3-bar-block w3-center">
+                            <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden="true"></i><span data-locale-msg="menu_product">產品介紹</span></button>
+                            <a href="backend.html" class="w3-bar-item" data-locale-msg="menu_product_1">後台管理系統</a>
+                            <a href="apigame.html" class="w3-bar-item" data-locale-msg="menu_product_2">API游戏</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-dropdown-hover">
+                    <span data-locale-msg="menu_service">特點服務</span><i class="fa fa-long-arrow-right w3-right w3-hide-large" aria-hidden="true"></i>
+                    <div class="sub-menu">
+                        <div class="w3-dropdown-content w3-bar-block w3-center">
+                            <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left" aria-hidden="true"></i><span data-locale-msg="menu_service">特點服務</span></button>
+                            <a href="technique.html" class="w3-bar-item" data-locale-msg="menu_service_1">技術服務</a>
+                            <a href="market.html" class="w3-bar-item" data-locale-msg="menu_service_2">市場營銷服務</a>
+                            <a href="template.html" class="w3-bar-item" data-locale-msg="menu_service_3">模板設計規劃</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="about.html" class="w3-bar-item" data-locale-msg="menu_about">關於洲际</a>
+                <a href="news.html" class="w3-bar-item" data-locale-msg="menu_news">最新消息</a>
+
+                
+            </div>
+        </div>
+    </nav>
+    <nav class="sub-nav" role="navigation" id="scroller2">
+        <div class="nav_container">
+            <div class="nav_submenu_container"></div>
+        </div>
+    </nav>
+    <div class="nav-bg"></div>
+</div>
+<!-- NAVIGATION BAR END -->
+<header></header>
+</body>
+
+</html>

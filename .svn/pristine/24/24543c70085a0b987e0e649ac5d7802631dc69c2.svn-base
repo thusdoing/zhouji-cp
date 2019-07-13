@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <!-- 删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- 设置苹果工具栏颜色 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- 苹果全屏 -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <!--忽略页面中的数字识别为电话，忽略email识别 -->
+  <meta name="format-detection" content="telephone=no, email=no, address=no" />
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 添加 favicon icon -->
+  <link rel="shortcut icon" href="./static/logo.ico?_=<%= htmlWebpackPlugin.options.VUE_APP_VERSION %>" type="image/x-icon">
+  <title><%= htmlWebpackPlugin.options.VUE_APP_NAME %></title>
+  <script src="./static/payhelp/zepto.min.js"></script>
+  <script>
+    (function () {
+      if ('production' != '<%= htmlWebpackPlugin.options.NODE_ENV %>') return;
+      var origin = window.location.origin; origin = origin.substr(origin.indexOf('://') + 3); var isHasOriginPrefix = false;
+      var prefixs = '<%= htmlWebpackPlugin.options.ORIGIN_PREFIXS %>';
+      if (!prefixs) return; prefixs = prefixs.split(',');
+      for (var i = 0; i < prefixs.length; i++) { if (origin.indexOf(prefixs[i]) == 0) { isHasOriginPrefix = true; break; } }
+      if (!isHasOriginPrefix) { window.location.href = '//www.' + origin; }
+    })();
+    var is_weixin = (function () { var ua = navigator.userAgent.toLowerCase(); if (ua.match(/MicroMessenger/i) == "micromessenger") { return true; } else if (ua.match(/QQ/i) == "qq" && ua.indexOf('qq/') > 0) { return true; } return false; })();
+    if (is_weixin) { window.location.href = '/static/payhelp/w_q.html'; }
+  </script>
+  <!-- <link rel="stylesheet" href="/static/css/loding.css"> -->
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_774971_ryifx1a2xd8.css" />
+  <!-- <link rel="stylesheet" href="./static/css/loding.css" /> -->
+  
+  <style type="text/css">
+  .containerloading { margin: 20px; width: calc(100% - 40px); height: auto; position: relative; top: 50%; transform: translateY(-50%) }
+  .loading-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0); transition: background-color .2s ease-out }
+  .loadinganim { position: relative; width: 200px; height: 200px; margin: auto; perspective: 800px; transform-style: preserve-3d; transition: all .2s ease-out }
+  .loadinganim .circle { width: 100%; height: 100%; animation: spin 5s linear infinite }
+  .loadinganim .border { position: absolute; border-radius: 50%; border: 3px solid #e34981 }
+  .loadinganim .out { top: 15%; left: 15%; width: 70%; height: 70%; border-left-color: transparent; border-right-color: transparent; animation: spin 2s linear reverse infinite }
+  .loadinganim .in { top: 18%; left: 18%; width: 64%; height: 64%; border-top-color: transparent; border-bottom-color: transparent; animation: spin 2s linear infinite }
+  .loadinganim .mid { top: 40%; left: 40%; width: 20%; height: 20%; border-left-color: transparent; border-right-color: transparent; animation: spin 1s linear infinite }
+  .dot { position: absolute; display: block; width: 20px; height: 20px; border-radius: 50%; background-color: #e34981; animation: jitter 5s ease-in-out infinite, fade-in-out 5s linear infinite }
+  .dot:nth-child(1) { top: 90px; left: 180px; animation-delay: 0s }
+  .dot:nth-child(2) { top: 135px; left: 168px; animation-delay: .41667s }
+  .dot:nth-child(3) { top: 168px; left: 135px; animation-delay: .83333s }
+  .dot:nth-child(4) { top: 180px; left: 90px; animation-delay: 1.25s }
+  .dot:nth-child(5) { top: 168px; left: 45px; animation-delay: 1.66667s }
+  .dot:nth-child(6) { top: 135px; left: 12px; animation-delay: 2.08333s }
+  .dot:nth-child(7) { top: 90px; left: 0; animation-delay: 2.5s }
+  .dot:nth-child(8) { top: 45px; left: 12px; animation-delay: 2.91667s }
+  .dot:nth-child(9) { top: 12px; left: 45px; animation-delay: 3.33333s }
+  .dot:nth-child(10) { top: 0; left: 90px; animation-delay: 3.75s }
+  .dot:nth-child(11) { top: 12px; left: 135px; animation-delay: 4.16667s }
+  .dot:nth-child(12) { top: 45px; left: 168px; animation-delay: 4.58333s }
+  @keyframes spin { from { transform: rotate(0) } to { transform: rotate(360deg) } }
+  @keyframes jitter { 0% { transform: scale(1, 1) } 25% { transform: scale(.7, .7) } 50% { transform: scale(1, 1) } 75% { transform: scale(1.3, 1.3) } 100% { transform: scale(1, 1) } }
+  @keyframes fade-in-out { 0% { opacity: .8 } 25% { opacity: .2 } 75% { opacity: 1 } 100% { opacity: .8 } }
+
+  </style>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script> -->
+  <!-- <script> if ('addEventListener' in document) { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false); }</script> -->
+</head>
+
+<body style="height: 100%;">
+  <div id="containerloading" style="position: fixed;background: #eee;top: 0;left: 0;bottom: 0;right: 0;z-index: 9999999;">
+    <div class='containerloading'>
+      <div class='loading-overlay'></div>
+      <div class='loadinganim'>
+        <div class='border out'></div> <div class='border in'></div> <div class='border mid'></div>
+        <div class='circle'>
+          <span class='dot'></span> <span class='dot'></span> <span class='dot'></span> <span class='dot'></span> <span
+            class='dot'></span> <span class='dot'></span> <span class='dot'></span> <span class='dot'></span> <span
+            class='dot'></span> <span class='dot'></span> <span class='dot'></span> <span class='dot'></span>
+        </div>
+      </div>
+      <p style="text-align: center;color: #999;padding-top: 50px;">加载中...</p>
+    </div>
+  </div>
+  <% if ('production' == htmlWebpackPlugin.options.NODE_ENV ) { %>
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script> -->
+  <script src="./static/libs/vue.min.js"></script>
+  <script src="./static/libs/vuex.min.js"></script>
+  <script src="./static/libs/vue-router.min.js"></script>
+  <% } %>
+  <script src="./static/libs/axios.min.js"></script>
+  <script src="./static/libs/crypto-js.min.js"></script>
+  <script src="./static/libs/lodash.min.js"></script>
+  <script src=./static/libs/fastclick.min.js></script>
+  <!-- app 监听事件  -->
+  <script> document.addEventListener('plusready', function () { var webview = plus.webview.currentWebview(); var first = null; plus.key.addEventListener('backbutton', function () { webview.canBack(function (e) { if (!first) { first = new Date().getTime(); document.querySelector('#backfixed').style.display = 'block'; setTimeout(function () { first = null; document.querySelector('#backfixed').style.display = 'none' }, 1000); } else { if (new Date().getTime() - first < 1500) { webview.close(); } } }) }); }); </script>
+  <div id="app" style="height: 100%;"></div>
+  <div class="backfixed" id="backfixed" style="position: fixed; left: 50%; z-index: 9999999; bottom: 20%; transform: translateX(-50%); background: rgba(0,0,0,0.8); padding: 5px 10px; border-radius: 3px; color: #fff; display: none;">再按一次退出应用</div>
+  <!-- built files will be auto injected -->
+</body>
+</html>

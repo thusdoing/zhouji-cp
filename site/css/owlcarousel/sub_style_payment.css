@@ -1,0 +1,679 @@
+/*font-----------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.blod-title{
+    font-weight: 400 !important;
+}
+.p-text{
+    font-size: 12px; !important;
+}
+.top-section {
+  display: flex;
+  align-items: center;
+  height: 86vh;
+  padding: 160px 0;
+  position: relative;
+}
+.top-section .kv {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.top-section .w3-center {
+  width: 100%;
+  padding: 24px;
+  position: absolute;
+  top: 29%;
+}
+.top-section .w3-center img {
+  width: 180px;
+  height: 80px;
+}
+.top-section .w3-center h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.top-section .w3-center h1 {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 100px;
+  margin: 12px 0 24px;
+}
+.top-section .w3-center:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  margin: 0 auto;
+}
+.payment-section {
+  position: relative;
+  padding: 60px 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  transform: translate(0, 0);
+}
+.payment-section .circle1 {
+  position: absolute;
+  top: 21%;
+  right: -18%;
+  width: 761px;
+  height: 761px;
+  background: #57b2f1;
+  background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+  -webkit-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+  -moz-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+  box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+  border-radius: 50%;
+}
+.payment-section .circle2 {
+  position: absolute;
+  top: 55%;
+  left: -2%;
+}
+.payment-section .circle2 img {
+  width: 661px;
+  height: 827px;
+  object-fit: contain;
+  -o-object-fit: contain;
+}
+.payment-section .w3-center {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+}
+.payment-section .w3-center > h2 {
+  position: relative;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 60px;
+  color: #000000;
+  padding: 0 24px;
+}
+.payment-section .w3-center > h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.payment-section .w3-center > p {
+  max-width: 960px;
+  font-size: 20px !important;
+  text-align: center;
+  margin: 0 auto;
+  color: #000000;
+  margin-bottom: 40px;
+}
+.payment-section .w3-center .list {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.payment-section .w3-center .list .item {
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 151px;
+}
+.payment-section .w3-center .list .item .info {
+  width: 479px;
+}
+.payment-section .w3-center .list .item .info .icon {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  background: #ffffff;
+  background-clip: padding-box;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  margin: 0;
+}
+.payment-section .w3-center .list .item .info .icon:after {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  border-radius: 50%;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: #f8eea4;
+  background: -webkit-radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+  background: -o-radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+  background: -moz-radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+  background: radial-gradient(circle at 92% 10%, #f8eea4, #b9760b);
+}
+.payment-section .w3-center .list .item .info .icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  -o-object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.payment-section .w3-center .list .item .info h2 {
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 50px;
+  margin: 21px 0 40px;
+  color: #000000;
+  text-align: left;
+}
+.payment-section .w3-center .list .item .info p {
+padding-right: 70px;
+  text-align: justify !important;
+  font-size: 16px !important;
+  font-weight: normal;
+  color: #000000;
+  text-align: left;
+}
+.payment-section .w3-center .list .item .pic img {
+  object-fit: contain;
+  -o-object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.payment-section .w3-center .list .item:nth-child(1) .info {
+  margin-left: 35px;
+  margin-bottom: 175px;
+}
+.payment-section .w3-center .list .item:nth-child(1) .pic {
+  margin-right: -230px;
+  width: 655px;
+  height: 583px;
+}
+.payment-section .w3-center .list .item:nth-child(2) {
+  flex-direction: row-reverse;
+}
+.payment-section .w3-center .list .item:nth-child(2) .info {
+  margin-left: 166px;
+}
+.payment-section .w3-center .list .item:nth-child(2) .pic {
+  /*margin-left: -360px;*/
+  width: 244px;
+  height: 498px;
+}
+.solution-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  background: #f8f8f8;
+  background: -webkit-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -o-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: -moz-radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+  background: radial-gradient(circle at 92% 10%, #f8f8f8, #e7e7e7);
+}
+.solution-section h2 {
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 84px;
+  margin-bottom: 60px;
+  color: #000;
+}
+.solution-section h2:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 6px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 100% 100%, #d41879, #2a00d7);
+  margin: 24px auto 0;
+}
+.solution-section h3 {
+  font-size: 30px !important;
+  font-weight: normal;
+  line-height: 50px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 60px;
+}
+.solution-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.solution-section ul li {
+  width: 194px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 55px;
+  position: relative;
+}
+.solution-section ul li .icon {
+  padding: 13px;
+  background-color: #ffffff;
+  -webkit-border-radius: 43px;
+  -moz-border-radius: 43px;
+  border-radius: 43px;
+  -webkit-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px;
+}
+.solution-section ul li .icon img {
+  width: 60px;
+  height: 60px;
+}
+.solution-section ul li p {
+  font-size: 15px !important;
+  line-height: 24px;
+  text-align: center !important;
+  color: #000000;
+}
+.solution-section ul li + li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 217px;
+  height: 2px;
+  right: 141px;
+  top: 42px;
+  background: #d41879;
+  background: -webkit-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -o-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: -moz-radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  background: radial-gradient(circle at 92% 10%, #d41879, #2a00d7);
+  margin: 0 auto;
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 992px) {
+  .top-section {
+    height: 50vh;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+  }
+  .payment-section {
+    padding: 100px 0 70px;
+  }
+  .payment-section .circle1 {
+    position: absolute;
+    top: 15%;
+    right: -25%;
+    width: 450px;
+    height: 450px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+    box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+    border-radius: 50%;
+  }
+  .payment-section .circle2 {
+    position: absolute;
+    top: 45%;
+    left: -7%;
+  }
+  .payment-section .circle2 img {
+    width: 400px;
+    height: 827px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .payment-section .w3-center h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .payment-section .w3-center h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .payment-section .w3-center > p {
+    font-size: 16px !important;
+    line-height: 22px;
+    text-align: left;
+    padding: 0 60px;
+  }
+  .payment-section .w3-center .list .item {
+    width: 100%;
+    padding: 0 60px;
+    margin-top: 100px;
+  }
+  .payment-section .w3-center .list .item .info {
+    margin: 0;
+    width: 100%;
+  }
+  .payment-section .w3-center .list .item .info .icon {
+    margin: 0 auto;
+  }
+  .payment-section .w3-center .list .item .info h2 {
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .payment-section .w3-center .list .item .info p {
+      padding-right: 0px;
+    font-size: 16px;
+    text-align: center !important;
+  }
+  .payment-section .w3-center .list .item:nth-child(1) {
+    flex-direction: column-reverse;
+  }
+  .payment-section .w3-center .list .item:nth-child(1) .info {
+    margin: 0 auto;
+  }
+  .payment-section .w3-center .list .item:nth-child(1) .pic {
+    margin: 0 auto;
+    width: auto;
+    height: 400px;
+  }
+  .payment-section .w3-center .list .item:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  .payment-section .w3-center .list .item:nth-child(2) .info {
+    margin: 50px auto 0;
+  }
+  .payment-section .w3-center .list .item:nth-child(2) .pic {
+    margin: 0 auto;
+    width: auto;
+    height: 400px;
+  }
+  .solution-section {
+    padding: 100px 0 120px;
+  }
+  .solution-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+  .solution-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 24px auto 0;
+  }
+  .solution-section h3 {
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 80px;
+  }
+  .solution-section ul {
+    flex-direction: column;
+  }
+  .solution-section ul li {
+    margin: 0;
+    width: 225px;
+  }
+  .solution-section ul li p {
+    font-size: 16px;
+  }
+  .solution-section ul li + li {
+    margin-top: 100px;
+  }
+  .solution-section ul li + li:before {
+    content: none;
+  }
+}
+
+/*color-------------------------------------------------------------------------------------*/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  .top-section {
+    height: 86vh;
+  }
+  .top-section .w3-center {
+    text-align: left !important;
+  }
+  .top-section .w3-center img {
+    width: 90px;
+    height: 40px;
+  }
+  .top-section .w3-center h2 {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .top-section .w3-center h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin: 16px 0;
+  }
+  .top-section .w3-center:after {
+    width: 60px;
+    height: 3px;
+    margin: 0;
+  }
+  .payment-section {
+    padding: 100px 0 120px;
+  }
+  .payment-section .circle1 {
+    position: absolute;
+    top: 16%;
+    right: -50%;
+    width: 304px;
+    height: 304px;
+    background: #57b2f1;
+    background: -webkit-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -o-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: -moz-radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    background: radial-gradient(circle at 84% 14%, #57b2f1, #590daa);
+    -webkit-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+    -moz-box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+    box-shadow: -43px 43px 86px rgba(155, 108, 226, 0.3);
+    border-radius: 50%;
+  }
+  .payment-section .circle2 {
+    position: absolute;
+    top: 54%;
+    left: 0%;
+  }
+  .payment-section .circle2 img {
+    width: 150px;
+    height: 321px;
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+  .payment-section .w3-center h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .payment-section .w3-center h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .payment-section .w3-center > p {
+    margin-bottom: 20px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+  .payment-section .w3-center .list .item {
+    padding: 0 24px;
+    text-align: left;
+    margin-top: 80px;
+  }
+  .payment-section .w3-center .list .item .info .icon {
+    margin: 0;
+  }
+  .payment-section .w3-center .list .item .info h2 {
+    margin: 24px auto 16px;
+    text-align: left;
+  }
+  .payment-section .w3-center .list .item .info p {
+      margin-top: 20px !important;
+      padding-right: 0px;
+    text-align: left !important;
+    font-size: 14px !important;
+  }
+  .payment-section .w3-center .list .item:nth-child(1) {
+    flex-direction: column-reverse;
+  }
+  .payment-section .w3-center .list .item:nth-child(1) .info {
+    margin: 60px auto 0;
+  }
+  .payment-section .w3-center .list .item:nth-child(1) .pic {
+    margin: 0 auto;
+    width: 262px;
+    height: 233px;
+  }
+  .payment-section .w3-center .list .item:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  .payment-section .w3-center .list .item:nth-child(2) .info {
+    margin: 110px auto 0;
+  }
+  .payment-section .w3-center .list .item:nth-child(2) .pic {
+    margin: 0 auto;
+    width: 124px;
+    height: 251px;
+  }
+  .solution-section {
+    align-items: flex-start;
+    padding: 100px 0 120px;
+  }
+  .solution-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 0 24px;
+  }
+  .solution-section h2:after {
+    width: 60px;
+    height: 3px;
+    margin: 16px 0 0;
+  }
+  .solution-section h3 {
+    width: 100%;
+    font-size: 20px!important;
+    text-align: center!important;
+    padding: 0 24px;
+  }
+  .solution-section ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .solution-section ul li {
+    margin: 0 auto;
+    width: 193px;
+  }
+  .solution-section ul li p {
+    font-size: 14px;
+  }
+  .solution-section ul li + li {
+    margin-top: 100px;
+  }
+  .solution-section ul li + li:before {
+    content: none;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "http-server ./ -p 3000"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

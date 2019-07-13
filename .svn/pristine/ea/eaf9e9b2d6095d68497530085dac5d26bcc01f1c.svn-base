@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <!-- 删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- 设置苹果工具栏颜色 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- 苹果全屏 -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <!--忽略页面中的数字识别为电话，忽略email识别 -->
+  <meta name="format-detection" content="telephone=no, email=no, address=no" />
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+    <title>利民彩票</title>
+</head>
+<body style="margin: 0;">
+    <img id="img" src="./open.png" alt="加载中" onload="load()" onerror="error()" style="width: 100%; height: 100%;">
+    <div id="desc" style="line-height: 40px;text-align: center;color: #454445;padding-top:200px "></div>
+</body>
+<script>
+    function load (){
+        window.location.href = location.origin
+    }
+
+    function error (){
+        document.getElementById("img").style.display = 'none';
+        document.getElementById("desc").innerHTML = `网络连接失败，请稍后重试. <br><a href="javascript:void(0);" onclick="load()">仍继续访问官网</a>`;
+    }
+</script>
+</html>

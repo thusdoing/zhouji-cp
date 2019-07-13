@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<style type="text/css">
+		.serchInput{
+		width: 300px;		
+	padding: 0 10px;
+	font-size: 12px;
+		margin-right: 10px;
+	margin-bottom: 10px;
+		vertical-align: middle;
+		white-space: nowrap;
+		box-sizing: border-box;
+	}
+</style>
+<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+<script src="../../layui/layui.js"></script>
+<script src="../../js/common.js"></script>
+</head>
+<body style="margin: 20px;">
+		<div class="layui-tab layui-tab-card" lay-filter="test1">
+			<ul class="layui-tab-title">
+				<li class="layui-this" lay-id="111">内部会员</li>
+				<li lay-id="222">普通会员</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">
+					<div class="layui-btn-container" style="text-align: center;">
+						<button class="layui-btn layui-btn-sm" data-type="reload" id='serchBtn1' lay-event="serch">搜索用户</button>
+						<div class="layui-inline serchInput">
+							<input class="layui-input" name="gname" id="serch1" autocomplete="off" style="height: 30px !important;
+					  line-height: 30px;">
+						</div>
+						<!-- <button class="layui-btn layui-btn-sm" data-type="delAll">删除选中</button> -->
+					</div>
+					<table class="layui-hide" id="memberManager" lay-filter="memberManager"></table>
+					
+				</div>
+				<div class="layui-tab-item">
+					<div class="layui-btn-container" style="text-align: center;">
+						<button class="layui-btn layui-btn-sm" data-type="reload2" id='serchBtn2' lay-event="serch">搜索用户</button>
+						<div class="layui-inline serchInput">
+							<input class="layui-input" name="gname" id="serch2" autocomplete="off" style="height: 30px !important;
+						  line-height: 30px;">
+						</div>
+						<!-- <button class="layui-btn layui-btn-sm" data-type="addAll">添加选中</button> -->
+					</div>
+					<table class="layui-hide" id="memberManager2" lay-filter="memberManager2"></table>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+
+		<!-- 		 <div class="layui-btn-container" style="text-align: center;">	
+		 	<button class="layui-btn layui-btn-sm" data-type="reload" id='serchBtn' lay-event="serch">搜索群名</button>
+		 		<div class="layui-inline serchInput">
+		 		  <input class="layui-input" name="gname" id="serch" autocomplete="off" style="height: 30px !important;
+		   line-height: 30px;">
+		 		</div>
+		 	<button class="layui-btn layui-btn-sm" id="add">增加群</button> 
+		 </div>	 -->
+		<!-- <script type="text/html" id="toolGroup"></script> -->
+		<script type="text/html" id="bar">
+			<a class="layui-btn layui-btn-xs " lay-event="changeH" >设置成普通会员</a>
+		</script>
+		<script type="text/html" id="bar2">
+			<a class="layui-btn layui-btn-xs" lay-event="changeM" >设置成管理员（增删群）</a>
+		</script>
+		</div>
+<script type="text/javascript">
+	layui.use(['table', 'layer', 'form', 'layedit', 'element'], function() {
+		var table = layui.table,
+			$ = layui.$,
+			layer = layui.layer,
+			layedit = layui.layedit,
+			element = layui.element;
+		var layid = location.hash.replace(/^#test1=/, '');
+		var gid = location.search.replace(/^\?gid=/, '');
+		var nicknameIngroup 
+		element.tabChange('test1', layid)
+		//监听Tab切换，以改变地址hash值
+		element.on('tab(test1)', function() {
+			location.hash = 'test1=' + this.getAttribute('lay-id');
+		});	
+		var tableIns = table.render({
+			elem: '#memberManager',
+			url: apiUrl+'userinfo/list',
+			where:{userType: 1},
+			method: 'post',
+			parseData: function(res) { //res 即为原始返回的数据
+				return {
+					"code": res.code, //解析接口状态
+					"msg": res.msg, //解析提示文本
+					"count": res.count, //解析数据长度
+					"data": res.data //解析数据列表
+				};
+			},
+			title: '成员管理'
+			,cols: [[
+			    {type: 'checkbox', fixed: 'left'}
+			    ,{field:'uid', title:'用户id', }
+			    ,{field:'name', title:'会员名'}
+				  ,{field:'address', title:'地址'}
+			    ,{field:'updatedate', title:'上次登录'}
+			    ,{field:'createdate', title:'注册时间'} 
+				  ,{field:'signature', title:'签名'} 
+				  ,{field:'phone', title:'手机'} 
+				  ,{field:'birthday', title:'生日'} 
+				  ,{fixed: 'right', title:'操作', toolbar: '#bar'}
+			  ]]
+			  ,id:'reload'
+			  ,limit: ""
+			});
+
+		var tableIns2 = table.render({
+			elem: '#memberManager2',
+			url: apiUrl+'userinfo/list',
+			where:{userType: 0},
+			method: 'post',
+			title: '成员管理'
+			,cols: [[
+			    {type: 'checkbox', fixed: 'left'}
+			    ,{field:'uid', title:'用户id', }
+			    ,{field:'name', title:'会员名'}
+				  ,{field:'address', title:'地址'}
+			    ,{field:'updatedate', title:'上次登录'}
+			    ,{field:'createdate', title:'注册时间'} 
+				  ,{field:'signature', title:'签名'} 
+				  ,{field:'phone', title:'手机'} 
+				  ,{field:'birthday', title:'生日'} 
+				  ,{fixed: 'right', title:'操作', toolbar: '#bar2'}
+			  ]],
+			id: 'reload2',
+			limit: ""
+		});
+		
+		$('#serchBtn1').click(function() {
+			var serch = $('#serch1');
+			console.log(serch.val())
+			tableIns.reload({
+				where: {
+					name: serch.val()
+				}
+			});
+
+		})
+		$('#serchBtn2').click(function() {
+			var serch = $('#serch2');
+			console.log(serch.val())
+			tableIns2.reload({
+				where: {
+					nickname: serch.val()
+				}
+			});
+		
+		})
+
+		// 		$('#addAll').click(function(obj) {
+		// 			var checkStatus = table.checkStatus('memberManager2'),
+		// 			var checkStatus = table.checkStatus(obj.config.id);
+		// 			var data = checkStatus.data;
+		// 			console.log(data)
+		// 
+		// 
+		// 		})
+
+		active = {
+			delAll: function() {  //批量删除成员
+				var checkStatus = table.checkStatus('reload'),
+					data = checkStatus.data;
+				// layer.alert(JSON.stringify(data));
+				var form = {
+					userRecordIds: []
+				}
+				data.forEach((item, j) => {
+					form.userRecordIds.push(item.user_record_id)
+				})
+				delAll(form)
+
+
+
+
+			},
+			addAll: function() { //批量添加成员
+				var checkStatus = table.checkStatus('reload2'),
+					data = checkStatus.data;
+				console.log(checkStatus)
+				var form = {
+					groupMembers: []
+				}
+				var form1 = {
+					userUid: data.uid,
+					gId: gid,
+					nicknameIngroup: nicknameIngroup,
+					beInviteUserId: -1
+				}
+				data.forEach((j, item) => {
+					form1.userUid=j.uid
+					form.groupMembers.push(JSON.stringify(form1))
+				})	
+							console.log(form)
+				// form.groupMembers.push(JSON.stringify(form1) )
+				addAll(form)
+				
+			},
+		};
+
+		$('.layui-btn-container  .layui-btn').on('click', function() {
+			var type = $(this).data('type');
+			active[type] ? active[type].call(this) : '';
+		});
+
+
+		table.on('tool(memberManager)', function(obj) {
+			var data = obj.data;
+			if (obj.event === 'changeH') {
+				layer.confirm('真的将 ' + data.name + '  降为普通成员吗？', function(index) {
+					obj.del();
+					setUserType(data.uid,"0")
+					
+				});
+			}
+
+
+
+		})
+
+
+
+
+		table.on('tool(memberManager2)', function(obj) {
+			var data = obj.data;
+			console.log(obj)
+			if (obj.event === 'changeM') {
+				layer.confirm('确认将 ' + data.nickname + ' 设置为内部会员吗？', function(index) {
+					obj.del();
+					setUserType(data.uid,"1")
+					
+				});
+			}
+
+
+
+		})
+
+		//修改成员权限api'
+		function setUserType(userId, userType) {
+			var form={userId:userId,userType:userType}
+			layer.load(0, {
+				shade: 0.1
+			});
+			$.ajax({
+				type: "post",
+				url: apiUrl+"/sys/setUserType",
+				// contentType: "application/json;charset=utf-8",
+				data: form,
+				dataType: "json",
+				traditional: true,
+				async: false, //同步				
+				success: function(res) {	
+					layer.closeAll('loading');
+					if (res.code == 0) {
+						parent.layer.msg("修改权限成功")
+						sessionStorage.setItem('isUpdate','1')
+						tableIns.reload({
+							where:{userType: 1}
+						})
+						tableIns2.reload({
+							where:{userType: 0}
+						})
+						if (index) {
+							layer.close(index);
+						}
+					}
+					
+				},
+				error: function(e) {
+					console.log(e)
+				}
+			})
+		}
+
+
+	})
+</script>
+	</body>
+</html>

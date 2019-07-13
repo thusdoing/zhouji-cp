@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 苹果全屏 -->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <!--忽略页面中的数字识别为电话，忽略email识别 -->
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_623734_fpe7blbass8aor.css">
+    <link rel="shortcut icon" href="./static/logo.ico?_=<%= htmlWebpackPlugin.options.VUE_APP_VERSION %>" type="image/x-icon">
+    <title><%= htmlWebpackPlugin.options.VUE_APP_NAME %></title>
+    <script>
+      (function () {
+        if ('production' != '<%= htmlWebpackPlugin.options.NODE_ENV %>') return;
+        var origin = window.location.origin; origin = origin.substr(origin.indexOf('://') + 3); var isHasOriginPrefix = false;
+        var prefixs = '<%= htmlWebpackPlugin.options.ORIGIN_PREFIXS %>';
+        if (!prefixs) return; prefixs = prefixs.split(',');
+        for (var i = 0; i < prefixs.length; i++) { if (origin.indexOf(prefixs[i]) == 0) { isHasOriginPrefix = true; break; } }
+        if (!isHasOriginPrefix) { window.location.href = '//www.' + origin; }
+      })();
+    </script>
+    <script src="./static_pc/crypto-js.min.js"></script>
+</head>
+
+<body oncontextmenu="return false">
+
+    <div id="app"></div>
+
+</body>
+</html>

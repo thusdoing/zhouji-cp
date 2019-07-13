@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <radialGradient id="a" cx="77.546%" cy="20.309%" r="122.816%" fx="77.546%" fy="20.309%" gradientTransform="scale(-.875 -1) rotate(-41.942 -.585 2.168)">
+            <stop offset="0%" stop-color="#F8EEA4"/>
+            <stop offset="100%" stop-color="#B9760B"/>
+        </radialGradient>
+    </defs>
+    <path fill="url(#a)" fill-rule="evenodd" d="M52 13H8v-.445C8 11.697 8.697 11 9.555 11h40.89c.858 0 1.555.697 1.555 1.555V13zM8 15h44v20H8V15zm44 24.445c0 .858-.697 1.555-1.555 1.555H9.555A1.556 1.556 0 0 1 8 39.445V37h44v2.445zM25.476 49l1.277-6h6.9l1.278 6h-9.455zM50.445 9H9.555A3.56 3.56 0 0 0 6 12.555v26.89A3.56 3.56 0 0 0 9.555 43h15.153l-1.277 6H22a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2h-1.025l-1.277-6h14.747A3.56 3.56 0 0 0 54 39.445v-26.89A3.56 3.56 0 0 0 50.445 9z"/>
+</svg>

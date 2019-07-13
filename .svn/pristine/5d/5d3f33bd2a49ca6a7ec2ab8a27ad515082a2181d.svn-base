@@ -1,0 +1,17 @@
+import Vue from 'vue';
+import router from './router';
+import store from './store';
+import plugin from './core/plugin';
+import App from './components/App';
+
+import 'vux/src/styles/reset.less';
+import 'styles/index.less';
+
+Vue.config.productionTip = false;
+
+// 集成插件
+Vue.use(plugin);
+// 启用严格模式
+store.enableStrict();
+// 挂载页面
+new Vue({ router, store, render: h => h(App) }).$mount('#app');

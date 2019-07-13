@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv=Content-Type>
+    <meta content=utf-8 http-equiv=encoding>
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>洲际娱乐彩票系统</title>
+    <link rel=stylesheet href="js/node_modules/w3-css/w3.css">
+    <link rel=stylesheet href="css/font-awesome.min.css">
+    <link rel=stylesheet href="js/node_modules/featherlight/release/featherlight.min.css">
+    <link rel=stylesheet href="css/main_style.css">
+    <script src="js/node_modules/jquery/dist/jquery.js"></script>
+    <script src="js/node_modules/featherlight/release/featherlight.min.js"></script>
+    <script src="js/mobile-chrome-vh-fix/mobile-chrome-vh-fix.js"></script>
+    <script src="js/node_modules/iscroll/build/iscroll.js"></script>
+    <script src="js/main_fun.js"></script>
+    <link rel=stylesheet href="css/sub_style_advantage.css">
+    <script src="js/sub_fun_advantage.js"></script>
+    <script src="js/jquery-cookie/jquery.cookie.js"></script>
+    <script src="js/jquery-i18n-properties/jquery.i18n.properties.min.js"></script>
+    <script src="js/locale_main.js"></script>
+
+</head>
+
+<body class=trhide>
+    <div id=content-wrapper class="main-container scrollContainer">
+        <div class=scrollContent>
+            <section class="w3-display-container top-section">
+                <img class="w3-display-middle w3-hide-small kv" src="static/advantage/banner.jpg">
+                <img class="w3-display-middle w3-hide-medium w3-hide-large kv" src="img/375/bg-ap-advantage-phone.jpg"
+                    srcset="img/375/bg-ap-advantage-phone@2x.jpg 2x, img/375/bg-ap-advantage-phone@3x.jpg 3x">
+                <div class=w3-center>
+                    <h2 data-locale-msg=advantage_main_caption>合作优势</h2>
+                    <h1 data-locale-msg=advantage_main_description>您的信赖，给我们的世界无限光彩</h1>
+                </div>
+            </section>
+            <section class="section-100 second-section">
+                <div class=w3-center>
+                    <div class=w3-row-padding>
+                        <div class="w3-col m6 l4">
+                            <div class=icon><img src="svg/ic-lock.svg"></div>
+                            <h2 data-locale-msg=advantage_main_sub_1_caption>首創域名防劫持</h2>
+                            <p data-locale-msg=advantage_main_sub_1_description>徹底告別域名/DNS被劫持，洲际重磅推出防劫持瀏覽器，助您告別劫持！獨立外圍伺服器，徹底解決網站被劫持等問題。</p>
+                        </div>
+                        <div class="w3-col m6 l4">
+                            <div class=icon><img src="svg/ic-top.svg"></div>
+                            <h2 data-locale-msg=advantage_main_sub_2_caption>頂尖軟硬技術團隊</h2>
+                            <ul>
+                                <li data-locale-msg=advantage_main_sub_2_description_1>專利的防劫持技術</li>
+                                <li data-locale-msg=advantage_main_sub_2_description_2>獨立的外圍服務器，享受高速寬帶</li>
+                                <li data-locale-msg=advantage_main_sub_2_description_3>大陸多個服務器節點，速度更快</li>
+                                <li data-locale-msg=advantage_main_sub_2_description_4>多條線路並行時，瀏覽器智能匹配最佳聯機</li>
+                                <li data-locale-msg=advantage_main_sub_2_description_5>多種瀏覽器皮膚可供選擇</li>
+                            </ul>
+                        </div>
+                        <div class="w3-col m6 l4">
+                            <div class=icon><img src="svg/ic-maintain.svg"></div>
+                            <h2 data-locale-msg=advantage_main_sub_3_caption>免停機維護</h2>
+                            <p data-locale-msg=advantage_main_sub_3_description>平臺例行維護免停機，同比業內大部分站點，每月至少多出一半以上的運營時間，實現鉅額廣告費用零耗損，總營收提升相當有感。系統例行維護期間，玩家仍可正常登入遊戲，並自動更新至新版本，大大減少因維護所造成的玩家流失。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="w3-center solution-section">
+                <div class=circle1></div>
+                <div class=circle2>
+                    <img class=w3-hide-small src="img/1920/ctn-ap-advantage-1.png" srcset="img/1920/ctn-ap-advantage-1@2x.png 2x, img/1920/ctn-ap-advantage-1@3x.png 3x">
+                    <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-ap-advantage-1.png" srcset="img/375/ctn-ap-advantage-1@2x.png 2x, img/375/ctn-ap-advantage-1@3x.png 3x">
+                </div>
+                <h2 data-locale-msg=advantage_2_caption>高品質建站方案</h2>
+                <p data-locale-msg=advantage_2_description>我們協助您建立精彩的線上博弈平台，憑藉我們的白牌解決方案，給您高自由度選擇適合市場的包裝設計，無論是模板、遊戲選擇、貨幣和語言，我們將提供專業知識協助您建立，您更保有數據所有權。</p>
+                <img class=w3-hide-small src="static/advantage/programme.png">
+                <img class="w3-hide-medium w3-hide-large" src="static/advantage/programme.png">
+                <div class="w3-row-padding w3-left-align">
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-customer.svg">
+                        <h3 data-locale-msg=advantage_2_sub_1_caption>客戶端保留數據庫所有權</h3>
+                        <p data-locale-msg=advantage_2_sub_1_description>遍布多國的數據中心，配備全面冗餘 UPS (無間斷電源) 系統，確保 100%
+                            運行時間的服務水平，接駁亞洲主要城市，保障用戶數據的安全性高效能。基於PCI-e SSD存儲介質，支持MySQL、SQL
+                            Server、TDSQL引擎，PostgreSQL等，提供數據庫運維全套解決方案。</p>
+                    </div>
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-money.svg">
+                        <h3 data-locale-msg=advantage_2_sub_2_caption>多種設置滿足建站需求</h3>
+                        <p data-locale-msg=advantage_2_sub_2_description>自主研發快速建站功能及大量精美模板，無論是國際各大賭場酒店主題風格，或真人視訊、體育博彩、彩票遊戲、電子遊戲或金融產品主營型的主題模板應有盡有，也提供人性化多種貨幣結算單位，所有平台均支持人民幣付款，為您省去換匯的煩惱。</p>
+                    </div>
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-web.svg">
+                        <h3 data-locale-msg=advantage_2_sub_3_caption>單一後台便捷管理</h3>
+                        <p data-locale-msg=advantage_2_sub_3_description>只需要一個管理後台，即可同時經營多個站點前台！
+                            有別於行業部分站點僅前端分離，但子站與主站共用後台資料庫的系統模式，洲际娛樂多系統平台下所有子站均配置獨立資料庫，完全支援您將子站獨立成一個站點管理（使用不同站長帳號登入管理），清晰檢視各站點資料。</p>
+                    </div>
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-network.svg">
+                        <h3 data-locale-msg=advantage_2_sub_4_caption>風險監控系統保證權益</h3>
+                        <p data-locale-msg=advantage_2_sub_4_description>您可在後台根據您的經營狀況，隨時清除玩家相關聯絡數據，系統將不進行任何形式存盤，保障您的權益！同時，系統建立完善的玩家欺詐監控提醒機制，讓洗水套利團隊、職業高手賭客、不良玩家能實時得到稽查，實時預防運營風險。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="w3-center solution-section ai-section">
+                <div class=circle1></div>
+                <div class=circle2>
+                    <img class=w3-hide-small src="img/1920/ctn-ap-advantage-2.png" srcset="img/1920/ctn-ap-advantage-2@2x.png 2x, img/1920/ctn-ap-advantage-2@3x.png 3x">
+                    <img class="w3-hide-medium w3-hide-large" src="img/375/ctn-ap-advantage-2.png" srcset="img/375/ctn-ap-advantage-2@2x.png 2x, img/375/ctn-ap-advantage-2@3x.png 3x">
+                </div>
+                <h2 data-locale-msg=advantage_3_caption>使人放心的智能管理</h2>
+                <p data-locale-msg=advantage_3_description>我們的高端技術與博弈業務知識使我們的系統人性化與高效率，給您全面性、系統性的控管與分析您的業務，少一點操作，更多時間讓您即刻判斷商業決策。</p>
+                <img class=w3-hide-small src="static/advantage/Administration.png">
+                <img class="w3-hide-medium w3-hide-large" src="static/advantage/Administration.png">
+                <div class="w3-row-padding w3-left-align">
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-system.svg">
+                        <h3 data-locale-msg=advantage_3_sub_1_caption>自訂賠率彩票系統</h3>
+                        <p data-locale-msg=advantage_3_sub_1_description>自定賠率，免費試玩<br>洲际彩票系統匹配的多元功能，將幫助客戶最大程度地刺激玩家消費</p>
+                        <ul>
+                            <li class=idn data-locale-msg=advantage_3_sub_1_description_1>自主調整彩票賠率</li>
+                            <li class=idn data-locale-msg=advantage_3_sub_1_description_2>免費試玩獨立資料系統</li>
+                            <li class=idn data-locale-msg=advantage_3_sub_1_description_3>實時走勢圖分析</li>
+                            <li class=idn data-locale-msg=advantage_3_sub_1_description_4>快速投注便捷通道</li>
+                        </ul>
+                    </div>
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-analysis.svg">
+                        <h3 data-locale-msg=advantage_3_sub_2_caption>便捷管理系統</h3>
+                        <p data-locale-msg=advantage_3_sub_2_description>子帳號權限分明</p>
+                        <ul>
+                            <li class=idn data-locale-msg=advantage_3_sub_2_description_1>集成玩家管理、資金管理、運營管理、統計報表、經營分析、內容管理、系統設置7大管理模組，平臺資金、會員動態、投資動向實時掌控。</li>
+                            <li class=idn data-locale-msg=advantage_3_sub_2_description_2>子帳號權限細化至每一個重要操作，玩家存取款稽核支援分層級進行管理。</li>
+                        </ul>
+                    </div>
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-system.svg">
+                        <h3 data-locale-msg=advantage_3_sub_3_caption>運營分析系統</h3>
+                        <p data-locale-msg=advantage_3_sub_3_description>全方位運營分析，讓您一目了然知悉站點優勢與短板，為您的商業決策提供有力指導！核心報表包含：損益分析、玩家分析、存取款分析、遊戲分析、活動分析、代理分析等。</p>
+                    </div>
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-analysis.svg">
+                        <h3 data-locale-msg=advantage_3_sub_4_caption>全方位後台系統</h3>
+                        <ul>
+                            <li class=idn data-locale-msg=advantage_3_sub_4_description_1>經營分析系統</li>
+                            <li class=idn data-locale-msg=advantage_3_sub_4_description_2>權限管理系統</li>
+                            <li class=idn data-locale-msg=advantage_3_sub_4_description_3>風險控管系統</li>
+                            <li class=idn data-locale-msg=advantage_3_sub_4_description_4>智能優惠活動系統</li>
+                        </ul>
+                    </div>
+                    <div class="w3-col m6 l6">
+                        <img src="svg/ic-system.svg">
+                        <h3 data-locale-msg=advantage_3_sub_5_caption>智慧活動系統</h3>
+                        <p data-locale-msg=advantage_3_sub_5_description>批量稽核，自動派彩<br>洲际活動系統，提供豐富的活動選擇：註冊送紅包、存款開寶箱、打碼玩拉霸、登入簽到領彩金、註冊送、存就送...且支援自定義活動（含案例介紹及規則模板）。</p>
+                        <ul>
+                            <li class=idn data-locale-msg=advantage_3_sub_5_description_1>營銷活動自動化，玩家前端提交的優惠申請，後臺一鍵批量稽核後系統自動派彩，多人工作量可由1人完成，失誤率不到<br>0.
+                                001%，有效節省人事成本。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section-100 footer-section">
+                <div class=w3-center>
+                    <h2 data-locale-msg=footer_caption>聯繫我們</h2>
+                    <form class=w3-container>
+                        <div class="w3-row-padding w3-section">
+                            <div class=w3-half>
+                                <div class=w3-half>
+                                    <input class="w3-input w3-border w3-round" id=username name=username required
+                                        placeholder=" ">
+                                    <label for=username data-locale-msg=footer_input_1>姓名</label>
+                                </div>
+                                <div class="w3-half margin-mob">
+                                    <div class="w3-cell w3-padding">
+                                        <input class=w3-radio type=radio name=gender value=male checked>
+                                        <label data-locale-msg=footer_radio_1>先生</label>
+                                    </div>
+                                    <div class="w3-cell w3-padding">
+                                        <input class=w3-radio type=radio name=gender value=female>
+                                        <label data-locale-msg=footer_radio_2>女士</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=w3-half>
+                                <div class=w3-col>
+                                    <input class="w3-input w3-border w3-round" type=tel pattern="[0-9]*" id=cellphone
+                                        name=cellphone required placeholder=" ">
+                                    <label for=cellphone data-locale-msg=footer_input_2>手機</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w3-row-padding w3-section">
+                            <div class=w3-half>
+                                <div class=w3-col>
+                                    <input class="w3-input w3-border w3-round" type=email id=email name=email required
+                                        placeholder=" ">
+                                    <label for=email data-locale-msg=footer_input_3>郵箱</label>
+                                </div>
+                                <div class="w3-col w3-section">
+                                    <select class="w3-select w3-border w3-round" id=cantact_acctount name=cantact_acctount
+                                        required>
+                                        <option value="" disabled selected data-locale-msg=footer_select>通訊帳號</option>
+                                        <option value=1>Skype</option>
+                                        <option value=2>QQ</option>
+                                        <option value=3>Wechat</option>
+                                    </select>
+                                </div>
+                                <div class=w3-col>
+                                    <input class="w3-input w3-border w3-round" id=contact_id name=contact_id required
+                                        placeholder=" ">
+                                    <label for=contact_id data-locale-msg=footer_input_4>通訊帳號ID</label>
+                                </div>
+                            </div>
+                            <div class="w3-half margin-mob-textarea">
+                                <div class=w3-col>
+                                    <textarea rows=7 class="w3-input w3-border w3-round" type=text id=contact_info name=contact_info
+                                        required placeholder=" "></textarea>
+                                    <label data-locale-msg=footer_input_5>輸入內容</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w3-section margin-mob-button">
+                            <button class="w3-button w3-block w3-padding-large w3-round" data-locale-msg=footer_button>確認送出</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class=w3-bar>
+        <button class="w3-bar-item w3-button nav-hamburger w3-hide-large">
+            <span class=hamburger-icon></span>
+        </button>
+        <a href=index.html class="w3-bar-item ap-logo">洲际 洲际</a>
+        <nav class=w3-right role=navigation id=scroller>
+            <div class=nav_container>
+                <div class=nav_menu_container>
+                    <a href=index.html class=w3-bar-item data-locale-msg=menu_home>首頁</a>
+                    <div class=w3-dropdown-hover>
+                        <span data-locale-msg=menu_advantage>洲际優勢</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+                            aria-hidden=true></i>
+                        <div class=sub-menu>
+                            <div class="w3-dropdown-content w3-bar-block w3-center">
+                                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                                        aria-hidden=true></i><span data-locale-msg=menu_advantage>洲际優勢</span></button>
+                                <a href=advantage.html class=w3-bar-item data-locale-msg=menu_advantage_1>合作優勢</a>
+                                <a href=deploy.html class=w3-bar-item data-locale-msg=menu_advantage_2>極速建站</a>
+                                <a href=payment.html class=w3-bar-item data-locale-msg=menu_advantage_3>快捷支付</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href=lottery.html class=w3-bar-item data-locale-msg=menu_lottery>洲际彩票</a>
+                    <div class=w3-dropdown-hover>
+                        <span data-locale-msg=menu_product>產品介紹</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+                            aria-hidden=true></i>
+                        <div class=sub-menu>
+                            <div class="w3-dropdown-content w3-bar-block w3-center">
+                                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                                        aria-hidden=true></i><span data-locale-msg=menu_product>產品介紹</span></button>
+                                <a href=backend.html class=w3-bar-item data-locale-msg=menu_product_1>後台管理系統</a>
+                                <a href=apigame.html class=w3-bar-item data-locale-msg=menu_product_2>API游戏</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=w3-dropdown-hover>
+                        <span data-locale-msg=menu_service>特點服務</span><i class="fa fa-long-arrow-right w3-right w3-hide-large"
+                            aria-hidden=true></i>
+                        <div class=sub-menu>
+                            <div class="w3-dropdown-content w3-bar-block w3-center">
+                                <button class="w3-bar-item w3-button w3-hide-large w3-center sub-back"><i class="fa fa-long-arrow-left w3-left"
+                                        aria-hidden=true></i><span data-locale-msg=menu_service>特點服務</span></button>
+                                <a href=technique.html class=w3-bar-item data-locale-msg=menu_service_1>技術服務</a>
+                                <a href=market.html class=w3-bar-item data-locale-msg=menu_service_2>市場營銷服務</a>
+                                <a href=template.html class=w3-bar-item data-locale-msg=menu_service_3>模板設計規劃</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href=about.html class=w3-bar-item data-locale-msg=menu_about>關於洲际</a>
+                    <a href=news.html class=w3-bar-item data-locale-msg=menu_news>最新消息</a>
+                </div>
+            </div>
+        </nav>
+        <nav class=sub-nav role=navigation id=scroller2>
+            <div class=nav_container>
+                <div class=nav_submenu_container></div>
+            </div>
+        </nav>
+        <div class=nav-bg></div>
+    </div>
+    <header></header>
+</body>
+
+</html>

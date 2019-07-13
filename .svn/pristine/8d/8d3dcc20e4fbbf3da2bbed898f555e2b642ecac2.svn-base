@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <!-- 字符集设置 -->
+    <meta charset="utf-8">
+    <!-- 窗口适应配置 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 苹果全屏 -->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <!--忽略页面中的数字识别为电话，忽略email识别 -->
+    <meta name="format-detection" content="telephone=no, email=no, address=no"/>
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- IE设定 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>历史开奖记录</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/index.css"/>
+
+    <style type="text/css">
+      .baoma-time { font-size: 2rem!important; }
+      .baoma-shuxing, .baoma-redball, .baoma-blueball, .baoma-greenball{ transform: scale(1.6)!important; }
+      .baoma-shuxing { margin: 20px 0 10px!important; }
+      .baoma-jieguo { margin-top: 10px!important;}
+      
+      .baoma-jieguo1 { padding: 4px 16px;}
+      .baoma-jieguo1-even { background-color: #f7f7f7; }
+      .baoma-jieguo1 h2 { margin: 0; padding: 0; line-height: 25px; color: #555;}
+
+      .header { width: 100%; height: 44px; background-color: #2c1902; position: fixed; left: 0; top: 0; z-index: 999;}
+      .logo { height: 44px; display: block; text-align: center;}
+      .logo img { height: 100%;}
+      
+      .el { margin-top: 44px; };
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo"><img src="./assets/logo.jpg"/></div>
+    </div>
+
+    <div class="el baoma" id="el" style="display: none;">
+      <h1 style="margin: 0; padding: 0; line-height: 45px; background-color: #f1f1f1; color: #434343; font-size: 18px; text-indent: 20px;">{{year}}年历史开奖记录</h1>
+      <div :class="getBgClass(d)" v-for="d of history">
+        <div class="baoma-jieguo">
+          <h2>{{d.label}}</h2>
+          <div id="num-1" class="baoma-num"><span v-bind:class="getClass(d.opennos[0])">{{d.opennos[0]}}</span><span class="baoma-shuxing">{{getSx(d.opennos[0])}}</span></div>
+          <div id="num-2" class="baoma-num"><span v-bind:class="getClass(d.opennos[1])">{{d.opennos[1]}}</span><span class="baoma-shuxing">{{getSx(d.opennos[1])}}</span></div>
+          <div id="num-3" class="baoma-num"><span v-bind:class="getClass(d.opennos[2])">{{d.opennos[2]}}</span><span class="baoma-shuxing">{{getSx(d.opennos[2])}}</span></div>
+          <div id="num-4" class="baoma-num"><span v-bind:class="getClass(d.opennos[3])">{{d.opennos[3]}}</span><span class="baoma-shuxing">{{getSx(d.opennos[3])}}</span></div>
+          <div id="num-5" class="baoma-num"><span v-bind:class="getClass(d.opennos[4])">{{d.opennos[4]}}</span><span class="baoma-shuxing">{{getSx(d.opennos[4])}}</span></div>
+          <div id="num-6" class="baoma-num"><span v-bind:class="getClass(d.opennos[5])">{{d.opennos[5]}}</span><span class="baoma-shuxing">{{getSx(d.opennos[5])}}</span></div>
+          <div class="baoma-add"></div>
+          <div id="num-7" class="baoma-num"><span v-bind:class="getClass(d.opennos[6])">{{d.opennos[6]}}</span><span class="baoma-shuxing">{{getSx(d.opennos[6])}}</span></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+      var map = {
+        set: [
+          { name: "波色", set: [
+            { name: "红", set: [1, 2, 7, 8, 12, 13, 18, 19, 23, 24, 29, 30, 34, 35, 40, 45, 46] }, 
+            { name: "绿", set: [5, 6, 11, 16, 17, 21, 22, 27, 28, 32, 33, 38, 39, 43, 44, 49] }, 
+            { name: "蓝", set: [3, 4, 9, 10, 14, 15, 20, 25, 26, 31, 36, 37, 41, 42, 47, 48] }] }, 
+          { name: "五行", set: [
+            { name: "金", set: [2, 3, 16, 17, 24, 25, 32, 33, 46, 47] }, 
+            { name: "木", set: [6, 7, 14, 15, 28, 29, 36, 37, 44, 45] }, 
+            { name: "水", set: [4, 5, 12, 13, 20, 21, 34, 35, 42, 43] }, 
+            { name: "火", set: [1, 8, 9, 22, 23, 30, 31, 38, 39] }, 
+            { name: "土", set: [10, 11, 18, 19, 26, 27, 40, 41, 48, 49] }] },
+          { name: "生肖", set: [
+            { name: "狗", set: [1, 13, 25, 37, 49] }, 
+            { name: "鸡", set: [2, 14, 26, 38] }, 
+            { name: "猴", set: [3, 15, 27, 39] }, 
+            { name: "羊", set: [4, 16, 28, 40] }, 
+            { name: "马", set: [5, 17, 29, 41] }, 
+            { name: "蛇", set: [6, 18, 30, 42] }, 
+            { name: "龙", set: [7, 19, 31, 43] }, 
+            { name: "兔", set: [8, 20, 32, 44] }, 
+            { name: "虎", set: [9, 21, 33, 45] }, 
+            { name: "牛", set: [10, 22, 34, 46] },
+            { name: "鼠", set: [11, 23, 35, 47] },
+            { name: "猪", set: [12, 24, 36, 48] }
+          ]
+        }
+      ]};
+      var sx = map.set[2].set.reduce(function(o, d) {
+        d.set.reduce(function(o1, d1) {
+          o1[d1] = d.name;
+          return o1; 
+        }, o)
+        return o;
+      }, {});
+
+      var rgb = map.set[0].set.reduce(function(o, d) {
+        d.set.reduce(function(o1, d1) {
+          o1[d1] = d.name;
+          return o1; 
+        }, o)
+        return o;
+      }, {});
+
+      new Vue({
+        el: '#el',
+        data: function() {
+          return { year: new Date().getFullYear(), history: [], sx, rgb}
+        },
+        methods: {
+          getBgClass(d) {
+            var i = this.history.indexOf(d);
+            return ('baoma-jieguo1 baoma-jieguo1-') + (i % 2 == 0 ? 'odd' : 'even');
+          },
+          getClass(openno) {
+            var d = this.rgb[Number(openno)];
+            if ('红' == d) return 'baoma-blueball';
+            if ('绿' == d) return 'baoma-greenball';
+            if ('蓝' == d) return 'baoma-redball';
+            return ''
+          },
+          getSx(openno) {
+            return this.sx[Number(openno)]; 
+          }
+        },
+        created() {
+          const el = this;
+          
+          $.getJSON('./data.json?_' + Math.random(), function(data) {
+            var history = data.data, d;
+            for (var i = 0; i < history.length; i++) {
+              d = history[i];
+              d.label = d.opentime.substr(0, 4) + '年' + d.opentime.substr(5, 2) + '月' + d.opentime.substr(8, 2) + '日';
+              d.label += ' 第' + d.expect.substr(4) + '期';
+              d.opennos = d.opencode.replace(/\+/g, ',').split(',');
+              
+            }
+            el.history = history;
+          });
+        },
+        mounted() {
+          this.$el.style.display = "block";
+        }
+      })
+    </script>
+
+  <div class="tools1">
+    <style>
+    .tools1 { width: 100%; margin: 10px auto 20px; text-align: center; }
+    .tools1 a { text-decoration: none; display: inline-block; padding: 0 16px; line-height: 40px; margin: 0 auto; color: #434343;
+      border-radius: 6px; border: 1px solid #ddd; text-align: center; font-size: 16px; }
+    </style>
+    <a href="./list/index.html">历史开奖记录</a>
+  </div>
+
+
+  </body>
+  </html>

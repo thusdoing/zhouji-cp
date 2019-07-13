@@ -1,0 +1,4 @@
+.index-footer{padding: 0px;position: fixed;width: 100%;z-index: 1000;bottom: 0px;background-color: #fff;text-align: center;}
+.footer-menus{display: flex;width: 100%;border-top: 1px solid #e6e6e6;}
+.footer-menus .fmenu{flex:1;font-size: 25px;margin-top:5px;}
+.footer-menus .fmenu > div{flex:1;font-size: 14px;}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>好友/群资料</title>
+		<link rel="stylesheet" href="../../../layui.css?v=1">
+		<script src="../../../../layui.js?v=1"></script>
+		<script src=".././../../../../js/common.js"></script>
+
+	</head>
+	<body>
+		<form class="layui-form" action="" id="form" onsubmit="return false" style="margin: 20px; display: none;" >
+			<div class="layui-form-item">
+				<label class="layui-form-label">群名称</label>
+				<div class="layui-input-block">
+					<input type="text" name="gName" lay-verify="required" autocomplete="off" placeholder="请输入群名称" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item" pane="">
+				<label class="layui-form-label">群状态</label>
+				<div class="layui-input-block">
+					<input type="radio" name="gStatus" value="1" title="正常" checked=checked>
+					<input type="radio" name="gStatus" value="0" title="封禁">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">创建人</label>
+				<div class="layui-input-block">
+					<select name="createUserUid" lay-filter="chuangjian" id='cj'>						
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">群所属人</label>
+				<div class="layui-input-block">
+					<select name="gOwnerUserUid" lay-filter="suoshu" id='ss'>						
+					</select>
+				</div>
+			</div>
+<!-- 			<div class="layui-form-item" pane="">
+				<label class="layui-form-label">最大群成员</label>
+				<div class="layui-input-block">
+					<input type="radio" name="maxMemberCount" value="200" title="200" checked="">
+					<input type="radio" name="maxMemberCount" value="500" title="500" checked="">
+					<input type="radio" name="maxMemberCount" value="1000" title="1000">
+					<input type="radio" name="maxMemberCount" value="1500" title="1500">
+					<input type="radio" name="maxMemberCount" value="2000" title="2000" checked=checked>
+					<input type="radio" name="maxMemberCount" value="2500" title="2500">
+				</div>
+			</div> -->
+<!-- 			<div class="layui-form-item" pane="">
+				<label class="layui-form-label">最大群成员</label>
+				<div class="layui-input-block">
+					<input type="radio" name="g_member_count" value="200" title="200" checked="">
+					<input type="radio" name="g_member_count" value="500" title="500" checked="">
+					<input type="radio" name="g_member_count" value="1000" title="1000">
+					<input type="radio" name="g_member_count" value="1500" title="1500">
+					<input type="radio" name="g_member_count" value="2000" title="2000" checked=checked>
+					<input type="radio" name="g_member_count" value="2500" title="2500">
+				</div>
+			</div> -->
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">群组公告</label>
+				<div class="layui-input-block">
+					<textarea placeholder="请输入群组公告" class="layui-textarea" name="gNotice"></textarea>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block" style="text-align: center;    margin-left: 0;">
+					<button class="layui-btn" lay-submit="" lay-filter="addGroup">立即提交</button>
+				</div>
+			</div>
+		</form>	
+	</body>
+	<script>
+		layui.config({
+			base: '../../../../../js/' //假设这是你存放拓展模块的根目录
+		}).extend({ //设定模块别名
+			main: 'main' //如果 mymod.js 是在根目录，也可以不用设定别名
+		});
+
+		layui.use(['laydate', 'form', 'laytpl', 'layim'], function() {
+			var layim = layui.layim,
+				layer = layui.layer,
+				laytpl = layui.laytpl,
+				$ = layui.jquery,
+				form = layui.form;
+				
+				$.post(apiUrl+"userinfo/list",{userType:1},function(res){
+					var select1=document.getElementById('cj')
+					var select2=document.getElementById('ss')
+					var data=JSON.parse(res)
+					data=data.data					
+					for(var i=0;i<data.length;i++){
+						var option=document.createElement('option')											
+						option.setAttribute("value",data[i].uid)
+						option.innerHTML =data[i].name
+						var option2=option.cloneNode()	
+						option2.innerHTML =data[i].name
+						select1.appendChild(option)
+						
+						select2.appendChild(option2)	
+						console.log(option2)
+					}
+					form.render()
+					$('#form').show()
+				})
+				
+				console.log(parent)
+			var index = parent.layer.getFrameIndex(window.name);
+			form.on('submit(addGroup)', function(data) {
+				
+				$.post(apiUrl+"groupbase/save",data.field,function(res){
+					data=JSON.parse(res)
+					if(data.code==0){
+						sessionStorage.setItem('isUpdate','1')
+						parent.layer.msg("创建成功",{time: 1000})
+					}
+				})
+					// parent.reloadTable()
+					parent.layer.close(index);
+					
+			});
+
+
+		});
+	</script>
+</html>

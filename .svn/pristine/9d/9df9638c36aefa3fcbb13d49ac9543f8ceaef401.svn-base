@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <title>彩8-线路检测中心</title>
+    <link type="text/css" rel="stylesheet" href="./assets/style.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="bookmark" href="/favicon.ico">
+</head>
+
+<body>
+    <div class="top"> <a class="logo" href="/#"></a></div>
+    <div class="title"></div>
+    <div class="main">
+        <div class="main01">
+            <form name="autof">
+                <ul class="list" id="autourl" style="display: none; padding-top: 60px;">
+                    <li class="" v-bind:id="`li0${i}`" v-for="(d, i) of autourl">
+                        <a v-bind:href="d" target="_blank" class="u6" id="ahref_1">
+                            <div class="item">线路{{i + 1}} </div>
+                            <em v-bind:id="`em_${i}`">计算中...   </em>
+                            <h6 v-bind:id="`h6_${i}`">{{d.substr(7)}}</h6>
+                        </a>
+                        <div class="libg"> </div>
+                        <div class="hover"> <a v-bind:href="d" id="ahref_ck_1" target="_blank">点击进入</a></div>
+                    </li>
+                </ul>
+                <p> 温馨提示：MB/S数值越大的网址，打开速度就越快。 <input type="submit" class="subbtn" value="重新检测"></p>
+            </form>
+        </div>
+        <div class="main02">
+            <div class="left">
+                <div class="title3"> <img src="./assets/title3.png" width="214" height="43"></div>
+                <div class="icon">
+                    <center>
+                        <a target="_blank" href="https://static.meiqia.com/dist/standalone.html?_=t&amp;eid=85872">
+                            <img src="./assets/icon.png" width="79" height="114" alt="联系客服"></a></center>
+                </div>
+            </div>
+            <div class="right">
+                <div class="title4">
+                    <img src="./assets/title4.png" width="323" height="43"></div>
+                <div id="help">
+                    <span style="color: #e4393c;">1.打开IE浏览器：</span><br>
+                    选择：工具-&gt;Internet选项-&gt;再选择（删除历史 浏览记录）-&gt;删除-&gt;重启IE
+                    <br>
+                    <span style="color: #e4393c;">2.访问本站域名出现跳转到其他网址的情况：</span><br>
+                    这是您当地电信运营商dns被劫持所导致的，您可以通过修 改电脑本地dns来解决。具体操作<br>
+                    请点击查看：<a style="color: #e4393c; font-size: 16px;" href="http://jingyan.baidu.com/article/6dad5075f91478a123e36eeb.html"
+                        target="_blank">百度dns操作教程</a><br>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+        <script type="text/javascript">
+            function startRun(autourl) {
+                tim = 1
+                setInterval("tim++", 100)
+                b = 0
+
+                function auto(url, b) {
+                    addClass(document.getElementById('li0' + b), "stop");
+                    if (tim > 50) {
+                        document.getElementById('em_' + b).innerHTML = "链接超时";
+                    } else {
+                        document.getElementById('em_' + b).innerHTML = tim * 10 + 'ms';
+                    }
+                    b++;
+                }
+
+                function addClass(ele, cls) {
+                    // if (!this.hasClass(ele, cls)) ele.className += " " + cls;
+                    $(ele).addClass(cls);
+                }
+                var st = new Date();
+
+                function showspeed(url, b) {
+                    var fs = 1.46 * 1024; //图片文件大小(KB)
+                    var l = 2; //小数点的位数
+                    var et = new Date();
+                    var alltime = fs * 1000 / (et - st)
+                    var Lnum = Math.pow(10, l);
+                    var calcspeed = Math.round(alltime * Lnum) / Lnum;
+                    var sp = Math.round(calcspeed / 128 * Lnum) / Lnum;
+                    // document.getElementById('ahref_' + b).href = url;
+                    // document.getElementById('ahref_ck_' + b).href = url;
+                    // document.getElementById('h6_' + b).innerHTML = url.substr(7);
+                    addClass(document.getElementById('li0' + b), "stop");
+                    if (tim > 50) {
+                        document.getElementById('em_' + b).innerHTML = "链接超时";
+                    } else {
+                        document.getElementById('em_' + b).innerHTML = sp + 'MB/S';
+                    }
+                }
+
+                function run() {
+                    var isStart = true;
+                    function stop (url, i) {
+                        if (isStart) {
+                            isStart = false;
+                            $(document.getElementById('li0' +i)).addClass('current');
+                            showspeed(url, i);
+                        } else {
+                            $(document.getElementById('li0' +i)).removeClass('current');
+                        }
+                        showspeed(url, i);
+                        
+                    }
+                    for (var i = 0; i < autourl.length; i++) {
+                        (function (i) {
+                            var image = new Image();
+                            image.src = autourl[i] + "/Images/orderedList0.png?_=" + + Math.random();
+                            // document.write("<img src=" + autourl[i] + "/Images/orderedList0.png?" + Math.random() +
+                            //     " width=1 height=1 onload=showspeed('" + autourl[i] + "') style='display:none'>");
+                            var url = autourl[i];
+                            image.onload = function () {
+                                stop(url, i);   
+                            }
+                            image.onerror = function () {
+                                stop(url, i);
+                            }
+                        })(i);
+                    }
+                }
+                run();
+            }
+
+            $.getJSON('./data.json', function (autourl) {
+                new Vue({
+                    el: "#autourl",
+                    data: {
+                        autourl: autourl
+                    },
+                    mounted() {
+                        $("#autourl").show();
+                        startRun(autourl);
+                    }
+                })
+            });
+
+            // var autourl = ["http://www.9022.APP","http://www.9033.APP","http://www.7033.APP","http://www.7011.APP","http://www.88827.APP","http://www.88878.APP"];
+        </script>
+    </div>
+</body>
+
+</html>
